@@ -2,4 +2,7 @@
 -export([to_roman/1]).
 
 to_roman(1) ->
-    "I".
+    "I";
+to_roman(2) ->
+    "II".
+
