@@ -17,8 +17,11 @@ to_roman(X) when X < 10 ->
     "IX";
 to_roman(X) when X == 10 ->
     "X";
-to_roman(X) ->
-    to_roman(10)++to_roman(X-10).
+to_roman(X) when X < 40 ->
+    to_roman(10)++to_roman(X-10);
+to_roman(_) ->
+    "XL".
+
 
 
 
