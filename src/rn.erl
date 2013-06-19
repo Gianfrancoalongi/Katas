@@ -11,8 +11,12 @@ to_roman(4) ->
     "IV";
 to_roman(5) ->
     "V";
-to_roman(X) when X > 5 ->
-    to_roman(5)++to_roman(X-5).
+to_roman(X) when X > 5 andalso X < 9 ->
+    to_roman(5)++to_roman(X-5);
+to_roman(_) ->
+    "IX".
+    
+
 
 
 
