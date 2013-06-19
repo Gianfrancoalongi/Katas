@@ -9,3 +9,9 @@ two_to_roman_test() ->
 
 three_to_roman_test() ->
     ?assertEqual("III",rn:to_roman(3)).
+
+four_to_roman_test() ->
+    ?assertEqual("IIII",rn:to_roman(4)).
+
+five_to_roman_test() ->
+    ?assertEqual("V",rn:to_roman(5)).
