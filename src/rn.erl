@@ -8,7 +8,7 @@ to_roman(2) ->
 to_roman(3) ->
     "III";
 to_roman(4) ->
-    "IIII";
+    "IV";
 to_roman(5) ->
     "V".
 
