@@ -9,7 +9,8 @@ roman_numeral_test_() ->
 			       {4,"IV"},
 			       {5,"V"},
 			       {6,"VI"},
-			       {7,"VII"}
+			       {7,"VII"},
+			       {8,"VIII"}
 			      ]).
 
 make_test({Input,Expected}) ->
