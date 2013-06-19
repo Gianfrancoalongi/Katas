@@ -10,7 +10,10 @@ to_roman(3) ->
 to_roman(4) ->
     "IV";
 to_roman(5) ->
-    "V".
+    "V";
+to_roman(X) when X > 5 ->
+    to_roman(5)++to_roman(X-5).
+
 
 
 
