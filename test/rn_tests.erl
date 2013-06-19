@@ -18,3 +18,6 @@ five_to_roman_test() ->
 
 six_to_roman_test() ->
     ?assertEqual("VI",rn:to_roman(6)).
+
+seven_to_roman_test() ->
+    ?assertEqual("VII",rn:to_roman(7)).
