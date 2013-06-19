@@ -27,7 +27,8 @@ roman_numeral_test_() ->
 			       {29,"XXIX"},
 			       {30,"XXX"},
 			       {40,"XL"},
-			       {41,"XLI"}
+			       {41,"XLI"},
+			       {45,"XLV"}
 			      ]).
 
 make_test({Input,Expected}) ->
