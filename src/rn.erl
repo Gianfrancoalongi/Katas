@@ -4,5 +4,8 @@
 to_roman(1) ->
     "I";
 to_roman(2) ->
-    "II".
+    "II";
+to_roman(3) ->
+    "III".
+
 
