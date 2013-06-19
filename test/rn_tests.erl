@@ -22,7 +22,8 @@ roman_numeral_test_() ->
 			       {17,"XVII"},
 			       {18,"XVIII"},
 			       {19,"XIX"},
-			       {20,"XX"}
+			       {20,"XX"},
+			       {21,"XXI"}
 			      ]).
 
 make_test({Input,Expected}) ->
