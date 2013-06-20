@@ -11,7 +11,7 @@ to_roman(5) ->
     "V";
 to_roman(X) when X < 9 ->
     to_roman(5)++to_roman(X-5);
-to_roman(X) when X < 10 ->
+to_roman(9) ->
     "IX";
 to_roman(10) ->
     "X";
