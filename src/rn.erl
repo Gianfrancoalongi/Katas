@@ -29,9 +29,10 @@ to_roman(X) when X < 90 ->
     to_roman(50)++to_roman(X-50);
 to_roman(X) when X == 90 ->
     "XC";
-to_roman(X)  ->
-    to_roman(90)++to_roman(X-90).
-
+to_roman(X) when X < 100 ->
+    to_roman(90)++to_roman(X-90);
+to_roman(_) ->
+    "C".
 
 
 

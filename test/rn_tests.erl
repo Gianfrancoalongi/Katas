@@ -38,7 +38,8 @@ roman_numeral_test_() ->
 			       {80,"LXXX"},
 			       {90,"XC"},
 			       {95,"XCV"},
-			       {99,"XCIX"}
+			       {99,"XCIX"},
+			       {100,"C"}
 			      ]).
 
 make_test({Input,Expected}) ->
