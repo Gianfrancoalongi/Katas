@@ -28,7 +28,10 @@ to_roman(X) when X == 50 ->
 to_roman(X) when X < 90 ->
     to_roman(50)++to_roman(X-50);
 to_roman(X) when X == 90 ->
-    "XC".
+    "XC";
+to_roman(X)  ->
+    to_roman(90)++to_roman(X-90).
+
 
 
 
