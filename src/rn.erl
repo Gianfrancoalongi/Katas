@@ -31,5 +31,8 @@ to_roman(X) when X < 100 ->
     to_roman(90)++to_roman(X-90);
 to_roman(100) ->
     "C";
-to_roman(X) ->
-    to_roman(100)++to_roman(X-100).
+to_roman(X) when X < 400 ->
+    to_roman(100)++to_roman(X-100);
+to_roman(400) ->
+    "CD".
+    
