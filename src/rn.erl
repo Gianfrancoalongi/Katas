@@ -7,7 +7,9 @@ to_roman(X) ->
     Part++to_roman(subtract_lower_bound(X,Bounds)).
 
 select_matching_slice_part(X) ->
-    Slices = [{{1,3},"I"},
+    hd(lists:dropwhile(
+	 x_is_not_in_range_predicate(X),
+	 [{{1,3},"I"},
 	      {{4,4},"IV"},
 	      {{5,8},"V"},
 	      {{9,9},"IX"},
@@ -20,13 +22,13 @@ select_matching_slice_part(X) ->
 	      {{500,899},"D"},
 	      {{900,999},"CM"},
 	      {{1000,3000},"M"}
-	     ],
-    hd(lists:dropwhile(
-	 fun({Range,_}) -> 
-		 not is_in_range(X,Range) 
-	 end,
-	 Slices
+	     ]
 	)).
+
+x_is_not_in_range_predicate(X) ->
+    fun({Range,_}) -> 
+	    not is_in_range(X,Range) 
+    end.
 
 is_in_range(X,{Lb,Ub}) ->
     X >= Lb andalso X =< Ub.
