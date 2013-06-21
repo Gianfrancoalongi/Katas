@@ -8,7 +8,7 @@ to_roman(X) ->
 
 select_matching_slice_part(X) ->
     hd(lists:dropwhile(
-	 x_is_not_in_range_predicate(X),
+	 x_is_not_in_range(X),
 	 [{{1,3},"I"},
 	      {{4,4},"IV"},
 	      {{5,8},"V"},
@@ -25,7 +25,7 @@ select_matching_slice_part(X) ->
 	     ]
 	)).
 
-x_is_not_in_range_predicate(X) ->
+x_is_not_in_range(X) ->
     fun({Range,_}) -> 
 	    not is_in_range(X,Range) 
     end.
