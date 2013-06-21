@@ -13,7 +13,8 @@ to_roman(X) ->
 	      {{90,99},"XC"},
 	      {{100,399},"C"},
 	      {{400,499},"CD"},
-	      {{500,999},"D"}
+	      {{500,899},"D"},
+	      {{900,1000},"CM"}
 	     ],
     {Xp,Part} = select_matching_slice_and_remove_lower_bound(X,Slices),
     Part++to_roman(Xp).
