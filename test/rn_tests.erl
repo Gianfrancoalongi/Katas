@@ -45,7 +45,8 @@ roman_numeral_test_() ->
 			       {120,"CXX"},
 			       {300,"CCC"},
 			       {399,"CCCXCIX"},
-			       {400,"CD"}
+			       {400,"CD"},
+			       {405,"CDV"}
 			      ]).
 
 make_test({Input,Expected}) ->
