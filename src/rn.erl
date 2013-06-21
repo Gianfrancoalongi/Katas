@@ -33,18 +33,3 @@ to_roman(100) ->
     "C";
 to_roman(X) ->
     to_roman(100)++to_roman(X-100).
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
