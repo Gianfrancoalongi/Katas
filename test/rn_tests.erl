@@ -51,7 +51,8 @@ roman_numeral_test_() ->
 			       {500,"D"},
 			       {550,"DL"},
 			       {899,"DCCCXCIX"},
-			       {900,"CM"}
+			       {900,"CM"},
+			       {999,"CMXCIX"}
 			      ]).
 
 make_test({Input,Expected}) ->
