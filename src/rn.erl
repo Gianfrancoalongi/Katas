@@ -3,6 +3,10 @@
 
 to_roman(X) when X < 1 -> "";
 to_roman(X) ->
+    {Bounds,Part} = select_matching_slice_part(X),
+    Part++to_roman(subtract_lower_bound(X,Bounds)).
+
+select_matching_slice_part(X) ->
     Slices = [{{1,3},"I"},
 	      {{4,4},"IV"},
 	      {{5,8},"V"},
@@ -17,14 +21,15 @@ to_roman(X) ->
 	      {{900,999},"CM"},
 	      {{1000,3000},"M"}
 	     ],
-    {Xp,Part} = select_matching_slice_and_remove_lower_bound(X,Slices),
-    Part++to_roman(Xp).
+    hd(lists:dropwhile(
+	 fun({Range,_}) -> 
+		 not is_in_range(X,Range) 
+	 end,
+	 Slices
+	)).
 
-select_matching_slice_and_remove_lower_bound(X,Slices) ->
-    smsarlb(X,Slices).
+is_in_range(X,{Lb,Ub}) ->
+    X >= Lb andalso X =< Ub.
 
-smsarlb(X,[{{Lb,Ub},Part}|_]) when X >= Lb andalso X =< Ub -> 
-    {X-Lb,Part};
-smsarlb(X,[_|T]) ->
-    smsarlb(X,T).
-    
+subtract_lower_bound(X,{Lb,_}) ->
+    X - Lb.    
