@@ -1,0 +1,4 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load /home/gianfranco/Katas/RomanNumerals/APL/src/roman.dyalog
+Load /home/gianfranco/Katas/RomanNumerals/APL/src/roman.dyalog
+Run UT.run '/home/gianfranco/Katas/RomanNumerals/APL/test/roman_tests.dyalog'
