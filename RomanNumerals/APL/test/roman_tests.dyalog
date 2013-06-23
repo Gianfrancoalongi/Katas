@@ -135,4 +135,9 @@
         Z ← #.roman.numeral 1005
 ∇
 
+∇ Z ← this_year_to_roman_TEST
+        #.UT.expect ← 'MMXIII'
+        Z ← #.roman.numeral 2013
+∇
+
 :EndNameSpace
