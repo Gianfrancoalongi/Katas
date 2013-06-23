@@ -1,8 +1,10 @@
 :NameSpace roman
 
 ∇ Z ← numeral Number
-        :If Number ≤ 3
-                Z ← Number ⍴ 'I'
+        :If Number ≤ 0
+                Z ← ⍬
+        :ElseIf Number ≤ 3
+                Z ← 'I', numeral Number + ¯1
         :ElseIf Number = 4
                 Z ← 'IV'
         :ElseIf Number ≤ 8
