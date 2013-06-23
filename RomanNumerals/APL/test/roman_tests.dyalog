@@ -50,4 +50,9 @@
         Z ← #.roman.numeral 11
 ∇
 
+∇ Z ← forty_to_roman_TEST
+        #.UT.expect ← 'XL'
+        Z ← #.roman.numeral 40
+∇
+
 :EndNameSpace
