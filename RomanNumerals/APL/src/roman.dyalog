@@ -10,7 +10,7 @@
         :ElseIf Number = 9
                 Z ← 'IX'
         :Else
-                Z ← 'X'
+                Z ← 'X', numeral Number + ¯10
         :EndIf
 ∇
 

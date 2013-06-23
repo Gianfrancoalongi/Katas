@@ -41,8 +41,13 @@
 ∇
 
 ∇ Z ← ten_to_roman_TEST
-        #.UT.expect ← 'X'
+        #.UT.expect ← 'X',⍬
         Z ← #.roman.numeral 10
+∇
+
+∇ Z ← eleven_to_roman_TEST
+        #.UT.expect ← 'XI'
+        Z ← #.roman.numeral 11
 ∇
 
 :EndNameSpace
