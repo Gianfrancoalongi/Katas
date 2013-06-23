@@ -4,7 +4,7 @@
         :If Number ≤ 3
                 Z ← Number ⍴ 'I'
         :Else
-                Z ← 'IV'
+                Z ← ⊃ (Number + ¯3) ⌷ 'IV' ('V',⍬)
         :EndIf
 ∇
 
