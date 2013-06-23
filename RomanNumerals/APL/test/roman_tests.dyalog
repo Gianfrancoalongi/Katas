@@ -30,4 +30,9 @@
         Z ← #.roman.numeral 6
 ∇
 
+∇ Z ← seven_to_roman_TEST
+        #.UT.expect ← 'VII'
+        Z ← #.roman.numeral 7
+∇
+
 :EndNameSpace
