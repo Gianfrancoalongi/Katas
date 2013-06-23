@@ -15,8 +15,10 @@
                 Z ← 'XL',numeral Number + ¯40
         :ElseIf Number ≤ 89
                 Z ← 'L',numeral Number + ¯50
-        :Else 
+        :ElseIf Number ≤ 99
                 Z ← 'XC',numeral Number + ¯90
+        :Else
+                Z ← 'C',⍬
         :EndIf
 ∇
 

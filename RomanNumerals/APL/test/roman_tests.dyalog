@@ -80,4 +80,9 @@
         Z ← #.roman.numeral 99
 ∇
 
+∇ Z ← one_hundred_to_roman_TEST
+        #.UT.expect ← 'C',⍬
+        Z ← #.roman.numeral 100
+∇
+
 :EndNameSpace
