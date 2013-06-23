@@ -35,4 +35,9 @@
         Z ← #.roman.numeral 7
 ∇
 
+∇ Z ← nine_to_roman_TEST
+        #.UT.expect ← 'IX'
+        Z ← #.roman.numeral 9
+∇
+
 :EndNameSpace
