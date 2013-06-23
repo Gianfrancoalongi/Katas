@@ -25,6 +25,8 @@
                 Z ← 'D',numeral Number + ¯500
         :ElseIf Number ≤ 999
                 Z ← 'CM',numeral Number + ¯900
+        :Else
+                Z ← 'M',⍬
         :EndIf
 ∇
 
