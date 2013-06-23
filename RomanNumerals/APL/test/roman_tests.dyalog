@@ -110,4 +110,9 @@
         Z ← #.roman.numeral 505
 ∇
 
+∇ Z ← eight_hundred_and_ninety_nine_to_roman_TEST
+        #.UT.expect ← 'DCCCXCIX'
+        Z ← #.roman.numeral 899
+∇
+
 :EndNameSpace
