@@ -25,4 +25,9 @@
         Z ← #.roman.numeral 5
 ∇
 
+∇ Z ← six_to_roman_TEST
+        #.UT.expect ← 'VI'
+        Z ← #.roman.numeral 6
+∇
+
 :EndNameSpace
