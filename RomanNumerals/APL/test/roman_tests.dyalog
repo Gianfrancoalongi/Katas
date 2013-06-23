@@ -100,4 +100,9 @@
         Z ← #.roman.numeral 499
 ∇
 
+∇ Z ← five_hundred_to_roman_TEST
+        #.UT.expect ← 'D',⍬
+        Z ← #.roman.numeral 500
+∇
+
 :EndNameSpace
