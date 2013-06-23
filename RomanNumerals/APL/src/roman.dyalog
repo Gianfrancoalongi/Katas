@@ -3,8 +3,10 @@
 ∇ Z ← numeral Number
         :If Number ≤ 3
                 Z ← Number ⍴ 'I'
+        :ElseIf Number = 4
+                Z ← 'IV'
         :Else
-                Z ← ⊃ (Number + ¯3) ⌷ 'IV' ('V',⍬) 'VI' 'VII'
+                Z ← 'V', numeral Number + ¯5
         :EndIf
 ∇
 
