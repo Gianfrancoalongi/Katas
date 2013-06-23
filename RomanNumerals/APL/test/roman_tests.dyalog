@@ -55,4 +55,9 @@
         Z ← #.roman.numeral 40
 ∇
 
+∇ Z ← forty_five_to_roman_TEST
+        #.UT.expect  ← 'XLV'
+        Z ← #.roman.numeral 45
+∇
+
 :EndNameSpace

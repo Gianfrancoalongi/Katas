@@ -12,7 +12,7 @@
         :ElseIf Number ≤ 39
                 Z ← 'X', numeral Number + ¯10
         :Else
-                Z ← 'XL'
+                Z ← 'XL',numeral Number + ¯40
         :EndIf
 ∇
 
