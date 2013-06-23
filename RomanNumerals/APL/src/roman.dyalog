@@ -7,8 +7,10 @@
                 Z ← 'IV'
         :ElseIf Number ≤ 8
                 Z ← 'V', numeral Number + ¯5
-        :Else
+        :ElseIf Number = 9
                 Z ← 'IX'
+        :Else
+                Z ← 'X'
         :EndIf
 ∇
 

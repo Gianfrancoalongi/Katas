@@ -40,4 +40,9 @@
         Z ← #.roman.numeral 9
 ∇
 
+∇ Z ← ten_to_roman_TEST
+        #.UT.expect ← 'X'
+        Z ← #.roman.numeral 10
+∇
+
 :EndNameSpace
