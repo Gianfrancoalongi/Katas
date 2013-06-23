@@ -14,7 +14,7 @@
         :ElseIf Number ≤ 49
                 Z ← 'XL',numeral Number + ¯40
         :Else
-                Z ← 'L',⍬
+                Z ← 'L',numeral Number + ¯50
         :EndIf
 ∇
 

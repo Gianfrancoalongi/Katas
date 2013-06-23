@@ -65,4 +65,9 @@
         Z ← #.roman.numeral 50
 ∇
 
+∇ Z ← eighty_nine_to_roman_TEST
+        #.UT.expect ← 'LXXXIX'
+        Z ← #.roman.numeral 89
+∇
+
 :EndNameSpace
