@@ -1,7 +1,7 @@
 :NameSpace rn_tests
 
 ∇ Z ← one_to_roman_TEST
-        #.UT.expect ← 'I',⍬
+        #.UT.expect ← 'I'
         Z ← #.roman.numeral 1
 ∇
 
@@ -21,7 +21,7 @@
 ∇
 
 ∇ Z ← five_to_roman_TEST
-        #.UT.expect ← 'V',⍬
+        #.UT.expect ← 'V'
         Z ← #.roman.numeral 5
 ∇
 
@@ -41,7 +41,7 @@
 ∇
 
 ∇ Z ← ten_to_roman_TEST
-        #.UT.expect ← 'X',⍬
+        #.UT.expect ← 'X'
         Z ← #.roman.numeral 10
 ∇
 
@@ -61,7 +61,7 @@
 ∇
 
 ∇ Z ← fifty_to_toman_TEST
-        #.UT.expect ← 'L',⍬
+        #.UT.expect ← 'L'
         Z ← #.roman.numeral 50
 ∇
 
@@ -81,7 +81,7 @@
 ∇
 
 ∇ Z ← one_hundred_to_roman_TEST
-        #.UT.expect ← 'C',⍬
+        #.UT.expect ← 'C'
         Z ← #.roman.numeral 100
 ∇
 
@@ -101,7 +101,7 @@
 ∇
 
 ∇ Z ← five_hundred_to_roman_TEST
-        #.UT.expect ← 'D',⍬
+        #.UT.expect ← 'D'
         Z ← #.roman.numeral 500
 ∇
 
@@ -126,7 +126,7 @@
 ∇
 
 ∇ Z ← one_thousand_to_roman_TEST
-        #.UT.expect ← 'M',⍬
+        #.UT.expect ← 'M'
         Z ← #.roman.numeral 1000
 ∇
 
