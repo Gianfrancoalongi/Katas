@@ -85,4 +85,9 @@
         Z ← #.roman.numeral 100
 ∇
 
+∇ Z ← one_hundred_five_to_roman_TEST
+        #.UT.expect ← 'CV'
+        Z ← #.roman.numeral 105
+∇
+
 :EndNameSpace

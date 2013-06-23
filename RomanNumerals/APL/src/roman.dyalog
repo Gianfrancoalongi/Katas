@@ -18,7 +18,7 @@
         :ElseIf Number ≤ 99
                 Z ← 'XC',numeral Number + ¯90
         :Else
-                Z ← 'C',⍬
+                Z ← 'C',numeral Number + ¯100
         :EndIf
 ∇
 
