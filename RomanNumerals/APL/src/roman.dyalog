@@ -17,8 +17,10 @@
                 Z ← 'L',numeral Number + ¯50
         :ElseIf Number ≤ 99
                 Z ← 'XC',numeral Number + ¯90
-        :Else
+        :ElseIf Number ≤ 399
                 Z ← 'C',numeral Number + ¯100
+        :Else
+                Z ← 'CD'
         :EndIf
 ∇
 
