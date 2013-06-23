@@ -26,7 +26,7 @@
         :ElseIf Number ≤ 999
                 Z ← 'CM',numeral Number + ¯900
         :Else
-                Z ← 'M',⍬
+                Z ← 'M',numeral Number + ¯1000
         :EndIf
 ∇
 

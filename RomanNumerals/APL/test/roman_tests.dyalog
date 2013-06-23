@@ -130,4 +130,9 @@
         Z ← #.roman.numeral 1000
 ∇
 
+∇ Z ← one_thousand_and_five_to_roman_TEST
+        #.UT.expect ← 'MV'
+        Z ← #.roman.numeral 1005
+∇
+
 :EndNameSpace
