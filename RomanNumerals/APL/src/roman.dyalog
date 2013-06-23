@@ -1,34 +1,13 @@
 :NameSpace roman
 
-∇ Z ← numeral Number
+∇ Z ← numeral Number;i;mark;sub
         :If Number ≤ 0
                 Z ← ⍬
-        :ElseIf Number ≤ 3
-                Z ← 'I', numeral Number + ¯1
-        :ElseIf Number = 4
-                Z ← 'IV'
-        :ElseIf Number ≤ 8
-                Z ← 'V', numeral Number + ¯5
-        :ElseIf Number = 9
-                Z ← 'IX'
-        :ElseIf Number ≤ 39
-                Z ← 'X', numeral Number + ¯10
-        :ElseIf Number ≤ 49
-                Z ← 'XL',numeral Number + ¯40
-        :ElseIf Number ≤ 89
-                Z ← 'L',numeral Number + ¯50
-        :ElseIf Number ≤ 99
-                Z ← 'XC',numeral Number + ¯90
-        :ElseIf Number ≤ 399
-                Z ← 'C',numeral Number + ¯100
-        :ElseIf Number ≤ 499
-                Z ← 'CD',numeral Number + ¯400
-        :ElseIf Number ≤ 899
-                Z ← 'D',numeral Number + ¯500
-        :ElseIf Number ≤ 999
-                Z ← 'CM',numeral Number + ¯900
         :Else
-                Z ← 'M',numeral Number + ¯1000
+                i ← (Number∘≤ 3 4 8 9 39 49 89 99 399 499 899 999) ⍳ 1
+                mark ← i ⌷ ('I',⍬) 'IV' ('V',⍬) 'IX' ('X',⍬) 'XL' ('L',⍬) 'XC' ('C',⍬) 'CD' ('D',⍬) 'CM' ('M',⍬)
+                sub ← i ⌷ 1 4 5 9 10 40 50 90 100 400 500 900 1000
+                Z ← ⊃,/ mark, numeral Number - sub
         :EndIf
 ∇
 
