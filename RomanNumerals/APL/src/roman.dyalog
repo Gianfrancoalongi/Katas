@@ -13,8 +13,10 @@
                 Z ← 'X', numeral Number + ¯10
         :ElseIf Number ≤ 49
                 Z ← 'XL',numeral Number + ¯40
-        :Else
+        :ElseIf Number ≤ 89
                 Z ← 'L',numeral Number + ¯50
+        :Else 
+                Z ← 'XC'
         :EndIf
 ∇
 

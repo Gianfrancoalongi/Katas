@@ -70,4 +70,9 @@
         Z ← #.roman.numeral 89
 ∇
 
+∇ Z ← ninety_to_roman_TEST
+        #.UT.expect ← 'XC'
+        Z ← #.roman.numeral 90
+∇
+
 :EndNameSpace
