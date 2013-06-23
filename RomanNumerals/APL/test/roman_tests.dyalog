@@ -10,4 +10,9 @@
         Z ← #.roman.numeral 2
 ∇
 
+∇ Z ← three_to_roman_TEST
+        #.UT.expect ← 'III'
+        Z ← #.roman.numeral 3
+∇
+
 :EndNameSpace
