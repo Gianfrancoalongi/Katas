@@ -21,8 +21,10 @@
                 Z ← 'C',numeral Number + ¯100
         :ElseIf Number ≤ 499
                 Z ← 'CD',numeral Number + ¯400
-        :Else
+        :ElseIf Number ≤ 899
                 Z ← 'D',numeral Number + ¯500
+        :Else
+                Z ← 'CM'
         :EndIf
 ∇
 
