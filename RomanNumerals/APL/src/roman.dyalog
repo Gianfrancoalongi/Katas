@@ -1,7 +1,11 @@
 :NameSpace roman
 
 ∇ Z ← numeral Number
-        Z ← Number ⍴ 'I'
+        :If Number ≤ 3
+                Z ← Number ⍴ 'I'
+        :Else
+                Z ← 'IV',⍬
+        :EndIf
 ∇
 
 :EndNameSpace

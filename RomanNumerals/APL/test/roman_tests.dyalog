@@ -15,4 +15,9 @@
         Z ← #.roman.numeral 3
 ∇
 
+∇ Z ← four_to_roman_TEST
+        #.UT.expect ← 'IV',⍬
+        Z ← #.roman.numeral 4
+∇
+
 :EndNameSpace
