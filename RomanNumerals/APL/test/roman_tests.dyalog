@@ -60,4 +60,9 @@
         Z ← #.roman.numeral 45
 ∇
 
+∇ Z ← fifty_to_toman_TEST
+        #.UT.expect ← 'L',⍬
+        Z ← #.roman.numeral 50
+∇
+
 :EndNameSpace
