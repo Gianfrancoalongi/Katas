@@ -5,4 +5,9 @@
         Z ← #.roman.numeral 1
 ∇
 
+∇ Z ← two_to_roman_TEST
+        #.UT.expect ← 'II'
+        Z ← #.roman.numeral 2
+∇
+
 :EndNameSpace

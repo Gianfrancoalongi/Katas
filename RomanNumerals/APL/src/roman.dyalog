@@ -1,7 +1,7 @@
 :NameSpace roman
 
 ∇ Z ← numeral Number
-        Z ← 'I'
+        Z ← Number ⊃ 'I' 'II' 
 ∇
 
 :EndNameSpace
