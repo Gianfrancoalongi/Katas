@@ -23,8 +23,8 @@
                 Z ← 'CD',numeral Number + ¯400
         :ElseIf Number ≤ 899
                 Z ← 'D',numeral Number + ¯500
-        :Else
-                Z ← 'CM'
+        :ElseIf Number ≤ 999
+                Z ← 'CM',numeral Number + ¯900
         :EndIf
 ∇
 
