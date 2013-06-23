@@ -20,7 +20,7 @@
         :ElseIf Number ≤ 399
                 Z ← 'C',numeral Number + ¯100
         :Else
-                Z ← 'CD'
+                Z ← 'CD',numeral Number + ¯400
         :EndIf
 ∇
 
