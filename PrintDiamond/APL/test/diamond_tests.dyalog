@@ -10,4 +10,9 @@
   Z ← #.diamond.width 'C'
 ∇
 
+∇ Z ← height_from_alphabetic_B_TEST
+  #.UT.expect ← 3
+  Z ← #.diamond.height 'B'
+∇
+
 :EndNameSpace
