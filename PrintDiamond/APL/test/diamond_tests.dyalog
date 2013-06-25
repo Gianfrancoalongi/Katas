@@ -20,7 +20,7 @@
   Z ← #.diamond.height 'C'
 ∇
 
-∇ Z ← layer_number_n_for_input_character_TEST
+∇ Z ← layer_number_1_for_input_character_B_TEST
   #.UT.expect ← ↑ (0 1 0)
   Z ← #.diamond.layer 1 'B'
 ∇
