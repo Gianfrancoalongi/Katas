@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load /home/gianfranco/Katas/PrintDiamond/APL/src/diamond.dyalog
+Run UT.run '/home/gianfranco/Katas/PrintDiamond/APL/test/diamond_tests.dyalog'
