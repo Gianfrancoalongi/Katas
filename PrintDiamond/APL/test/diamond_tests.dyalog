@@ -15,4 +15,9 @@
   Z ← #.diamond.height 'B'
 ∇
 
+∇ Z ← height_from_alphabetic_C_TEST
+  #.UT.expect ← 5
+  Z ← #.diamond.height 'C'
+∇
+
 :EndNameSpace
