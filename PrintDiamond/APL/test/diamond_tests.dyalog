@@ -21,12 +21,12 @@
 ∇
 
 ∇ Z ← layer_number_2_for_input_character_C_TEST
-  #.UT.expect ← (2 0 0 0 2)
+  #.UT.expect ← (0 2 0 2 0)
   Z ← #.diamond.layer 2 'C'
 ∇
 
 ∇ Z ← layer_number_2_for_input_character_D_TEST
-  #.UT.expect ← (2 0 0 0 0 0 2)
+  #.UT.expect ← (0 0 2 0 2 0 0)
   Z ← #.diamond.layer 2 'D'
 ∇
 
