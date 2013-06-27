@@ -70,4 +70,9 @@
   Z ← #.diamond.diamond 'B'
 ∇
 
+∇ Z ← diamond_from_character_C_TEST
+  #.UT.expect ← ↑ '  A  ' ' B B ' 'C   C' ' B B ' '  A  '
+  Z ← #.diamond.diamond 'C'
+∇
+
 :EndNameSpace
