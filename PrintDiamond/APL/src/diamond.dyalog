@@ -9,7 +9,8 @@
          zero ← (zeroes Alphabetic) ⍴ 0
          Z ← zero,1,zero
  :Else
-         Z ← 2 0 2
+         zero ← ((zeroes Alphabetic) + ¯1) ⍴ 0
+         Z ← 2,zero,0,zero,2
  :EndIf
 ∇
 
