@@ -15,7 +15,8 @@
          zero ← ((zeroes Alphabetic) + ¯2) ⍴ 0
          Z ← zero,3 0 0 0 3,zero
  :Else
-         Z ← 4 0 0 0 0 0 4
+         zero ← ((zeroes Alphabetic) + ¯3) ⍴ 0
+         Z ← zero,4 0 0 0 0 0 4,zero
  :EndIf
 ∇
 
