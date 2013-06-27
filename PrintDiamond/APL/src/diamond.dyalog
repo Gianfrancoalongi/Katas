@@ -19,10 +19,10 @@
   Z ← ¯1 + position Alphabetic
 ∇
 
-∇ Z ← layer (Alphabetic number);zero;edge;middle
+∇ Z ← layer (Alphabetic number);edge;middle
         :If 1 = number
-                zero ← (zeroes Alphabetic) ⍴ 0
-                Z ← zero,1,zero
+                edge ← (zeroes Alphabetic) ⍴ 0
+                Z ← edge,1,edge
         :Else                
                 edge ← ((zeroes Alphabetic) + (¯1 × number - 1)) ⍴ 0
                 middle ← (¯3 + number × 2) ⍴ 0
