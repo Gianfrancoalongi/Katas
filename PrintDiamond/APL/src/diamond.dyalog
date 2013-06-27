@@ -1,8 +1,10 @@
 :NameSpace diamond
 
+alphabet ← 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 ∇ Z ← diamond Alphabetic;m
   m ← 1 + ↑ { layer Alphabetic ⍵ }¨ layer_array Alphabetic 
-  Z ← ' ABCDEFGHIJKLMNOPQRSTUVWXYZ'[m]
+  Z ← (' ',alphabet) [m]
 ∇
 
 ∇ Z ← layer_array Alphabetic;p;s
@@ -12,7 +14,7 @@
 ∇
 
 ∇ Z ← position Alphabetic
-  Z ← 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' ⍳ Alphabetic
+  Z ← alphabet ⍳ Alphabetic
 ∇
 
 ∇ Z ← zeroes Alphabetic
