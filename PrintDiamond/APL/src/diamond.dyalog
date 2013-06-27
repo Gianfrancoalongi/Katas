@@ -1,11 +1,17 @@
 :NameSpace diamond
 
 ∇ Z ← layer_array Alphabetic
-  Z ← 1 2 1
+  p ← position Alphabetic
+  s ← ⍳ ¯1 + p
+  Z ← s,p,⌽s
+∇
+
+∇ Z ← position Alphabetic
+  Z ← 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' ⍳ Alphabetic
 ∇
 
 ∇ Z ← zeroes Alphabetic
-  Z ← ¯1 + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' ⍳ Alphabetic
+  Z ← ¯1 + position Alphabetic
 ∇
 
 ∇ Z ← layer (number Alphabetic);zero;edge;middle

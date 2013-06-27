@@ -55,4 +55,9 @@
   Z ← #.diamond.layer_array 'B'
 ∇
 
+∇ Z ← layer_number_array_from_input_character_C_TEST
+  #.UT.expect ← 1 2 3 2 1
+  Z ← #.diamond.layer_array 'C'
+∇
+
 :EndNameSpace
