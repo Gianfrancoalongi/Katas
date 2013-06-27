@@ -12,8 +12,8 @@
          zero ← ((zeroes Alphabetic) + ¯1) ⍴ 0
          Z ← zero,2,0,2,zero
  :Else
-         zero ← ((zeroes Alphabetic) + ¯1) ⍴ 0
-         Z ← 3,zero,0,zero,3
+         zero ← ((zeroes Alphabetic) + ¯2) ⍴ 0
+         Z ← zero,3 0 0 0 3,zero
  :EndIf
 ∇
 
