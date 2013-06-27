@@ -30,4 +30,9 @@
   Z ← #.diamond.layer 2 'D'
 ∇
 
+∇ Z ← layer_number_3_for_input_character_C_TEST
+  #.UT.expect ← (3 0 0 0 3)
+  Z ← #.diamond.layer 3 'C'
+∇
+
 :EndNameSpace
