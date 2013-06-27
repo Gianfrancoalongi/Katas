@@ -1,6 +1,10 @@
 :NameSpace diamond
 
-∇ Z ← layer_array Alphabetic
+∇ Z ← diamond Alphabetic
+  Z ← layer_array Alphabetic
+∇
+
+∇ Z ← layer_array Alphabetic;p;s
   p ← position Alphabetic
   s ← ⍳ ¯1 + p
   Z ← s,p,⌽s
@@ -14,7 +18,7 @@
   Z ← ¯1 + position Alphabetic
 ∇
 
-∇ Z ← layer (number Alphabetic);zero;edge;middle
+∇ Z ← layer (Alphabetic number);zero;edge;middle
         :If 1 = number
                 zero ← (zeroes Alphabetic) ⍴ 0
                 Z ← zero,1,zero
