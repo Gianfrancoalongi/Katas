@@ -50,4 +50,9 @@
   Z ← #.diamond.layer 4 'E'
 ∇
 
+∇ Z ← layer_number_array_from_input_character_B_TEST
+  #.UT.expect ← 1 2 1
+  Z ← #.diamond.layer_array 'B'
+∇
+
 :EndNameSpace
