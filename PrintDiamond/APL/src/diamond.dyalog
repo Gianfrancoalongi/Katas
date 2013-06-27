@@ -5,8 +5,12 @@
 ∇
 
 ∇ Z ← layer (number Alphabetic);zero
-  zero ← (zeroes Alphabetic) ⍴ 0
-  Z ← zero,1,zero
+ :IF 1 = number
+         zero ← (zeroes Alphabetic) ⍴ 0
+         Z ← zero,1,zero
+ :Else
+         Z ← 2 0 2
+ :EndIf
 ∇
 
 :EndNameSpace
