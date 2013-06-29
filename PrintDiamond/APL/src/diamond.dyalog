@@ -7,10 +7,9 @@ alphabet ← 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   Z ← (' ',alphabet) [m]
 ∇
 
-∇ Z ← layer_array Alphabetic;p;s
+∇ Z ← layer_array Alphabetic;p
   p ← position Alphabetic
-  s ← ⍳ ¯1 + p
-  Z ← s,p,⌽s
+  Z ← { ⍵,p,⌽⍵ } ⍳ ¯1 + p
 ∇
 
 ∇ Z ← position Alphabetic
