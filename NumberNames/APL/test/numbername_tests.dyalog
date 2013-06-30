@@ -55,4 +55,9 @@
   Z ← #.numbername.convert 10
 ∇
 
+∇ Z ← eleven_TEST
+  #.UT.expect ← 'eleven'
+  Z ← #.numbername.convert 11
+∇
+
 :EndNameSpace
