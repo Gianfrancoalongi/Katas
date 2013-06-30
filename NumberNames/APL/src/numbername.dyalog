@@ -13,7 +13,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :ElseIf number = 30
           Z ← prefix number
   :ElseIf number ≤ 39
-          Z ← 'thirty ',convert number - 30
+          Z ← (prefix number),' ',convert number - 30
   :ElseIf number = 40
           Z ← prefix number
   :Else
