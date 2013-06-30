@@ -30,4 +30,9 @@
   Z ← #.numbername.convert 5
 ∇
 
+∇ Z ← six_TEST
+  #.UT.expect ← 'six'
+  Z ← #.numbername.convert 6
+∇
+
 :EndNameSpace
