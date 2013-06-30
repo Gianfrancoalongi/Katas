@@ -16,6 +16,8 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           Z ← 'thirty ',convert number - 30
   :ElseIf number = 40
           Z ← 'forty'
+  :Else
+          Z ← 'forty ',convert number - 40
   :EndIf
 ∇
 
