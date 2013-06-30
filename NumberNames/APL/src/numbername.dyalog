@@ -9,8 +9,10 @@ numbers,← ⊂'twenty'
           Z ← ⊃  numbers [ number + 1 ]
   :ElseIf number ≤ 29
           Z ← 'twenty ',convert number - 20
-  :Else
+  :ElseIf number = 30
           Z ← 'thirty'
+  :Else
+          Z ← 'thirty ',convert number - 30
   :EndIf
 ∇
 
