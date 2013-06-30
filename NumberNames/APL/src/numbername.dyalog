@@ -9,7 +9,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :ElseIf number = 20
           Z ← prefix number
   :ElseIf number ≤ 29
-          Z ← 'twenty ',convert number - 20
+          Z ← (prefix number),' ',convert number - 20
   :ElseIf number = 30
           Z ← prefix number
   :ElseIf number ≤ 39
@@ -22,7 +22,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 ∇
 
 ∇ Z ← prefix number
-  Z ← ⊃ 'twenty' 'thirty' 'forty' [ ¯1 + number ÷ 10 ]
+  Z ← ⊃ 'twenty' 'thirty' 'forty' [ ¯1 + ⌊ number ÷ 10 ]
 ∇
 
 :EndNameSpace
