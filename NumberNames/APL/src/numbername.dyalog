@@ -12,8 +12,10 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           Z ← 'twenty ',convert number - 20
   :ElseIf number = 30
           Z ← 'thirty'
-  :Else
+  :ElseIf number ≤ 39
           Z ← 'thirty ',convert number - 30
+  :ElseIf number = 40
+          Z ← 'forty'
   :EndIf
 ∇
 
