@@ -17,7 +17,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 ∇
 
 ∇ Z ← prefix number
-  Z ← ⊃ 'twenty' 'thirty' 'forty' [ ¯1 + ⌊ number ÷ 10 ]
+  Z ← ⊃ 'twenty' 'thirty' 'forty' 'fifty' [ ¯1 + ⌊ number ÷ 10 ]
 ∇
 
 :EndNameSpace

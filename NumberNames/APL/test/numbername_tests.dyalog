@@ -130,4 +130,9 @@
   Z ← #.numbername.convert 41
 ∇
 
+∇ Z ← fifty_TEST
+  #.UT.expect ← 'fifty'
+  Z ← #.numbername.convert 50
+∇
+
 :EndNameSpace
