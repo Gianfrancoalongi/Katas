@@ -15,4 +15,9 @@
   Z ← #.numbername.convert 2
 ∇
 
+∇ Z ← three_TEST
+  #.UT.expect ← 'three'
+  Z ← #.numbername.convert 3
+∇
+
 :EndNameSpace
