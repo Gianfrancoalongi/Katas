@@ -40,4 +40,9 @@
   Z ← #.numbername.convert 7
 ∇
 
+∇ Z ← eight_TEST
+  #.UT.expect ← 'eight'
+  Z ← #.numbername.convert 8
+∇
+
 :EndNameSpace
