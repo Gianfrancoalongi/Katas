@@ -85,4 +85,9 @@
   Z ← #.numbername.convert 16
 ∇
 
+∇ Z ← seventeen_TEST
+  #.UT.expect ← 'seventeen'
+  Z ← #.numbername.convert 17
+∇
+
 :EndNameSpace
