@@ -5,7 +5,11 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 numbers,← ⊂'twenty'
 
 ∇ Z ← convert number  
-  Z ← ⊃  numbers [ number + 1 ]
+  :If number ≤ 20
+          Z ← ⊃  numbers [ number + 1 ]
+  :Else
+          Z ← 'twenty ',convert number - 20
+  :EndIf
 ∇
 
 :EndNameSpace
