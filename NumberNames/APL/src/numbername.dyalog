@@ -17,7 +17,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :ElseIf number = 40
           Z ← prefix number
   :Else
-          Z ← 'forty ',convert number - 40
+          Z ← (prefix number),' ',convert number - 40
   :EndIf
 ∇
 
