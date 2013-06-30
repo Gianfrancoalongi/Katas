@@ -11,11 +11,11 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :ElseIf number ≤ 29
           Z ← 'twenty ',convert number - 20
   :ElseIf number = 30
-          Z ← 'thirty'
+          Z ← prefix number
   :ElseIf number ≤ 39
           Z ← 'thirty ',convert number - 30
   :ElseIf number = 40
-          Z ← 'forty'
+          Z ← prefix number
   :Else
           Z ← 'forty ',convert number - 40
   :EndIf
