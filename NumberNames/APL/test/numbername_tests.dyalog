@@ -155,4 +155,9 @@
   Z ← #.numbername.convert 81
 ∇
 
+∇ Z ← ninety_one_TEST
+  #.UT.expect ← 'ninety one'
+  Z ← #.numbername.convert 91
+∇
+
 :EndNameSpace
