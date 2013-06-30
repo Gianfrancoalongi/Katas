@@ -100,4 +100,9 @@
   Z ← #.numbername.convert 19
 ∇
 
+∇ Z ← twenty_TEST
+  #.UT.expect ← 'twenty'
+  Z ← #.numbername.convert 20
+∇
+
 :EndNameSpace
