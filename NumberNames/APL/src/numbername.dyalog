@@ -22,6 +22,9 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           :EndIf
   :Else
           Z ← 'one thousand'
+          :If number > 1000
+                  Z,← ', ',convert number - 1000 × ⌊ (number ÷ 1000)
+          :EndIf
   :EndIf
 ∇
 
