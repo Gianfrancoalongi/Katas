@@ -6,13 +6,15 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 ∇ Z ← convert number;p
   :If number ≤ 19
           Z ← ⊃  numbers [ number + 1 ]
-  :Else
+  :ElseIf number < 100
           p ← prefix number
           :If 0 = 10 | number
                   Z ← p
           :Else
                   Z ← p,' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
+  :Else
+          Z ← 'one hundred'
   :EndIf
 ∇
 

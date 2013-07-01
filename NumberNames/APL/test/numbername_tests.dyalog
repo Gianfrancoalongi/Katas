@@ -160,4 +160,9 @@
   Z ← #.numbername.convert 91
 ∇
 
+∇ Z ← one_hundred_TEST
+  #.UT.expect ← 'one hundred'
+  Z ← #.numbername.convert 100
+∇
+
 :EndNameSpace
