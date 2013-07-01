@@ -3,7 +3,7 @@
 numbers ← 'zero' 'one' 'two' 'three' 'four' 'five' 'six' 'seven' 'eight' 'nine' 'ten'
 numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'seventeen' 'eighteen' 'nineteen'
 
-∇ Z ← convert number;p
+∇ Z ← convert number;p;n;d;t;s
   :If number ≤ 19
           Z ← ⊃  numbers [ number + 1 ]
   :ElseIf number < 100
@@ -11,15 +11,14 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           :If 0 ≠ 10 | number
                   Z,← ' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
-  :ElseIf number < 1000
-          Z ← (⊃numbers[ 1 + ⌊number ÷ 100 ]),' hundred'
-          :If 0 ≠ 100 | number
-                  Z,← ' and ',convert (number -  (100 × ⌊ (number ÷ 100)))
-          :EndIf
   :Else
-          Z ← (⊃numbers[ 1 + ⌊ number ÷ 1000 ]),' thousand'
-          :If 0 ≠ 1000 | number 
-                  Z,← ', ',convert number - 1000 × ⌊ (number ÷ 1000)
+          n ← number < 1000 100000
+          d ← ⊃ n / 100 1000
+          t ← ⊃ n / 'hundred' 'thousand'
+          s ← ⊃ n / ' and ' ', '
+          Z ← (⊃numbers[ 1 + ⌊number ÷ d ]),' ',t
+          :If 0 ≠ d | number
+                  Z,← s,convert (number -  (d × ⌊ (number ÷ d)))
           :EndIf
   :EndIf
 ∇
