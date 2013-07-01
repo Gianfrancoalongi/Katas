@@ -180,4 +180,9 @@
   Z ← #.numbername.convert 999
 ∇
 
+∇ Z ← one_thousand_TEST
+  #.UT.expect ← 'one thousand'
+  Z ← #.numbername.convert 1000
+∇
+
 :EndNameSpace

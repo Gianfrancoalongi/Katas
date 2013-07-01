@@ -20,6 +20,8 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           :Else
                   Z ← p,' and ',convert (number -  (100 × ⌊ (number ÷ 100)))
           :EndIf
+  :Else
+          Z ← 'one thousand'
   :EndIf
 ∇
 
