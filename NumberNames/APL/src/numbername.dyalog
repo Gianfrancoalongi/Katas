@@ -7,11 +7,9 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :If number ≤ 19
           Z ← ⊃  numbers [ number + 1 ]
   :ElseIf number < 100
-          p ← prefix number
-          :If 0 = 10 | number
-                  Z ← p
-          :Else
-                  Z ← p,' ',convert number - (⌊ (number ÷ 10)) × 10
+          Z ← prefix number
+          :If 0 ≠ 10 | number
+                  Z,← ' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
   :ElseIf number < 1000
           p ← c_prefix number
