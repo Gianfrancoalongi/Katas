@@ -12,7 +12,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
                   Z,← ' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
   :ElseIf number < 1000
-          Z ← c_prefix number
+          Z ← (⊃numbers[ 1 + ⌊number ÷ 100 ]),' hundred'
           :If 0 ≠ 100 | number
                   Z,← ' and ',convert (number -  (100 × ⌊ (number ÷ 100)))
           :EndIf
@@ -26,10 +26,6 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 
 ∇ Z ← prefix number
   Z ← ⊃ 'twenty' 'thirty' 'forty' 'fifty' 'sixty' 'seventy' 'eighty' 'ninety' [ ¯1 + ⌊ number ÷ 10 ]
-∇
-
-∇ Z ← c_prefix number
-  Z ← (⊃numbers[ 1 + ⌊number ÷ 100 ]),' hundred'
 ∇
 
 :EndNameSpace
