@@ -13,10 +13,12 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           :Else
                   Z ← p,' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
-  :ElseIf number = 100
-          Z ← hundred_prefix
-  :Else
-          Z ← hundred_prefix,' and ',convert number - 100
+  :ElseIf number < 1000
+          :If 0 = 100 | number
+                  Z ← (⊃numbers[ 1 + number ÷ 100 ]),' hundred'
+          :Else
+                  Z ← (⊃numbers[ 1 + ⌊number ÷ 100 ]),' hundred and ',convert (number -  (100 × ⌊ (number ÷ 100)))
+          :EndIf
   :EndIf
 ∇
 
