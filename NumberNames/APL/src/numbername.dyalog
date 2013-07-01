@@ -14,14 +14,18 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
                   Z ← p,' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
   :ElseIf number = 100
-          Z ← 'one hundred'
+          Z ← hundred_prefix
   :Else
-          Z ← 'one hundred and ',convert number - 100
+          Z ← hundred_prefix,' and ',convert number - 100
   :EndIf
 ∇
 
 ∇ Z ← prefix number
   Z ← ⊃ 'twenty' 'thirty' 'forty' 'fifty' 'sixty' 'seventy' 'eighty' 'ninety' [ ¯1 + ⌊ number ÷ 10 ]
+∇
+
+∇ Z ← hundred_prefix
+  Z ← 'one hundred'
 ∇
 
 :EndNameSpace
