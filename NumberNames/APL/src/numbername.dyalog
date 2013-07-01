@@ -12,11 +12,9 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
                   Z,← ' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
   :ElseIf number < 1000
-          p ← c_prefix number
-          :If 0 = 100 | number
-                  Z ← p
-          :Else
-                  Z ← p,' and ',convert (number -  (100 × ⌊ (number ÷ 100)))
+          Z ← c_prefix number
+          :If 0 ≠ 100 | number
+                  Z,← ' and ',convert (number -  (100 × ⌊ (number ÷ 100)))
           :EndIf
   :Else
           Z ← (⊃numbers[ 1 + ⌊ number ÷ 1000 ]),' thousand'
