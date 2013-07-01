@@ -21,8 +21,8 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
                   Z ← p,' and ',convert (number -  (100 × ⌊ (number ÷ 100)))
           :EndIf
   :Else
-          Z ← 'one thousand'
-          :If number > 1000
+          Z ← (⊃numbers[ 1 + ⌊ number ÷ 1000 ]),' thousand'
+          :If 0 ≠ 1000 | number 
                   Z,← ', ',convert number - 1000 × ⌊ (number ÷ 1000)
           :EndIf
   :EndIf
