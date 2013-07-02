@@ -29,7 +29,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 ∇
 
 ∇ Z ← convert_large number;p;n;d;t;s
-  n ← number < 1000 100000 1000000 1000000000
+  n ← (number < 1000 100000 1000000),1
   d ← ⊃ n / 100 1000 1000 1000000
   t ← ⊃ n / 'hundred' 'thousand' 'thousand' 'million'
   s ← ⊃ n / ' and ' ', ' ', ' ', '
