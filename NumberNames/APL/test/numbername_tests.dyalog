@@ -210,4 +210,9 @@
   Z ← #.numbername.convert 100000
 ∇
 
+∇ Z ← nine_hundred_and_ninety_nine_thousand_one_hundred_and_fifty_one_TEST
+  #.UT.expect ← 'nine hundred and ninety nine thousand, one hundred and fifty one'
+  Z ← #.numbername.convert 999151
+∇
+
 :EndNameSpace
