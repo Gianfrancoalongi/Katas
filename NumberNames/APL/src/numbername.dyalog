@@ -5,7 +5,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
 
 ∇ Z ← convert number
   :If number ≤ 19
-          Z ← ⊃  numbers [ number + 1 ]
+          Z ← convert_small number
   :ElseIf number < 100
           Z ← prefix number
           :If 0 ≠ 10 | number
@@ -14,6 +14,10 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :Else
           Z ← convert_large number
   :EndIf
+∇
+
+∇ Z ← convert_small number
+  Z ← ⊃  numbers [ number + 1 ]
 ∇
 
 ∇ Z ← prefix number
