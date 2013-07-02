@@ -12,10 +12,10 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
                   Z,← ' ',convert number - (⌊ (number ÷ 10)) × 10
           :EndIf
   :Else
-          n ← number < 1000 100000 1000000
-          d ← ⊃ n / 100 1000 1000
-          t ← ⊃ n / 'hundred' 'thousand' 'thousand'
-          s ← ⊃ n / ' and ' ', ' ', '
+          n ← number < 1000 100000 1000000 1000000000
+          d ← ⊃ n / 100 1000 1000 1000000
+          t ← ⊃ n / 'hundred' 'thousand' 'thousand' 'million'
+          s ← ⊃ n / ' and ' ', ' ', ' ', '
           Z ← (convert ⌊ number ÷ d),' ',t
           :If 0 ≠ d | number
                   Z,← s,convert (number -  (d × ⌊ (number ÷ d)))
