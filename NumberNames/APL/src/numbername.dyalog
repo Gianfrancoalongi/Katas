@@ -35,7 +35,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   s ← ⊃ n / ' and ' ', ' ', ' ', '
   Z ← (convert ⌊ number ÷ d),' ',t
   :If 0 ≠ d | number
-          Z,← s,convert (number -  (d × ⌊ (number ÷ d)))
+          Z,← s,convert number -  (d × ⌊ (number ÷ d))
   :EndIf        
 ∇
 
