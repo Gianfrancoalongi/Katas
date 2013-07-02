@@ -16,6 +16,10 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :EndIf
 ∇
 
+∇ Z ← prefix number
+  Z ← ⊃ 'twenty' 'thirty' 'forty' 'fifty' 'sixty' 'seventy' 'eighty' 'ninety' [ ¯1 + ⌊ number ÷ 10 ]
+∇
+
 ∇ Z ← convert_large number;p;n;d;t;s
   n ← number < 1000 100000 1000000 1000000000
   d ← ⊃ n / 100 1000 1000 1000000
@@ -25,10 +29,6 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
   :If 0 ≠ d | number
           Z,← s,convert (number -  (d × ⌊ (number ÷ d)))
   :EndIf        
-∇
-
-∇ Z ← prefix number
-  Z ← ⊃ 'twenty' 'thirty' 'forty' 'fifty' 'sixty' 'seventy' 'eighty' 'ninety' [ ¯1 + ⌊ number ÷ 10 ]
 ∇
 
 :EndNameSpace
