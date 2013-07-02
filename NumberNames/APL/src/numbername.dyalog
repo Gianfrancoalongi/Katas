@@ -16,7 +16,7 @@ numbers,← 'eleven' 'twelve' 'thirteen' 'fourteen' 'fifteen' 'sixteen' 'sevente
           d ← ⊃ n / 100 1000
           t ← ⊃ n / 'hundred' 'thousand'
           s ← ⊃ n / ' and ' ', '
-          Z ← (⊃numbers[ 1 + ⌊number ÷ d ]),' ',t
+          Z ← (convert ⌊ number ÷ d),' ',t
           :If 0 ≠ d | number
                   Z,← s,convert (number -  (d × ⌊ (number ÷ d)))
           :EndIf
