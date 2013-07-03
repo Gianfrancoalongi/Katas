@@ -10,6 +10,10 @@
   Z ← #.gameoflife.neighbor_matrix ↑ '.....' '.*...' '...*.' '.....'
 ∇
 
+∇ Z ← next_gen_less_than_two_neighbors_dies_dead_case_TEST
+  #.UT.expect ←  ↑ ('...') ('...') ('...') 
+  Z ← #.gameoflife.next_generation ↑ ('...') ('.*.') ('...')
+∇
 
 
 

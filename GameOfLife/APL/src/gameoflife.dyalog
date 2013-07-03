@@ -6,4 +6,8 @@
   Z ← ⊃ +/ { ⍵[1] ⌽ ⍵[2] ⊖ p } ¨ m
 ∇
 
+∇ Z ← next_generation board
+  Z ← '*.' [ 1 + 2 > neighbor_matrix board ]
+∇
+
 :EndNameSpace
