@@ -7,7 +7,7 @@
 ∇
 
 ∇ Z ← next_generation board
-  Z ← '*.' [ 1 + 2 > neighbor_matrix board ]
+  Z ← '.*' [ 1 + (2 ≤ neighbor_matrix board) × '*'=board ]
 ∇
 
 :EndNameSpace

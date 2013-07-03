@@ -15,6 +15,9 @@
   Z ← #.gameoflife.next_generation ↑ ('...') ('.*.') ('...')
 ∇
 
-
-
+∇ Z ← next_gen_two_or_more_neighbors_lives_TEST
+  #.UT.expect ← ↑ ('....')  ('....')  ('.*..') ('....')  ('....') 
+  Z ← #.gameoflife.next_generation ↑ ('....') ('..*.') ('.*..') ('.*..') ('....')
+∇
+        
 :EndNameSpace
