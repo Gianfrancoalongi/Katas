@@ -21,10 +21,13 @@
 ∇
 
 ∇ Z ← next_gen_dies_if_three_or_more_neighbors_TEST
-  #.UT.expect ← ↑ '....' '..*.' '....' '.*..' '....'
-  Z ← #.gameoflife.next_generation ↑ '....' '..*.' '.**.' '.*..' '....'
+  #.UT.expect ← ↑ '....'  '....'  '....'  '.*..'  '....' 
+  Z ← #.gameoflife.next_generation ↑ '....'  '.**.'  '.**.'  '.*..'  '....' 
 ∇
         
 :EndNameSpace
+
+
+
 
 
