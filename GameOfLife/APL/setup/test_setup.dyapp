@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load /home/gianfranco/Katas/GameOfLife/APL/src/gameoflife.dyalog
+Run UT.run '/home/gianfranco/Katas/GameOfLife/APL/test/gameoflife_tests.dyalog'
