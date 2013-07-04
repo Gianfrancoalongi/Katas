@@ -27,10 +27,16 @@
   Z ← ( 3 < neighbor_matrix board) × '*' = board
 ∇
 
-∇ Z ← life_matrix board;lives;born
-  lives ← ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix board) × '*' = board 
-  born ← ( 3 = neighbor_matrix board) × '.' = board
-  Z ← lives ∨ born
+∇ Z ← life_matrix board
+  Z ← (keeps_on_matrix board) ∨ (born_matrix board)
+∇
+
+∇ Z ← keeps_on_matrix board
+  Z ← ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix board) × '*' = board 
+∇
+
+∇ Z ← born_matrix board
+  Z ← ( 3 = neighbor_matrix board) × '.' = board
 ∇
 
 :EndNameSpace
