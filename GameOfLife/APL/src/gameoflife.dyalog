@@ -21,9 +21,7 @@ underpopulation_matrix ← { ( 2 > neighbor_matrix ⍵) × '*' = ⍵ }
 
 overcrowding_matrix ←  { ( 3 < neighbor_matrix ⍵) × '*' = ⍵ }
 
-∇ Z ← life_matrix board
-  Z ← (keeps_on_matrix board) ∨ (born_matrix board)
-∇
+life_matrix ← { (keeps_on_matrix ⍵) ∨ (born_matrix ⍵) }
 
 ∇ Z ← keeps_on_matrix board
   Z ← ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix board) × '*' = board 
