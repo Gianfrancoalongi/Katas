@@ -26,7 +26,7 @@
 ∇
 
 ∇ Z ← live_cell_with_two_or_three_live_neighbors_lives_on_TEST
-  #.UT.expect ← ↑ '.....' '.....' '..*..' '.*...' '.....' '.....'
+  #.UT.expect ← ↑ '.....' '..*..' '.**..' '.**..' '.....' '.....' 
   Z ← #.gameoflife.next_generation ↑ '.....' '.*.*.' '..*..' '.*...' '..*..' '.....'
 ∇
 
