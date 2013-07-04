@@ -16,10 +16,7 @@
 ∇
 
 death_matrix ← { (underpopulation_matrix ⍵) ∨ (overcrowding_matrix ⍵) }
-
-∇ Z ← underpopulation_matrix board
-  Z ← ( 2 > neighbor_matrix board) × '*' = board
-∇
+underpopulation_matrix ← { ( 2 > neighbor_matrix ⍵) × '*' = ⍵ }
 
 ∇ Z ← overcrowding_matrix board
   Z ← ( 3 < neighbor_matrix board) × '*' = board
