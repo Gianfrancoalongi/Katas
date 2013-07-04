@@ -25,8 +25,6 @@ life_matrix ← { (keeps_on_matrix ⍵) ∨ (born_matrix ⍵) }
 
 keeps_on_matrix ← { ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix ⍵) × '*' = ⍵ }
 
-∇ Z ← born_matrix board
-  Z ← ( 3 = neighbor_matrix board) × '.' = board
-∇
+born_matrix ← { ( 3 = neighbor_matrix ⍵) × '.' = ⍵ }
 
 :EndNameSpace
