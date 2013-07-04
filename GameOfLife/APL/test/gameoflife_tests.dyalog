@@ -16,8 +16,8 @@
 ∇
 
 ∇ Z ← next_gen_two_or_more_neighbors_lives_TEST
-  #.UT.expect ← ↑ ('....')  ('....')  ('.*..') ('....')  ('....') 
-  Z ← #.gameoflife.next_generation ↑ ('....') ('..*.') ('.*..') ('.*..') ('....')
+  #.UT.expect ← ↑ ('....')  ('....')  ('.**.') ('....')  ('....') 
+  Z ← #.gameoflife.next_generation ↑ '....' '..*.' '.*..' '.*..' '....'
 ∇
 
 ∇ Z ← next_gen_dies_if_more_than_three_neighbors_TEST
