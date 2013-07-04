@@ -23,9 +23,7 @@ overcrowding_matrix ←  { ( 3 < neighbor_matrix ⍵) × '*' = ⍵ }
 
 life_matrix ← { (keeps_on_matrix ⍵) ∨ (born_matrix ⍵) }
 
-∇ Z ← keeps_on_matrix board
-  Z ← ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix board) × '*' = board 
-∇
+keeps_on_matrix ← { ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix ⍵) × '*' = ⍵ }
 
 ∇ Z ← born_matrix board
   Z ← ( 3 = neighbor_matrix board) × '.' = board
