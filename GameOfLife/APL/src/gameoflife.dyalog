@@ -15,13 +15,13 @@
   Z ← board
 ∇
 
-death_matrix ← { (underpopulation ⍵) ∨ (overcrowding ⍵) }
+death_matrix ← { (underpopulation ⍵) ∨ overcrowding ⍵ }
 
 underpopulation ← { ( 2 > neighbor_matrix ⍵) × '*' = ⍵ }
 
 overcrowding ←  { ( 3 < neighbor_matrix ⍵) × '*' = ⍵ }
 
-life_matrix ← { (keeps_on ⍵) ∨ (born ⍵) }
+life_matrix ← { (keeps_on ⍵) ∨ born ⍵ }
 
 keeps_on ← { ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix ⍵) × '*' = ⍵ }
 
