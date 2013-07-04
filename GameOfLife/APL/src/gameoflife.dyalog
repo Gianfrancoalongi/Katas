@@ -21,10 +21,10 @@ underpopulation ← { ( 2 > neighbor_matrix ⍵) × '*' = ⍵ }
 
 overcrowding ←  { ( 3 < neighbor_matrix ⍵) × '*' = ⍵ }
 
-life_matrix ← { (keeps_on_matrix ⍵) ∨ (born_matrix ⍵) }
+life_matrix ← { (keeps_on ⍵) ∨ (born ⍵) }
 
-keeps_on_matrix ← { ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix ⍵) × '*' = ⍵ }
+keeps_on ← { ({ (⍵ = 2) ∨ (⍵ = 3)} neighbor_matrix ⍵) × '*' = ⍵ }
 
-born_matrix ← { ( 3 = neighbor_matrix ⍵) × '.' = ⍵ }
+born ← { ( 3 = neighbor_matrix ⍵) × '.' = ⍵ }
 
 :EndNameSpace
