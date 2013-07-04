@@ -29,7 +29,12 @@
   #.UT.expect ← ↑ '.....' '.....' '..*..' '.*...' '.....' '.....'
   Z ← #.gameoflife.next_generation ↑ '.....' '.*.*.' '..*..' '.*...' '..*..' '.....'
 ∇
-        
+
+∇ Z ← dead_cell_with_three_live_neighbors_becomes_live_cell_TEST
+  #.UT.expect ← ↑ '.....'  '..*..'  '..*..'  '.....'  
+  Z ← #.gameoflife.next_generation ↑ '.....' '.*.*.' '..*..' '.....' 
+∇
+
 :EndNameSpace
 
 
