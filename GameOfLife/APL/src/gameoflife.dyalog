@@ -15,10 +15,16 @@
   Z ← board
 ∇
 
-∇ Z ← death_matrix board;underpopulation;overcrowding
-  underpopulation ← ( 2 > neighbor_matrix board) × '*' = board
-  overcrowding ← ( 3 < neighbor_matrix board) × '*' = board
-  Z ← underpopulation ∨ overcrowding
+∇ Z ← death_matrix board
+  Z ← (underpopulation_matrix board) ∨ (overcrowding_matrix board)
+∇
+
+∇ Z ← underpopulation_matrix board
+  Z ← ( 2 > neighbor_matrix board) × '*' = board
+∇
+
+∇ Z ← overcrowding_matrix board
+  Z ← ( 3 < neighbor_matrix board) × '*' = board
 ∇
 
 ∇ Z ← life_matrix board;lives;born
