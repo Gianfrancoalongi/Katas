@@ -10,5 +10,9 @@
   Z ← #.phone.numbers ('Bob' 91125426) ('Emergency' 911)
 ∇
 
+∇ Z ← three_numbers_consistent_list_TEST
+  #.UT.expect ← 'consistent'
+  Z ← #.phone.numbers ('Bob' 91125426) ('Alice' 97625992) ('Ellie' 912289822)
+∇
 
 :EndNameSpace
