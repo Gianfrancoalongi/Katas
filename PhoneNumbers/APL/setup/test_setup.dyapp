@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load /home/gianfranco/Katas/PhoneNumbers/APL/src/phone.dyalog
+Run UT.run '/home/gianfranco/Katas/PhoneNumbers/APL/test/phone_tests.dyalog'
