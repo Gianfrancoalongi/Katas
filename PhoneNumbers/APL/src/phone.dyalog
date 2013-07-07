@@ -23,11 +23,7 @@
 ∇
 
 ∇ Z ← any_indication_of_match_after subset_comparison
-  Z ← ∨ / ⊃∘bit_pattern_indicates_subset_match ¨ subset_comparison
-∇
-
-∇ Z ← bit_pattern_indicates_subset_match bit_pattern
-  Z ← ∧ / bit_pattern
+  Z ← ∨ / { ⊃ ∧ / ⍵ }  ¨ subset_comparison
 ∇
 
 :EndNameSpace
