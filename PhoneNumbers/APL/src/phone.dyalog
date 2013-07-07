@@ -3,13 +3,12 @@
 ∇ Z ← numbers phone_book;b;v
   :If 0 = ⍴⍴ phone_book 
           Z ← 'consistent'
-  :Else        
+  :Else       
+          Z ← 'consistent'
           v ← subset_comparison phone_book
           b ← any_indication_of_subset_match v
           :If b
-                  Z ← 'inconsistent'
-          :Else
-                  Z ← 'consistent'
+                  Z ← 'in',Z
           :EndIf
   :EndIf
 ∇
