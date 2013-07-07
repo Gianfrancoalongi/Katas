@@ -1,11 +1,11 @@
 :NameSpace phone
 
-∇ Z ← numbers phone_book;t;v
+∇ Z ← numbers phone_book;b;v
   :If 0 = ⍴⍴ phone_book 
           Z ← 'consistent'
   :Else        
           v ← subset_comparison phone_book
-          b ← ∨ / { (0=1⌷⌽⍵) ∧ (1 = 1⌷⍵) } ¨ v
+          b ← any_indication_of_subset_match v
           :If b
                   Z ← 'inconsistent'
           :Else
@@ -17,6 +17,10 @@
 ∇ Z ← subset_comparison phone_book;t
   t ← ↓ ↑ ⍕ ¨ 2∘⌷ ¨ phone_book          
   Z ← ∪ ,N ∘.= N ← t          
+∇
+
+∇ Z ← any_indication_of_subset_match subset_comparison
+  Z ← ∨ / { (0=1⌷⌽⍵) ∧ (1 = 1⌷⍵) } ¨ subset_comparison
 ∇
 
 :EndNameSpace
