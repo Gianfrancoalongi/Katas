@@ -14,24 +14,20 @@
 ∇
 
 ∇ Z ← subset_comparison_of phone_book;t
-  t ← ↓ ↑ ⍕ ¨ 2∘⌷ ¨ phone_book
-  Z ← ⊃,/{ ⍵∘= ¨ t ~ ⊂⍵ } ¨ t
+  t ← ↓↑ ⍕ ¨ 2∘⌷ ¨ phone_book
+  Z ← ⊃,/{ ⍵∘matched_with ¨ t ~ ⊂⍵ } ¨ t
+∇
+
+∇ Z ← a matched_with b
+  Z ← (a = b)[ ⍳ ¯1 + (a⍳' ') ⌊ (b⍳' ') ]
 ∇
 
 ∇ Z ← any_indication_of_match_after subset_comparison
   Z ← ∨ / ⊃∘bit_pattern_indicates_subset_match ¨ subset_comparison
 ∇
 
-∇ Z ← bit_pattern_indicates_subset_match bit_pattern;pos;first;last;ascending
-  pos ← (0 = bit_pattern) / ⍳ ⍴ bit_pattern  
-  :If 0 = ⊃ ⍴ pos
-          Z ← 0
-  :Else
-          first ← 1 = ⊃ bit_pattern
-          last ← 0=1 ⊃ ⌽bit_pattern
-          ascending ← ∧ / ¯1 = 2 -/ pos
-          Z ← first ∧ last ∧ ascending
-  :EndIf
+∇ Z ← bit_pattern_indicates_subset_match bit_pattern
+  Z ← ∧ / bit_pattern
 ∇
 
 :EndNameSpace

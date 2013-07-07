@@ -15,4 +15,9 @@
   Z ← #.phone.numbers ('Bob' 91125426) ('Alice' 97625992) ('Ellie' 912289822)
 ∇
 
+∇ Z ← consistent_with_partial_match_TEST
+  #.UT.expect ← 'consistent'
+  Z ← #.phone.numbers ('Bob' 91125426) ('Alan' 9112333)
+∇
+
 :EndNameSpace
