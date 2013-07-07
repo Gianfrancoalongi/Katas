@@ -15,7 +15,7 @@
 
 ∇ Z ← subset_comparison_of phone_book;t
   t ← ↓ ↑ ⍕ ¨ 2∘⌷ ¨ phone_book
-  Z ← ∪ ,N ∘.= N ← t          
+  Z ← ⊃,/{ ⍵∘= ¨ t ~ ⊂⍵ } ¨ t
 ∇
 
 ∇ Z ← any_indication_of_match_after subset_comparison
