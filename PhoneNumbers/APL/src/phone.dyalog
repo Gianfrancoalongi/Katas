@@ -1,10 +1,8 @@
 :NameSpace phone
 
 ∇ Z ← numbers phone_book;b;v
-  :If 0 = ⍴⍴ phone_book 
-          Z ← 'consistent'
-  :Else       
-          Z ← 'consistent'
+  Z ← 'consistent'
+  :If 0 ≠ ⍴⍴ phone_book 
           v ← subset_comparison phone_book
           b ← any_indication_of_subset_match v
           :If b
