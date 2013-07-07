@@ -3,7 +3,7 @@
 ∇ Z ← numbers phone_book;b;v
   Z ← 'consistent'
   :If 0 ≠ ⍴⍴ phone_book 
-          v ← subset_comparison phone_book
+          v ← subset_comparison_of phone_book
           b ← any_indication_of_subset_match v
           :If b
                   Z ← 'in',Z
@@ -11,7 +11,7 @@
   :EndIf
 ∇
 
-∇ Z ← subset_comparison phone_book;t
+∇ Z ← subset_comparison_of phone_book;t
   t ← ↓ ↑ ⍕ ¨ 2∘⌷ ¨ phone_book          
   Z ← ∪ ,N ∘.= N ← t          
 ∇
