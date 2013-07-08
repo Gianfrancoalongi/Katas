@@ -9,4 +9,9 @@
   Z ← #.coins.change 1
 ∇
 
+∇ Z ← changing_5_cent_TEST
+  #.UT.expect ←  (5 0 0 0) (0 1 0 0)
+  Z ← #.coins.change 5
+∇
+
 :EndNameSpace
