@@ -1,8 +1,12 @@
 :NameSpace coins_tests
 
 ∇ Z ← changing_1_cent_TEST
-  #.UT.expect ← ⊂(1 'cent'),⍬
-  Z ← #.coins.change (1 'cent')
+  pennies ← 1
+  nickles ← 0
+  dimes ← 0
+  quarters ← 0
+  #.UT.expect ← ⊂(pennies nickles dimes quarters),⍬
+  Z ← #.coins.change (1 0 0 0)
 ∇
 
 :EndNameSpace
