@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load ./src/coins.dyalog
+Run UT.run './test/coins_tests.dyalog'
