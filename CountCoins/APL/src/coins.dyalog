@@ -1,11 +1,12 @@
 :NameSpace coins
 
 ∇ Z ← change coins
-  Z ← ⊂(coins 0 0 0)
-  :if 0 = 5 | coins 
-          Z,← ⊂(0 1 0 0)
-  :elseif coins > 5
-          Z,← ⊂((5|coins) 1 0 0)
+  Z ← ⊂ (coins 0 0 0),⍬
+  :if (coins ≥ 5) ∧ coins < 10
+          Z,←  ⊂ ((⌊ 5 | coins) 1 0 0),⍬
+  :endif
+  :if (coins = 10)
+          Z,← (5 1 0 0) (0 2 0 0) (0 0 1 0)
   :endif
 ∇
 
