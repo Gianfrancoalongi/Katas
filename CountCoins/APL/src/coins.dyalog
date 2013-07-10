@@ -4,7 +4,7 @@
   Z ← ⌽ ¨ (change2 (25 10 5 1) coins)
 ∇
 
-∇ Z ← change2 (limit coins);l;p;r;z
+∇ Z ← change2 (limit coins);l;p
   :if limit ≡ 1,⍬
       Z ← coins
   :else
