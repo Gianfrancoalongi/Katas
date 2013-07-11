@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load ./src/poker.dyalog
+Run UT.run './test/poker_tests.dyalog'
