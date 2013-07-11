@@ -30,4 +30,9 @@
   Z ← #.poker.classify '5H' '8H' '2H' '3H' '6H'
 ∇
 
+∇ Z ← is_straight_TEST
+  #.UT.expect ← ('straight' (10 9 8 7 6))
+  Z ← #.poker.classify '8S' 'TC' '9H' '7D' '6S'
+∇
+
 :EndNameSpace

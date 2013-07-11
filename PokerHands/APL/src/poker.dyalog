@@ -12,6 +12,8 @@
           Z ← 'full house' values
   :elseif all_same suites
           Z ← 'flush' values
+  :elseif 1=∧/¯1×2-/values
+          Z ← 'straight' values
   :endif          
 ∇
 
