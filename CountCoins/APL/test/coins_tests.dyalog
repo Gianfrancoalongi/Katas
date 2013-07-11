@@ -39,4 +39,9 @@
   Z ← #.coins.change 20  
 ∇
 
+∇ Z ← changing_100_cent_TEST
+  #.UT.expect ← 242
+  Z ← ⊃ ⍴ #.coins.change 100
+∇
+
 :EndNameSpace
