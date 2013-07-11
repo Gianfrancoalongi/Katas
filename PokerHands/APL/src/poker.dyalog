@@ -4,7 +4,7 @@
   suites ← ¯1∘↑ ¨ hand
   values ← ⊃,/ from_text_to_value ¨ ¯1∘↓ ¨ hand
   values ← values[ ⍒ values]
-  :if (all_same suites) ∧ (1=∧/¯1×2-/values)
+  :if (all_same suites) ∧ (are_ascending values)
           Z ← 'straight flush' values
   :elseif (all_same values[1+⍳4])  ∨ (all_same values[⍳4])
           Z ← 'four of a kind' values
@@ -12,9 +12,13 @@
           Z ← 'full house' values
   :elseif all_same suites
           Z ← 'flush' values
-  :elseif 1=∧/¯1×2-/values
+  :elseif are_ascending values
           Z ← 'straight' values
   :endif          
+∇
+
+∇ Z ← are_ascending values
+  Z ← 1=∧/¯1×2-/ values
 ∇
 
 ∇ Z ← from_text_to_value text
