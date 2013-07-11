@@ -15,9 +15,9 @@
   Z ← #.poker.classify '6H' '4S' '6C' '6D' '6S'
 ∇
 
-⍝ ∇ Z ← is_full_house_TEST
-⍝   #.UT.expect ← ('full house' (13 13 4 4 4 4))
-⍝   Z ← #.poker.classify '4S' 'AD' '4C' '4H' 'AS'
-⍝ ∇
+∇ Z ← is_full_house_TEST
+  #.UT.expect ← ('full house' (14 14 4 4 4))
+  Z ← #.poker.classify 'AS' '4D' 'AC' '4H' '4S'
+∇
 
 :EndNameSpace

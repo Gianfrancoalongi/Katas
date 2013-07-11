@@ -8,6 +8,8 @@
           Z ← 'straight flush' values
   :elseif (all_same values[1+⍳4])  ∨ (all_same values[⍳4])
           Z ← 'four of a kind' values
+  :elseif (all_same values[⍳2]) ∧ (all_same values[2+⍳3])
+          Z ← 'full house' values
   :endif          
 ∇
 
