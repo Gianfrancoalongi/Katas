@@ -25,4 +25,9 @@
   Z ← #.poker.classify 'AS' 'AD' '4C' 'AH' '4S'
 ∇
 
+∇ Z ← is_flush_TEST
+  #.UT.expect ← ('flush' (8 6 5 3 2))
+  Z ← #.poker.classify '5H' '8H' '2H' '3H' '6H'
+∇
+
 :EndNameSpace

@@ -10,6 +10,8 @@
           Z ← 'four of a kind' values
   :elseif ((all_same values[⍳2]) ∧ (all_same values[2+⍳3])) ∨ ((all_same values[⍳3]) ∧ (all_same values[3+⍳2]))
           Z ← 'full house' values
+  :elseif all_same suites
+          Z ← 'flush' values
   :endif          
 ∇
 
