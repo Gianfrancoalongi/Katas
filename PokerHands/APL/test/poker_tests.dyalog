@@ -20,4 +20,9 @@
   Z ← #.poker.classify 'AS' '4D' 'AC' '4H' '4S'
 ∇
 
+∇ Z ← is_full_house_three_high_TEST
+  #.UT.expect ← ('full house' (14 14 14 4 4))
+  Z ← #.poker.classify 'AS' 'AD' '4C' 'AH' '4S'
+∇
+
 :EndNameSpace
