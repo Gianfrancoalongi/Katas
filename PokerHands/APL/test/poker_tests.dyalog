@@ -65,4 +65,9 @@
   Z ← #.poker.classify '5H' '3C' '5S' '4D' '3H'
 ∇
 
+∇ Z ← is_pair_leftmost_TEST
+  #.UT.expect ← ('pair' (6 6 5 4 3))
+  Z ← #.poker.classify '5S' '6H' '4C' '3D' '6C'
+∇
+
 :EndNameSpace
