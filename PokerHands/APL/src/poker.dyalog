@@ -16,9 +16,25 @@
           Z ← 'straight' values
   :elseif {(same ⍵[1+⍳3]) ∨ (same ⍵[⍳3]) ∨ (same ⍵[2+⍳3]) } values
           Z ← 'three of a kind' values
-  :elseif {((same ⍵[⍳2]) ∧ same ⍵[2+⍳2]) ∨ ((same ⍵[1+⍳2])∧same ⍵[3+⍳2]) ∨ ((same ⍵[⍳2]) ∧ same ⍵[3+⍳2])} values
+  :elseif there_are_two_pairs_amongst_the values
           Z ← 'two pairs' values
   :endif
+∇
+
+∇ Z ← there_are_two_pairs_amongst_the values
+  Z ← { (two_pairs_left ⍵) ∨ (two_pairs_right ⍵) ∨ (two_pairs_edges values) } values
+∇
+
+∇ Z ← two_pairs_left values
+  Z ← (same values[⍳2]) ∧ same values[2+⍳2]
+∇
+
+∇ Z ← two_pairs_right values
+  Z ← (same values[1+⍳2]) ∧ same values[3+⍳2]
+∇
+
+∇ Z ← two_pairs_edges values
+  Z ← (same values[⍳2]) ∧ same values[3+⍳2]
 ∇
 
 ∇ Z ← ascending values
