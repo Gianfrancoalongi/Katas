@@ -14,6 +14,8 @@
           Z ← 'flush' values
   :elseif ascending values
           Z ← 'straight' values
+  :elseif (same values[1+⍳3])
+          Z ← 'three of a kind' values
   :endif          
 ∇
 
