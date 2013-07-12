@@ -45,4 +45,9 @@
   Z ← #.poker.classify '3S' '4H' '4C' '2D' '4S'
 ∇
 
+∇ Z ← is_three_of_a_kind_right_edge_TEST
+  #.UT.expect ← ('three of a kind' (4 3 2 2 2))
+  Z ← #.poker.classify '2S' '4H' '3C' '2C' '2H'
+∇
+
 :EndNameSpace
