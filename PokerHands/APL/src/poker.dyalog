@@ -8,7 +8,7 @@
           Z ← 'straight flush' values
   :elseif (same values[1+⍳4])  ∨ (same values[⍳4])
           Z ← 'four of a kind' values
-  :elseif {((same ⍵[⍳2]) ∧ (same ⍵[2+⍳3])) ∨ ((same ⍵[⍳3]) ∧ (same ⍵[3+⍳2]))} values
+  :elseif there_is_a_full_house_amongest_the values
           Z ← 'full house' values
   :elseif same suites
           Z ← 'flush' values
@@ -19,6 +19,10 @@
   :elseif there_are_two_pairs_amongst_the values
           Z ← 'two pairs' values
   :endif
+∇
+
+∇ Z ← there_is_a_full_house_amongest_the values
+  Z ← {((same ⍵[⍳2]) ∧ (same ⍵[2+⍳3])) ∨ ((same ⍵[⍳3]) ∧ (same ⍵[3+⍳2]))} values
 ∇
 
 ∇ Z ← there_are_three_of_a_kind_amongst_the values
