@@ -6,7 +6,7 @@
   values ← values[ ⍒ values]
   :if (same suites) ∧ (ascending values)
           Z ← 'straight flush' values
-  :elseif (same values[1+⍳4])  ∨ (same values[⍳4])
+  :elseif there_are_four_of_a_kind_amongst_the values
           Z ← 'four of a kind' values
   :elseif there_is_a_full_house_amongest_the values
           Z ← 'full house' values
@@ -19,6 +19,10 @@
   :elseif there_are_two_pairs_amongst_the values
           Z ← 'two pairs' values
   :endif
+∇
+
+∇ Z ← there_are_four_of_a_kind_amongst_the values
+  Z ← (same values[1+⍳4])  ∨ same values[⍳4]
 ∇
 
 ∇ Z ← there_is_a_full_house_amongest_the values
