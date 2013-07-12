@@ -8,13 +8,13 @@
           Z ← 'straight flush' values
   :elseif (same values[1+⍳4])  ∨ (same values[⍳4])
           Z ← 'four of a kind' values
-  :elseif ((same values[⍳2]) ∧ (same values[2+⍳3])) ∨ ((same values[⍳3]) ∧ (same values[3+⍳2]))
+  :elseif {((same ⍵[⍳2]) ∧ (same ⍵[2+⍳3])) ∨ ((same ⍵[⍳3]) ∧ (same ⍵[3+⍳2]))} values
           Z ← 'full house' values
   :elseif same suites
           Z ← 'flush' values
   :elseif ascending values
           Z ← 'straight' values
-  :elseif (same values[1+⍳3]) ∨ (same values[⍳3]) ∨ (same values[2+⍳3])
+  :elseif {(same ⍵[1+⍳3]) ∨ (same ⍵[⍳3]) ∨ (same ⍵[2+⍳3]) } values
           Z ← 'three of a kind' values
   :elseif {((same ⍵[⍳2]) ∧ same ⍵[2+⍳2]) ∨ ((same ⍵[1+⍳2])∧same ⍵[3+⍳2])} values
           Z ← 'two pairs' values
