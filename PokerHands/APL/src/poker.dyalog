@@ -16,6 +16,8 @@
           Z ← 'straight' values
   :elseif (same values[1+⍳3]) ∨ (same values[⍳3]) ∨ (same values[2+⍳3])
           Z ← 'three of a kind' values
+  :elseif (same values[⍳2]) ∧ (same values[2+⍳2])
+          Z ← 'two pairs' values
   :endif
 ∇
 

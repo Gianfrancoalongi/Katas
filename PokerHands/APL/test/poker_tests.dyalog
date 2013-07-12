@@ -50,4 +50,9 @@
   Z ← #.poker.classify '2S' '4H' '3C' '2C' '2H'
 ∇
 
+∇ Z ← is_two_pair_left_heavy_TEST
+  #.UT.expect ← ('two pairs' (5 5 3 3 2))
+  Z ← #.poker.classify '5C' '3C' '2H' '5H' '3D'
+∇
+
 :EndNameSpace
