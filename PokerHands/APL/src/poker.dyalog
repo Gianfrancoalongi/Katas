@@ -16,7 +16,7 @@
           Z ← 'straight' values
   :elseif {(same ⍵[1+⍳3]) ∨ (same ⍵[⍳3]) ∨ (same ⍵[2+⍳3]) } values
           Z ← 'three of a kind' values
-  :elseif {((same ⍵[⍳2]) ∧ same ⍵[2+⍳2]) ∨ ((same ⍵[1+⍳2])∧same ⍵[3+⍳2])} values
+  :elseif {((same ⍵[⍳2]) ∧ same ⍵[2+⍳2]) ∨ ((same ⍵[1+⍳2])∧same ⍵[3+⍳2]) ∨ ((same ⍵[⍳2]) ∧ same ⍵[3+⍳2])} values
           Z ← 'two pairs' values
   :endif
 ∇

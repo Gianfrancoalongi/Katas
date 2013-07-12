@@ -60,4 +60,9 @@
   Z ← #.poker.classify '5C' '3H' '6D' '3S' '5S'
 ∇
 
+∇ Z ← is_two_pairs_edge_heavy_TEST
+  #.UT.expect ← ('two pairs' (5 5 4 3 3))
+  Z ← #.poker.classify '5H' '3C' '5S' '4D' '3H'
+∇
+
 :EndNameSpace
