@@ -14,11 +14,15 @@
           Z ← 'flush' values
   :elseif ascending values
           Z ← 'straight' values
-  :elseif {(same ⍵[1+⍳3]) ∨ (same ⍵[⍳3]) ∨ (same ⍵[2+⍳3]) } values
+  :elseif there_are_three_of_a_kind_amongst_the values
           Z ← 'three of a kind' values
   :elseif there_are_two_pairs_amongst_the values
           Z ← 'two pairs' values
   :endif
+∇
+
+∇ Z ← there_are_three_of_a_kind_amongst_the values
+  Z ← {(same ⍵[1+⍳3]) ∨ (same ⍵[⍳3]) ∨ (same ⍵[2+⍳3]) } values
 ∇
 
 ∇ Z ← there_are_two_pairs_amongst_the values
