@@ -18,7 +18,9 @@
 ∇
 
 ∇ Z ← strength classified
-  Z ← 'high card' 'pair' 'two pairs' 'three of a kind' 'straight' 'flush' 'full house' 'four of a kind' 'straight flush' ⍳ ⊂⊃ classified
+  Z ← 'high card' 'pair' 'two pairs' 'three of a kind' 'straight' 'flush'
+  Z,← 'full house' 'four of a kind' 'straight flush'
+  Z ← Z ⍳ ⊂⊃ classified
 ∇
 
 ∇ Z ← card_name value
