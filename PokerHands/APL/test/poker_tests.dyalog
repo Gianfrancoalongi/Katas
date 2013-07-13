@@ -118,4 +118,11 @@
   Z ← #.poker.rank Black White
 ∇
 
+∇ Z ← white_wins_on_high_card_TEST
+  #.UT.expect ← 'White wins - high card Ten'
+  Black ← '5H' '6H' '7H' '8H' '9H'
+  White ← '6H' '7H' '8H' '9H' 'TH'
+  Z ← #.poker.rank Black White
+∇
+
 :EndNameSpace

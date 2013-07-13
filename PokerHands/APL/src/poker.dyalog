@@ -13,6 +13,8 @@
                   Z ← 'Black wins - high card ',card_name bhigh ⊃ bvals
           :elseif bhigh = whigh
                   Z ← 'Tie'
+          :elseif whigh < bhigh
+                  Z ← 'White wins - high card ',card_name whigh ⊃ wvals
           :endif
   :elseif wstren > bstren
           Z ← 'White wins - ',1⊃White
