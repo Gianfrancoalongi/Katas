@@ -85,4 +85,9 @@
   Z ← #.poker.classify '5S' '3C' '4D' '6H' '3S'
 ∇
 
+∇ Z ← is_high_card_TEST
+  #.UT.expect ← ('high card' (9 6 5 3 2))
+  Z ← #.poker.classify '6S' '5S' '3C' '2D' '9H'
+∇
+
 :EndNameSpace

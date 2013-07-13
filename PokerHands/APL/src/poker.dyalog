@@ -20,6 +20,8 @@
           Z ← 'two pairs' values
   :elseif there_is_a_pair_amongst_the values
           Z ← 'pair' values
+  :else
+          Z ← 'high card' values
   :endif
 ∇
 
