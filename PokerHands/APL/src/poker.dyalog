@@ -2,7 +2,9 @@
 
 ∇ Z ← rank Hands;bvals;wvals
   (Black White) ← classify ¨ Hands
-  :if (strength Black) ≡ strength White
+  bstren ← strength Black
+  wstren ← strength White
+  :if bstren = wstren
           bvals ← 2 ⊃ Black
           wvals ← 2 ⊃ White
           bhigh ← (∨ ⌿ bvals ∘.> wvals) ⍳ 1
@@ -10,11 +12,13 @@
           :if bhigh < whigh
                   Z ← 'Black wins - high card ',card_name bhigh ⊃ bvals
           :endif
+  :elseif wstren > bstren
+          Z ← 'White wins - ',1⊃White
   :endif
 ∇
 
 ∇ Z ← strength classified
-  Z ← 'high card' 'pair' 'two pairs' 'three of a kind' 'straight' 'flush' 'full house' 'four of a kind' 'straight flush' ⍳ ⊃ classified
+  Z ← 'high card' 'pair' 'two pairs' 'three of a kind' 'straight' 'flush' 'full house' 'four of a kind' 'straight flush' ⍳ ⊂⊃ classified
 ∇
 
 ∇ Z ← card_name value
