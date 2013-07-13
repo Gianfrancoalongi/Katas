@@ -70,4 +70,9 @@
   Z ← #.poker.classify '5S' '6H' '4C' '3D' '6C'
 ∇
 
+∇ Z ← is_pair_left_TEST
+  #.UT.expect ← ('pair' (6 5 5 4 3))
+  Z ← #.poker.classify '5S' '4C' '3D' '6S' '5D'
+∇
+
 :EndNameSpace
