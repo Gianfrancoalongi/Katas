@@ -90,4 +90,11 @@
   Z ← #.poker.classify '6S' '5S' '3C' '2D' '9H'
 ∇
 
+∇ Z ← rank_equal_winning_on_high_card_TEST
+  #.UT.expect ← 'Black wins - high card Ten'
+  Black ← '6H' '7H' '8H' '9H' 'TH'
+  White ← '5H' '6H' '7H' '8H' '9H'
+  Z ← #.poker.rank Black White
+∇
+
 :EndNameSpace

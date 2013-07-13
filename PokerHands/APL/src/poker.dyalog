@@ -1,5 +1,26 @@
 :NameSpace poker
 
+∇ Z ← rank Hands;bvals;wvals
+  (Black White) ← classify ¨ Hands
+  :if (strength Black) ≡ strength White
+          bvals ← 2 ⊃ Black
+          wvals ← 2 ⊃ White
+          bhigh ← (∨ ⌿ bvals ∘.> wvals) ⍳ 1
+          whigh ← (∨ ⌿ wvals ∘.> bvals) ⍳ 1
+          :if bhigh < whigh
+                  Z ← 'Black wins - high card ',card_name bhigh ⊃ bvals
+          :endif
+  :endif
+∇
+
+∇ Z ← strength classified
+  Z ← 'high card' 'pair' 'two pairs' 'three of a kind' 'straight' 'flush' 'full house' 'four of a kind' 'straight flush' ⍳ ⊃ classified
+∇
+
+∇ Z ← card_name value
+  Z ← (¯1 + value) ⊃ 'Two' 'Three' 'Four' 'Five' 'Six' 'Seven' 'Eight' 'Nine' 'Ten' 'Jack' 'Queen' 'King' 'Ace'
+∇
+
 ∇ Z ← classify hand;values;suites
   suites ← ¯1∘↑ ¨ hand
   values ← ⊃,/ from_text_to_value ¨ ¯1∘↓ ¨ hand
