@@ -111,4 +111,11 @@
   Z ← #.poker.rank Black White
 ∇
 
+∇ Z ← tie_TEST
+  #.UT.expect ← 'Tie'
+  Black ← '2H' '3D' '5S' '9C' 'KD'
+  White ← '2D' '3H' '5C' '9S' 'KH'
+  Z ← #.poker.rank Black White
+∇
+
 :EndNameSpace
