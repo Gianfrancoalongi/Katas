@@ -1,25 +1,29 @@
 :NameSpace poker
 
-∇ Z ← rank Hands;bstren;wstren;bvals;wvals;bhigh;whigh
+∇ Z ← rank Hands;bstren;wstren
   (Black White) ← classify ¨ Hands
   bstren ← strength Black
   wstren ← strength White
   :if bstren = wstren
-          bvals ← 2 ⊃ Black
-          wvals ← 2 ⊃ White
-          bhigh ← (∨ ⌿ bvals ∘.> wvals) ⍳ 1
-          whigh ← (∨ ⌿ wvals ∘.> bvals) ⍳ 1
-          :if bhigh < whigh
-                  Z ← 'Black wins - high card ',card_name bhigh ⊃ bvals
-          :elseif bhigh = whigh
-                  Z ← 'Tie'
-          :elseif whigh < bhigh
-                  Z ← 'White wins - high card ',card_name whigh ⊃ wvals
-          :endif
+          Z ← determine_winner_on_high_card Black White
   :elseif wstren > bstren
           Z ← 'White wins - ',1⊃White
   :elseif bstren > wstren
           Z ← 'Black wins - ',1⊃Black
+  :endif
+∇
+
+∇ Z ← determine_winner_on_high_card (Black White);bvals;wvals;bhigh;whigh
+  bvals ← 2 ⊃ Black
+  wvals ← 2 ⊃ White
+  bhigh ← (∨ ⌿ bvals ∘.> wvals) ⍳ 1
+  whigh ← (∨ ⌿ wvals ∘.> bvals) ⍳ 1
+  :if bhigh < whigh
+          Z ← 'Black wins - high card ',card_name bhigh ⊃ bvals
+  :elseif bhigh = whigh
+          Z ← 'Tie'
+  :elseif whigh < bhigh
+          Z ← 'White wins - high card ',card_name whigh ⊃ wvals
   :endif
 ∇
 
