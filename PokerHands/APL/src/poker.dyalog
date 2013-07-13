@@ -69,6 +69,4 @@
   Z ← 1 = ∧/ 2 ≡/ values
 ∇
 
-
-
 :EndNameSpace
