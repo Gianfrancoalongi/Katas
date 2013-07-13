@@ -14,6 +14,8 @@
           :endif
   :elseif wstren > bstren
           Z ← 'White wins - ',1⊃White
+  :else
+          Z ← 'Black wins - ',1⊃Black
   :endif
 ∇
 

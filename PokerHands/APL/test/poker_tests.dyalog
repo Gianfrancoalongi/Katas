@@ -104,4 +104,11 @@
   Z ← #.poker.rank Black White
 ∇
 
+∇ Z ← rank_winning_on_black_hand_TEST
+  #.UT.expect ← 'Black wins - straight flush'
+  Black ← '5H' '6H' '7H' '8H' '9H'
+  White ← '5H' '3C' '5S' '4D' '3H'
+  Z ← #.poker.rank Black White
+∇
+
 :EndNameSpace
