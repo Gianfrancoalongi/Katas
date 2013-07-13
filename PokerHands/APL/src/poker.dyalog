@@ -24,7 +24,9 @@
 ∇
 
 ∇ Z ← card_name value
-  Z ← (¯1 + value) ⊃ 'Two' 'Three' 'Four' 'Five' 'Six' 'Seven' 'Eight' 'Nine' 'Ten' 'Jack' 'Queen' 'King' 'Ace'
+  Z ← 'Two' 'Three' 'Four' 'Five' 'Six' 'Seven' 'Eight' 'Nine' 'Ten' 'Jack'
+  Z,← 'Queen' 'King' 'Ace'
+  Z ← (¯1 + value) ⊃ Z
 ∇
 
 ∇ Z ← classify hand;values;suites
