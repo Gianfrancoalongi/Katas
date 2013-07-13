@@ -80,4 +80,9 @@
   Z ← #.poker.classify '5S' '4C' '3D' '6D' '4S'
 ∇
 
+∇ Z ← is_rightmost_pair_TEST
+  #.UT.expect ← ('pair' (6 5 4 3 3))
+  Z ← #.poker.classify '5S' '3C' '4D' '6H' '3S'
+∇
+
 :EndNameSpace

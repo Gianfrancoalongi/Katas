@@ -18,7 +18,7 @@
           Z ← 'three of a kind' values
   :elseif there_are_two_pairs_amongst_the values
           Z ← 'two pairs' values
-  :elseif (same values[⍳2]) ∨ (same values[1+⍳2]) ∨ (same values[2+⍳2])
+  :elseif (same values[⍳2]) ∨ (same values[1+⍳2]) ∨ (same values[2+⍳2]) ∨ (same values[3+⍳2])
           Z ← 'pair' values
   :endif
 ∇
