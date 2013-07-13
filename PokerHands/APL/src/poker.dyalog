@@ -1,6 +1,6 @@
 :NameSpace poker
 
-∇ Z ← rank Hands;bvals;wvals
+∇ Z ← rank Hands;bstren;wstren;bvals;wvals;bhigh;whigh
   (Black White) ← classify ¨ Hands
   bstren ← strength Black
   wstren ← strength White
