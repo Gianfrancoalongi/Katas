@@ -4,11 +4,8 @@
   Z ← does_any_outer_product_indicate_broken_chain  ∪ ↓ pattern ∘.= pattern
 ∇
 
-∇ Z ← does_any_outer_product_indicate_broken_chain products;a;b;c
-  a ← {⍵/⍳⍴⍵} ¨ products
-  b ← {2-/⍵} ¨ a
-  c ← ~∨/1≠{∧/¯1×⍵} ¨ b
-  Z ← c
+∇ Z ← does_any_outer_product_indicate_broken_chain products
+  Z ← ~∨/1≠{∧/¯1×2-/⍵/⍳⍴⍵} ¨ products
 ∇
 
 :EndNameSpace
