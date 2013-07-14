@@ -38,7 +38,7 @@ ABC
 We would get three files A.txt, B.txt and C.txt containing the following.
 A.txt
  HE 
- WO D!
+ WO
 
 B.txt
  LL 
