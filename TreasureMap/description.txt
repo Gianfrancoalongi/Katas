@@ -1,0 +1,67 @@
+Given some text we can split it into geometric pieces (rectangles or squares), 
+and store the pieces in more files. Given the following text
+
+Fair into the great Atlantic Ocean, 
+by the third day - when the sun is high,
+set sail to the east, there ye shall walk 
+the deck seven times lengthwise, then ye 
+shall walk the deck seven times more. 
+When this is done, call the name of the 
+Mermaid from the Seven seas, and the Island 
+shall appear before ye.
+
+The following Split Pattern
+
+AB
+CD
+
+will yield the following into 4 files.
+
+
+file A                   file B
+-------------------------------------------------
+Fair into the          | great Atlantic Ocean, 
+by the third day       | - when the sun is high,
+set sail to the east   |, there ye shall walk 
+the deck seven times   | lengthwise, then ye 
+
+file C                   file D
+-------------------------------------------------
+shall walk the deck    | seven times more. 
+When this is done      |, call the name of the 
+Mermaid from the Seven | seas, and the Island 
+shall appear before ye.|
+
+Write a program - that given a piece of text, will split it into the appropriate
+amount of files according to a given Split Pattern.
+
+The rules for the Split Pattern are
+
+* No same letters may appear with another letter in between. 
+  Thus, this is a legal pattern
+
+  AB
+  AB
+  AB
+
+  and this is NOT a legal pattern
+
+  AB
+  CB
+  AB
+
+* A letter chain must never start further to the right than a consecutive chain 
+  of the same letters.
+  Thus, this is a legal pattern
+
+  AAA
+  ABB
+
+  and this is NOT a legal pattern
+
+  AAA
+  ABB
+  BBB
+
+The same program shall also be able to reconstruct the text from the given files
+and the split pattern.
