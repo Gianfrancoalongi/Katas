@@ -81,3 +81,15 @@ The rules for the Split Pattern are
 
 The same program shall also be able to reconstruct the text from the given files
 and the split pattern.
+
+* The split pattern must be an non-jagged matrix.
+  Thus, this is a legal pattern
+
+  ABB
+  CCC
+
+  and this is NOT a legal pattern
+
+  ABB
+  CC
+
