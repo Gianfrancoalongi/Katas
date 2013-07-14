@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load ./src/treasure.dyalog
+Run UT.run './test/treasure_tests.dyalog'
