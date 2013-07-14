@@ -1,7 +1,7 @@
 Given some text we can split it into geometric pieces (rectangles or squares), 
 and store the pieces in more files. Given the following text
 
-Fair into the great Atlantic Ocean, 
+Fare into the great Atlantic Ocean, 
 by the third day - when the sun is high,
 set sail to the east, there ye shall walk 
 the deck seven times lengthwise, then ye 
@@ -20,7 +20,7 @@ will yield the following into 4 files.
 
 file A                   file B
 -------------------------------------------------
-Fair into the          | great Atlantic Ocean, 
+Fare into the          | great Atlantic Ocean, 
 by the third day       | - when the sun is high,
 set sail to the east   |, there ye shall walk 
 the deck seven times   | lengthwise, then ye 
