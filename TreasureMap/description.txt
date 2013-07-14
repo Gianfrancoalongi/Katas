@@ -1,36 +1,52 @@
 Given some text we can split it into geometric pieces (rectangles or squares), 
 and store the pieces in more files. Given the following text
 
-Fare into the great Atlantic Ocean, 
-by the third day - when the sun is high,
-set sail to the east, there ye shall walk 
-the deck seven times lengthwise, then ye 
-shall walk the deck seven times more. 
-When this is done, call the name of the 
-Mermaid from the Seven seas, and the Island 
-shall appear before ye.
+HELLO, WORLD!
 
 The following Split Pattern
 
 AB
-CD
 
-will yield the following into 4 files.
+would generate two files A.txt and B.txt each one containing the following.
+A.txt
+ HELLO,
 
+B.txt
+ WORLD!
 
-file A                   file B
--------------------------------------------------
-Fare into the          | great Atlantic Ocean, 
-by the third day       | - when the sun is high,
-set sail to the east   |, there ye shall walk 
-the deck seven times   | lengthwise, then ye 
+The split pattern 
 
-file C                   file D
--------------------------------------------------
-shall walk the deck    | seven times more. 
-When this is done      |, call the name of the 
-Mermaid from the Seven | seas, and the Island 
-shall appear before ye.|
+AB
+AB
+
+would generate two files A.txt and B.txt each one containing the following.
+A.txt
+  HEL
+  WOR
+
+B.txt
+  LO,
+  LD!
+
+Thus, the split pattern dictates how the data is "reshaped" as well as the
+geometric dimensions.
+Given a split pattern as 
+
+ABC
+ABC
+
+We would get three files A.txt, B.txt and C.txt containing the following.
+A.txt
+ HE 
+ WO D!
+
+B.txt
+ LL 
+ RL 
+
+C.txt
+ O,
+ D!
 
 Write a program - that given a piece of text, will split it into the appropriate
 amount of files according to a given Split Pattern.
