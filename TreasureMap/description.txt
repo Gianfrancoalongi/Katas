@@ -27,8 +27,8 @@ B.txt
  LO,
  LD!
 
-Thus, the split pattern dictates how the data is "reshaped" as well as the
-geometric dimensions.
+Thus, the split pattern not only dictates how the data is partitioned, it
+also dictates how the data is "reshaped".
 
 The split pattern
 ABC
@@ -36,15 +36,15 @@ ABC
 
 Would result in three files A.txt, B.txt and C.txt containing the following.
 A.txt
- HE 
+ HE
  WO
 
 B.txt
- LL 
+ LL
  RL 
 
 C.txt
- O,
+ O, 
  D!
 
 For multi line inputs, the whole block of text is considered as the subject
@@ -66,12 +66,15 @@ B.txt
 C.txt
  I AM SO HAPPY
 
-Write a program - that given a piece of text, will split it into the appropriate
-amount of files according to a given Split Pattern.
+
+Write a program - that given text and a Split pattern as input,
+will split the text into the appropriate amount of files according, with
+the appropriate contents.
 
 The rules for the Split Pattern are
 
 * No same letters may appear with another letter in between. 
+
   Thus, this is a legal pattern
   AB
   AB
@@ -82,7 +85,8 @@ The rules for the Split Pattern are
   CB
   AB
 
-* Only rectangles or squares of letters are allowed
+* Only rectangles or squares of same letters are allowed
+
   Thus, this is a legal pattern
   AAB
   AAB
