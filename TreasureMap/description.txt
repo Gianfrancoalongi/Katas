@@ -1,10 +1,10 @@
 Given some text we can split it into geometric pieces (rectangles or squares), 
-and store the pieces in more files. Given the following text
+based on what can be called a 'Split Pattern', the pieces of the text can then
+be stored in more than one files. 
 
-HELLO, WORLD!
+Example: Given the text "HELLO, WORLD!"
 
 The following Split Pattern
-
 AB
 
 would generate two files A.txt and B.txt each one containing the following.
@@ -15,27 +15,26 @@ B.txt
  WORLD!
 
 The split pattern 
-
 AB
 AB
 
 would generate two files A.txt and B.txt each one containing the following.
 A.txt
-  HEL
-  WOR
+ HEL
+ WOR
 
 B.txt
-  LO,
-  LD!
+ LO,
+ LD!
 
 Thus, the split pattern dictates how the data is "reshaped" as well as the
 geometric dimensions.
-Given a split pattern as 
 
+The split pattern
 ABC
 ABC
 
-We would get three files A.txt, B.txt and C.txt containing the following.
+Would result in three files A.txt, B.txt and C.txt containing the following.
 A.txt
  HE 
  WO
@@ -55,13 +54,11 @@ The rules for the Split Pattern are
 
 * No same letters may appear with another letter in between. 
   Thus, this is a legal pattern
-
   AB
   AB
   AB
 
   and this is NOT a legal pattern
-
   AB
   CB
   AB
@@ -69,12 +66,10 @@ The rules for the Split Pattern are
 * A letter chain must never start further to the right than a consecutive chain 
   of the same letters.
   Thus, this is a legal pattern
-
   AAA
   ABB
 
   and this is NOT a legal pattern
-
   AAA
   ABB
   BBB
@@ -82,14 +77,14 @@ The rules for the Split Pattern are
 
 * The split pattern must be an non-jagged matrix.
   Thus, this is a legal pattern
-
   ABB
   CCC
 
   and this is NOT a legal pattern
-
   ABB
   CC
 
 The same program shall also be able to reconstruct the text from the given files
 and the split pattern.
+
+You shall of course also have pattern validation for your program.
