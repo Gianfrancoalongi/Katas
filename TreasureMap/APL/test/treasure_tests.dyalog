@@ -25,14 +25,4 @@
   Z ← #.treasure.is_split_pattern_valid ↑ 'AB' 'AB' 'AB'
 ∇
 
-∇ Z ← illegal_pattern_further_to_the_right_than_next_layer_TEST
-  #.UT.expect ← 0
-  Z ← #.treasure.is_split_pattern_valid ↑ 'AAA' 'ABB' 'BBB'
-∇
-
-∇ Z ← legal_pattern_staircasing_TEST
-  #.UT.expect ← 1
-  Z ← #.treasure.is_split_pattern_valid ↑ 'AAA' 'BAA' 'BBA' 'BBB'
-∇
-
 :EndNameSpace
