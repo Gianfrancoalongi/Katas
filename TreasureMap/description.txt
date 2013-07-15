@@ -82,17 +82,15 @@ The rules for the Split Pattern are
   CB
   AB
 
-* A letter chain must never start further to the right than a consecutive chain 
-  of the same letters.
+* Only rectangles or squares of letters are allowed
   Thus, this is a legal pattern
-  AAA
-  ABB
+  AAB
+  AAB
 
   and this is NOT a legal pattern
-  AAA
-  ABB
+  AAB
+  AAB
   BBB
-
 
 * The split pattern must be an non-jagged matrix.
   Thus, this is a legal pattern
