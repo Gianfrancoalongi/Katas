@@ -47,6 +47,25 @@ C.txt
  O,
  D!
 
+For multi line inputs, the whole block of text is considered as the subject
+for the Split Pattern.
+Thus the text "HELLO, WORLD!\nI AM SO HAPPY"
+Using the Split Pattern
+
+ABB
+CCC
+
+Would result in three files (A.txt B.txt and C.txt) containing
+
+A.txt
+ HELLO
+
+B.txt
+ , WORLD!
+
+C.txt
+ I AM SO HAPPY
+
 Write a program - that given a piece of text, will split it into the appropriate
 amount of files according to a given Split Pattern.
 
