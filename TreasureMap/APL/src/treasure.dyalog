@@ -1,15 +1,19 @@
 :NameSpace treasure
 
-∇ Z ← is_split_pattern_valid pattern;rows;cols;a;b
+∇ Z ← is_split_pattern_valid pattern
   :if 1 = ⊃⍴⍴ pattern
           Z ← check_if_chain_is_unbroken pattern
   :else
-          rows ← ↓ pattern
-          cols ← ↓⍉pattern
-          a ← check_if_chain_is_unbroken ¨ rows
-          b ← check_if_chain_is_unbroken ¨ cols
-          Z ← ∧/ a,b
+          Z ← is_matrix_split_pattern_valid pattern
   :endif
+∇
+
+∇ Z ← is_matrix_split_pattern_valid pattern;rows;cols;a;b
+  rows ← ↓ pattern
+  cols ← ↓⍉pattern
+  a ← check_if_chain_is_unbroken ¨ rows
+  b ← check_if_chain_is_unbroken ¨ cols
+  Z ← ∧/ a,b
 ∇
 
 ∇ Z ← check_if_chain_is_unbroken chain
