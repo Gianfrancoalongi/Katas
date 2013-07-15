@@ -5,22 +5,24 @@
 ∇
 
 ∇ Z ← check_chains pattern
-  :if 1 = ⊃⍴⍴ pattern
+  :if is_just_a_row pattern
           Z ← is_chain_unbroken pattern
   :else
           Z ← is_matrix_split_pattern_valid pattern
   :endif
 ∇
 
-∇ Z ← check_indentation pattern;letters;points
-  :if 1 = ⊃⍴⍴ pattern
+∇ Z ← check_indentation pattern;letters;letter_points
+  :if is_just_a_row pattern
           Z ← 1
   :else
           letters ← ∪,pattern
-          points ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ letters
-          Z ← ∧/⊃,/no_point_start_further_to_right_than_in_next_row ¨ points
+          letter_points ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ letters
+          Z ← ∧/⊃,/no_point_start_further_to_right_than_in_next_row ¨ letter_points
   :endif
 ∇
+
+is_just_a_row ← { 1 = ⊃⍴⍴ ⍵ }
 
 ∇ Z ← no_point_start_further_to_right_than_in_next_row points;rows;column_of_first_in_every_row
   rows ← ∪⊃¨points
