@@ -11,7 +11,7 @@
 ∇ Z ← is_matrix_split_pattern_valid pattern;rows;cols;a;b
   rows ← ↓ pattern
   cols ← ↓⍉pattern
-  Z ← ∧/ ⊃,/ (is_chain_unbroken ¨ rows) (is_chain_unbroken ¨ cols)
+  Z ← ∧/ ⊃,/ { is_chain_unbroken ¨ ⍵ } ¨ rows cols
 ∇
 
 ∇ Z ← is_chain_unbroken chain
