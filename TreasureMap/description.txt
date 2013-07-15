@@ -79,8 +79,6 @@ The rules for the Split Pattern are
   ABB
   BBB
 
-The same program shall also be able to reconstruct the text from the given files
-and the split pattern.
 
 * The split pattern must be an non-jagged matrix.
   Thus, this is a legal pattern
@@ -93,3 +91,5 @@ and the split pattern.
   ABB
   CC
 
+The same program shall also be able to reconstruct the text from the given files
+and the split pattern.
