@@ -20,4 +20,9 @@
   Z ← #.treasure.is_split_pattern_valid ↑ 'AB' 'CB' 'AB'
 ∇
 
+∇ Z ← legal_matrix_split_pattern_TEST
+  #.UT.expect ← 1
+  Z ← #.treasure.is_split_pattern_valid ↑ 'AB' 'AB' 'AB'
+∇
+
 :EndNameSpace
