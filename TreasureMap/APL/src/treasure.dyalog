@@ -15,7 +15,7 @@
 ∇
 
 ∇ Z ← coordinates_form_rectangle_or_square coordinates
-  Z ←  ∨ / (⊂coordinates_indicate coordinates) ≡¨ 'column' 'square' 'rectangle'
+  Z ←  ∨ / (⊂coordinates_indicate coordinates) ≡¨ 'square' 'rectangle'
 ∇
 
 ∇ Z ← coordinates_indicate coordinates
