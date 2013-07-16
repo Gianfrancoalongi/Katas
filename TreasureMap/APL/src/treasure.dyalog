@@ -19,15 +19,11 @@
 ∇
 
 ∇ Z ← coordinates_indicate coordinates
-  :if is_row coordinates
-          Z ← 'rectangle'
-  :elseif is_row ⌽ ¨ coordinates
+  :if (is_row coordinates) ∨ is_row ⌽ ¨ coordinates
           Z ← 'rectangle'
   :elseif is_square coordinates
           Z ← 'square'
-  :elseif is_rectangle coordinates
-          Z ← 'rectangle'
-  :elseif is_rectangle ⌽ ¨ coordinates
+  :elseif (is_rectangle coordinates) ∨ is_rectangle ⌽ ¨ coordinates
           Z ← 'rectangle'
   :else
           Z ← 'unknown'
