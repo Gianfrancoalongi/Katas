@@ -19,12 +19,15 @@
 ∇
 
 ∇ Z ← coordinates_indicate coordinates
-  :if 1 = ⊃ ⍴ ∪ ⊃ ¨ coordinates
-          :if 1 = ∧/¯1×2-/2∘⊃ ¨ coordinates
+  :if only_one_row_in_coordinates coordinates
+          :if columns_form_ascending_sequence coordinates
                   Z ← 'row'
           :endif
   :endif
 ∇
+
+only_one_row_in_coordinates ← { 1 = ⊃ ⍴ ∪ ⊃ ¨ ⍵ }
+columns_form_ascending_sequence ← { 1 = ∧/¯1×2-/2∘⊃ ¨ ⍵ }
 
 ∇ Z ← check_chains pattern
   :if is_just_a_row pattern
