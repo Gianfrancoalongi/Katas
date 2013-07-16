@@ -1,14 +1,14 @@
 :NameSpace treasure
 
 ∇ Z ← is_split_pattern_valid pattern
-  Z ← { (check_chains ⍵) ∧ (check_rectangles_and_squares ⍵) ∧ (not_jagged ⍵) } pattern
+  Z ← { (valid_chains ⍵) ∧ (rectangles_and_squares ⍵) ∧ (not_jagged ⍵) } pattern
 ∇
 
 ∇ Z ← not_jagged pattern
   Z ← 0=∨/∨/' '≡¨pattern
 ∇
 
-∇ Z ← check_rectangles_and_squares pattern;letters;letter_coordinates
+∇ Z ← rectangles_and_squares pattern;letters;letter_coordinates
   :if is_just_a_row pattern
           Z ← 1
   :else
@@ -69,7 +69,7 @@
 only_one_row_in_coordinates ← { 1 = ⊃ ⍴ ∪ ⊃ ¨ ⍵ }
 columns_form_ascending_sequence ← { 1 = ∧/¯1×2-/2∘⊃ ¨ ⍵ }
 
-∇ Z ← check_chains pattern
+∇ Z ← valid_chains pattern
   :if is_just_a_row pattern
           Z ← is_chain_unbroken pattern
   :else
