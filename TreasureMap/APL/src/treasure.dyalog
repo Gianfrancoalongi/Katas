@@ -23,6 +23,8 @@
           Z ← 'row'
   :elseif is_row ⌽ ¨ coordinates
           Z ← 'column'
+  :elseif is_square coordinates
+          Z ← 'square'
   :elseif is_rectangle coordinates
           Z ← 'rectangle'
   :elseif is_rectangle ⌽ ¨ coordinates
@@ -49,6 +51,18 @@
   :endif
 ∇
 
+∇ Z ← is_square coordinates;sqrt;a;m;c;u
+  sqrt ← ⊃ (⍴ coordinates) * 0.5
+  a ← sqrt = ⌊ sqrt
+  :if a
+          m ← (sqrt sqrt) ⍴ coordinates
+          c ← ↓[1] 2∘⊃¨m
+          u ← ∪ ¨ c
+          Z ← sqrt = ⍴ ⊃,/ u
+  :else
+          Z ← 0
+  :endif
+∇
 
 only_one_row_in_coordinates ← { 1 = ⊃ ⍴ ∪ ⊃ ¨ ⍵ }
 columns_form_ascending_sequence ← { 1 = ∧/¯1×2-/2∘⊃ ¨ ⍵ }
