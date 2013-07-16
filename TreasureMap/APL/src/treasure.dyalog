@@ -23,6 +23,10 @@
           :if columns_form_ascending_sequence coordinates
                   Z ← 'row'
           :endif
+  :elseif only_one_row_in_coordinates ⌽ ¨ coordinates
+          :if columns_form_ascending_sequence ⌽ ¨ coordinates
+                  Z ← 'column'
+          :endif
   :endif
 ∇
 

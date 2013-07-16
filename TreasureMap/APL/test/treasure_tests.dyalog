@@ -35,4 +35,9 @@
   Z ← #.treasure.coordinates_indicate (1 1) (1 2) (1 3)
 ∇
 
+∇ Z ← coordinates_indicate_a_column_TEST
+  #.UT.expect ← 'column'
+  Z ← #.treasure.coordinates_indicate (1 1) (2 1) (3 1)
+∇
+
 :EndNameSpace
