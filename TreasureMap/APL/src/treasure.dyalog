@@ -22,7 +22,7 @@
   :if is_row coordinates
           Z ← 'rectangle'
   :elseif is_row ⌽ ¨ coordinates
-          Z ← 'column'
+          Z ← 'rectangle'
   :elseif is_square coordinates
           Z ← 'square'
   :elseif is_rectangle coordinates
