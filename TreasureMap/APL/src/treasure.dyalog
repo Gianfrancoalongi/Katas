@@ -25,6 +25,8 @@
           Z ← 'column'
   :elseif is_rectangle coordinates
           Z ← 'rectangle'
+  :elseif is_rectangle ⌽ ¨ coordinates
+          Z ← 'rectangle'
   :endif
 ∇
 
