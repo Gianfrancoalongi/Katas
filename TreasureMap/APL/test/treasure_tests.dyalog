@@ -55,4 +55,9 @@
   Z ← #.treasure.coordinates_indicate (1 1) (1 2) (2 1) (2 2)
 ∇
 
+∇ Z ← jagged_matrix_pattern_is_not_legal_TEST
+  #.UT.expect ← 0
+  Z ← #.treasure.is_split_pattern_valid ↑ 'AAA' 'BB'
+∇
+
 :EndNameSpace
