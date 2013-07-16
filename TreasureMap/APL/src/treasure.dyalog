@@ -19,14 +19,18 @@
 ∇
 
 ∇ Z ← coordinates_indicate coordinates
+  :if is_row coordinates
+          Z ← 'row'
+  :elseif is_row ⌽ ¨ coordinates
+          Z ← 'column'
+  :endif
+∇
+
+∇ Z ← is_row coordinates
   :if only_one_row_in_coordinates coordinates
-          :if columns_form_ascending_sequence coordinates
-                  Z ← 'row'
-          :endif
-  :elseif only_one_row_in_coordinates ⌽ ¨ coordinates
-          :if columns_form_ascending_sequence ⌽ ¨ coordinates
-                  Z ← 'column'
-          :endif
+          Z ← columns_form_ascending_sequence coordinates
+  :else
+          Z ← 0
   :endif
 ∇
 
