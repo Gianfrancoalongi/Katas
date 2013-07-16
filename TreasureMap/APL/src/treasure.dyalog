@@ -23,6 +23,15 @@
           Z ← 'row'
   :elseif is_row ⌽ ¨ coordinates
           Z ← 'column'
+  :else
+          rows ← {(⍵∘=∘⊃¨coordinates)/coordinates} ¨ ∪⊃¨ coordinates
+          :if 1=⊃⊃2=/⍴ ¨ rows
+                  all_rows ← ∧/ is_row ¨ rows
+                  columns_match ← ∧/⊃=/2∘⊃ ¨ ¨ rows
+                  :if columns_match
+                          Z ← 'rectangle'
+                  :endif
+          :endif
   :endif
 ∇
 
