@@ -15,12 +15,12 @@
 ∇
 
 ∇ Z ← coordinates_form_rectangle_or_square coordinates
-  Z ←  ∨ / (⊂coordinates_indicate coordinates) ≡¨ 'row' 'column' 'square' 'rectangle'
+  Z ←  ∨ / (⊂coordinates_indicate coordinates) ≡¨ 'column' 'square' 'rectangle'
 ∇
 
 ∇ Z ← coordinates_indicate coordinates
   :if is_row coordinates
-          Z ← 'row'
+          Z ← 'rectangle'
   :elseif is_row ⌽ ¨ coordinates
           Z ← 'column'
   :elseif is_square coordinates

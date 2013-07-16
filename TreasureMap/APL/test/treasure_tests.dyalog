@@ -31,7 +31,7 @@
 ∇
 
 ∇ Z ← coordinates_indicate_a_row_TEST
-  #.UT.expect ← 'row'
+  #.UT.expect ← 'rectangle'
   Z ← #.treasure.coordinates_indicate (1 1) (1 2) (1 3)
 ∇
 
