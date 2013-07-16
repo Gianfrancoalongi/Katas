@@ -23,15 +23,8 @@
           Z ← 'row'
   :elseif is_row ⌽ ¨ coordinates
           Z ← 'column'
-  :else
-          rows ← {(⍵∘=∘⊃¨coordinates)/coordinates} ¨ ∪⊃¨ coordinates
-          :if 1=⊃⊃2=/⍴ ¨ rows
-                  all_rows ← ∧/ is_row ¨ rows
-                  columns_match ← ∧/⊃=/2∘⊃ ¨ ¨ rows
-                  :if columns_match
-                          Z ← 'rectangle'
-                  :endif
-          :endif
+  :elseif is_rectangle coordinates
+          Z ← 'rectangle'
   :endif
 ∇
 
@@ -42,6 +35,18 @@
           Z ← 0
   :endif
 ∇
+
+∇ Z ← is_rectangle coordinates;rows;all_rows;columns_match
+  rows ← {(⍵∘=∘⊃¨coordinates)/coordinates} ¨ ∪⊃¨ coordinates
+  :if 1=⊃⊃2=/⍴ ¨ rows
+          all_rows ← ∧/ is_row ¨ rows
+          columns_match ← ∧/⊃=/2∘⊃ ¨ ¨ rows
+          Z ← all_rows ∧ columns_match
+  :else
+          Z ← 0
+  :endif
+∇
+
 
 only_one_row_in_coordinates ← { 1 = ⊃ ⍴ ∪ ⊃ ¨ ⍵ }
 columns_form_ascending_sequence ← { 1 = ∧/¯1×2-/2∘⊃ ¨ ⍵ }
