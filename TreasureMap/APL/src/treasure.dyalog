@@ -1,7 +1,7 @@
 :NameSpace treasure
 
 ∇ Z ← is_split_pattern_valid pattern
-  Z ← (check_chains pattern) ∧  (check_rectangles_and_squares pattern) ∧ (not_jagged pattern)
+  Z ← { (check_chains ⍵) ∧ (check_rectangles_and_squares ⍵) ∧ (not_jagged ⍵) } pattern
 ∇
 
 ∇ Z ← not_jagged pattern
