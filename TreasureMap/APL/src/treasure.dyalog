@@ -1,7 +1,29 @@
 :NameSpace treasure
 
 ∇ Z ← is_split_pattern_valid pattern
-  Z ← (check_chains pattern)
+  Z ← (check_chains pattern) ∧  (check_rectangles_and_squares pattern)
+∇
+
+∇ Z ← check_rectangles_and_squares pattern;letters;letter_coordinates
+  :if is_just_a_row pattern
+          Z ← 1
+  :else
+          letters ← ∪,pattern
+          letter_coordinates ← { (,⍵=pattern)/(,⍳⍴pattern) }  ¨ letters
+          Z ← ∧/⊃,/coordinates_form_rectangle_or_square ¨ letter_coordinates
+  :endif
+∇
+
+∇ Z ← coordinates_form_rectangle_or_square coordinates
+  Z ← 1
+∇
+
+∇ Z ← coordinates_indicate coordinates
+  :if 1 = ⊃ ⍴ ∪ ⊃ ¨ coordinates
+          :if 1 = ∧/¯1×2-/2∘⊃ ¨ coordinates
+                  Z ← 'row'
+          :endif
+  :endif
 ∇
 
 ∇ Z ← check_chains pattern

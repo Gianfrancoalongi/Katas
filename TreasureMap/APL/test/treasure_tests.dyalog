@@ -25,4 +25,14 @@
   Z ← #.treasure.is_split_pattern_valid ↑ 'AB' 'AB' 'AB'
 ∇
 
+∇ Z ← not_legal_letter_pattern_for_A_TEST
+  #.UT.expect ← 0
+  Z ← #.treasure.is_split_pattern_valid ↑ 'AAA' 'ABB'
+∇
+
+∇ Z ← coordinates_indicate_a_row_TEST
+  #.UT.expect ← 'row'
+  Z ← #.treasure.coordinates_indicate (1 1) (1 2) (1 3)
+∇
+
 :EndNameSpace
