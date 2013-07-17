@@ -74,4 +74,11 @@
   Z ← #.treasure.split_with_pattern text pattern
 ∇
 
+∇ Z ← text_partition_on_row_with_differing_sizes_TEST
+  #.UT.expect ← 'HELLO WO' 'RLD!'
+  pattern ← 'AAB'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace

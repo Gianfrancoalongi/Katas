@@ -1,11 +1,13 @@
 :NameSpace treasure
 
-∇ Z ← split_with_pattern args;text;pattern
+∇ Z ← split_with_pattern args;text;pattern;c;t
   (text pattern) ← args
   :if one_letter_only pattern
           Z ← text
   :else
-          Z ← {text[(⍵×6)+⍳6]} ¨ ¯1 + ⍳ 2
+          c ← (⊃⍴text) ÷ (⊃⍴pattern)
+          t ← ↓ ((⊃⍴pattern) c) ⍴ text
+          Z ← {⊃,/t[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
   :endif
 ∇
 
