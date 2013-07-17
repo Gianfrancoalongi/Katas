@@ -67,4 +67,11 @@
   Z ← #.treasure.split_with_pattern text pattern
 ∇
 
+∇ Z ← text_partition_on_one_row_by_one_letter_TEST
+  #.UT.expect ← 'HELLO WORLD!'
+  pattern ← 'A'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace

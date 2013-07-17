@@ -1,9 +1,15 @@
 :NameSpace treasure
 
-∇ Z ← split_with_pattern (text pattern);letters
-        letters ← pattern
-        Z ← {text[(⍵×6)+⍳6]} ¨ ¯1 + ⍳ 2
+∇ Z ← split_with_pattern args;text;pattern
+  (text pattern) ← args
+  :if one_letter_only pattern
+          Z ← text
+  :else
+          Z ← {text[(⍵×6)+⍳6]} ¨ ¯1 + ⍳ 2
+  :endif
 ∇
+
+one_letter_only ← {0=⊃⍴⍴⍵}
 
 ∇ Z ← is_split_pattern_valid pattern
   Z ← { (valid_chains ⍵) ∧ (rectangles_and_squares ⍵) ∧ (not_jagged ⍵) } pattern
