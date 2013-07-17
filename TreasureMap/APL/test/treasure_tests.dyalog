@@ -60,4 +60,11 @@
   Z ← #.treasure.is_split_pattern_valid ↑ 'AAA' 'BB'
 ∇
 
+∇ Z ← text_partition_on_one_row_by_pattern_TEST
+  #.UT.expect ← 'HELLO ' 'WORLD!'
+  pattern ← 'AB'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace
