@@ -81,4 +81,11 @@
   Z ← #.treasure.split_with_pattern text pattern
 ∇
 
+∇ Z ← text_partition_on_row_with_3_files_TEST
+  #.UT.expect ← 'HELL' 'O ' 'WORLD!'
+  pattern ← 'AABCC'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace
