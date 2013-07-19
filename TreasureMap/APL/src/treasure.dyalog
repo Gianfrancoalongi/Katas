@@ -45,6 +45,9 @@ one_letter_only ← {0=⊃⍴⍴⍵}
   r ← ( r ((⊃⍴text)÷r) ) ⍴ text
   s ← (⍴pattern) ⍴ ⊃,/{ partition_into_slices ⍵ (2⊃⍴pattern)} ¨ ↓r
   Z ← {↑s[(,⍵=pattern)/(,⍳⍴pattern)]} ¨ ∪,pattern
+  :if 1=2⊃⍴pattern
+          Z ← , ¨ Z 
+  :endif
 ∇
 
 :EndNameSpace
