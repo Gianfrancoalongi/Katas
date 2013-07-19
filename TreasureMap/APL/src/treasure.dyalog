@@ -1,20 +1,25 @@
 :NameSpace treasure
 
-∇ Z ← split_with_pattern args;text;pattern;c;t;partitions;r
+∇ Z ← split_with_pattern args;text;pattern
   (text pattern) ← args
   :if one_letter_only pattern
           Z ← text
   :elseif 1=⊃⍴⍴pattern
-          c ← (⊃⍴text) ÷ (⊃⍴pattern)
-          :if c = ⌊ c
-                  t ← ↓ ((⊃⍴pattern) c) ⍴ text
-                  Z ← {⊃,/t[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
-          :else
-                  partitions ← partition_into_slices text (⊃⍴pattern)
-                  Z ← {⊃,/partitions[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
-          :endif
+          Z ← split_with_row_pattern text pattern
   :else
           Z ← split_with_matrix_pattern text pattern
+  :endif
+∇
+
+∇ Z ← split_with_row_pattern args;text;pattern;c;t
+  (text pattern) ← args
+  c ← (⊃⍴text) ÷ (⊃⍴pattern)
+  :if c = ⌊ c
+          t ← ↓ ((⊃⍴pattern) c) ⍴ text
+          Z ← {⊃,/t[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
+  :else
+          partitions ← partition_into_slices text (⊃⍴pattern)
+          Z ← {⊃,/partitions[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
   :endif
 ∇
 
