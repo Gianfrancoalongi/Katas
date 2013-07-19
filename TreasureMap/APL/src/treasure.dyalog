@@ -14,14 +14,11 @@
                   Z ← {⊃,/partitions[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
           :endif
   :else
-          r ← ⊃ ⍴ pattern
-          r ← ( r ((⊃⍴text)÷r) ) ⍴ text
-          s ← (⍴pattern) ⍴ ⊃,/{ partition_into_slices ⍵ (2⊃⍴pattern)} ¨ ↓r
-          Z ← {↑s[(,⍵=pattern)/(,⍳⍴pattern)]} ¨ ∪,pattern
+          Z ← split_with_matrix_pattern text pattern
   :endif
 ∇
 
-∇ Z ← partition_into_slices (text amount);d;r;t
+∇ Z ← partition_into_slices (text amount);d;c;r;t
   d ← ⊃ (⍴text) ÷ amount
   :if { ⍵ = ⌊ ⍵ } d
           Z ← ↓ (amount d) ⍴ text
@@ -34,5 +31,13 @@
 ∇
 
 one_letter_only ← {0=⊃⍴⍴⍵}
+
+∇ Z ← split_with_matrix_pattern args;text;pattern;r;s
+  (text pattern) ← args
+  r ← ⊃ ⍴ pattern
+  r ← ( r ((⊃⍴text)÷r) ) ⍴ text
+  s ← (⍴pattern) ⍴ ⊃,/{ partition_into_slices ⍵ (2⊃⍴pattern)} ¨ ↓r
+  Z ← {↑s[(,⍵=pattern)/(,⍳⍴pattern)]} ¨ ∪,pattern
+∇
 
 :EndNameSpace
