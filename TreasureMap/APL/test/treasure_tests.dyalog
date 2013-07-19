@@ -35,4 +35,11 @@
   Z ← #.treasure.split_with_pattern text pattern
 ∇
 
+∇ Z ← text_partition_matrix_with_two_small_rectangles_TEST
+  #.UT.expect ← 'HELLO ' 'WORLD!'
+  pattern ← ↑ 'A' 'B'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace
