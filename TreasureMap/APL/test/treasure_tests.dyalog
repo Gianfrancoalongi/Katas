@@ -28,4 +28,11 @@
   Z ← #.treasure.split_with_pattern text pattern
 ∇
 
+∇ Z ← text_partition_matrix_with_two_columns_TEST
+  #.UT.expect ← (↑'HEL' 'WOR') (↑'LO ' 'LD!')
+  pattern ← ↑ 'AB' 'AB'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace
