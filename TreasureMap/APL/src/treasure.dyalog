@@ -4,12 +4,14 @@
   (text pattern) ← args
   :if one_letter_only pattern
           Z ← text
-  :elseif 1=⊃⍴⍴pattern
+  :elseif row_pattern pattern
           Z ← split_with_row_pattern text pattern
   :else
           Z ← split_with_matrix_pattern text pattern
   :endif
 ∇
+
+row_pattern ← {1=⊃⍴⍴⍵}
 
 ∇ Z ← split_with_row_pattern args;text;pattern;c;t
   (text pattern) ← args
