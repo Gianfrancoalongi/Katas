@@ -45,9 +45,11 @@ one_letter_only ← {0=⊃⍴⍴⍵}
   r ← ( r ((⊃⍴text)÷r) ) ⍴ text
   s ← (⍴pattern) ⍴ ⊃,/{ partition_into_slices ⍵ (2⊃⍴pattern)} ¨ ↓r
   Z ← {↑s[(,⍵=pattern)/(,⍳⍴pattern)]} ¨ ∪,pattern
-  :if 1=2⊃⍴pattern
+  :if only_one_column pattern
           Z ← , ¨ Z 
   :endif
 ∇
+
+only_one_column ← {1=2⊃⍴⍵}
 
 :EndNameSpace
