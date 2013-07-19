@@ -38,15 +38,20 @@ row_pattern ← {1=⊃⍴⍴⍵}
 
 one_letter_only ← {0=⊃⍴⍴⍵}
 
-∇ Z ← split_with_matrix_pattern args;text;pattern;r;s
+∇ Z ← split_with_matrix_pattern args;text;pattern;r;s;i
   (text pattern) ← args
-  r ← ⊃ ⍴ pattern
-  r ← ( r ((⊃⍴text)÷r) ) ⍴ text
+  r ← reshape_text_according_to_pattern args
   s ← (⍴pattern) ⍴ ⊃,/{ partition_into_slices ⍵ (2⊃⍴pattern)} ¨ ↓r
-  Z ← {↑s[(,⍵=pattern)/(,⍳⍴pattern)]} ¨ ∪,pattern
+  i ← { (,⍵=pattern)/(,⍳⍴pattern) } ¨ ∪,pattern
+  Z ← {↑s[⍵]} ¨ i
   :if only_one_column pattern
           Z ← , ¨ Z 
   :endif
+∇
+
+∇ Z ← reshape_text_according_to_pattern (text pattern);r
+  r ← ⊃ ⍴ pattern
+  Z ← ( r ((⊃⍴text)÷r) ) ⍴ text
 ∇
 
 only_one_column ← {1=2⊃⍴⍵}

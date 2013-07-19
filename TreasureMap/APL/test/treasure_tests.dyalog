@@ -42,4 +42,11 @@
   Z ← #.treasure.split_with_pattern text pattern
 ∇
 
+∇ Z ← text_partition_matrix_with_mixed_large_TEST
+  #.UT.expect ← (↑'HELL' 'O W') (⍪ 'L' 'O') 'RLD!'
+  pattern ← ↑ 'AAB' 'AAB' 'CCC'
+  text ← 'HELLO WORLD!'
+  Z ← #.treasure.split_with_pattern text pattern
+∇
+
 :EndNameSpace
