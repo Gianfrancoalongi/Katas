@@ -18,11 +18,10 @@ row_pattern ← {1=⊃⍴⍴⍵}
   c ← (⊃⍴text) ÷ (⊃⍴pattern)
   :if c = ⌊ c
           t ← ↓ ((⊃⍴pattern) c) ⍴ text
-          Z ← {⊃,/t[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
   :else
-          partitions ← partition_into_slices text (⊃⍴pattern)
-          Z ← {⊃,/partitions[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
+          t ← partition_into_slices text (⊃⍴pattern)
   :endif
+  Z ← {⊃,/t[(⍵=pattern)/(⍳⍴pattern)]} ¨ ∪pattern
 ∇
 
 ∇ Z ← partition_into_slices (text amount);d;c;r;t
