@@ -5,8 +5,7 @@
           :if can_be_expressed_as_one_letter pattern
                   Z ← text
           :else
-                  indices ← indices_from_pattern_letters pattern (⍴text)
-                  Z ← { text[⍵] } ¨ indices
+                  Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
           :endif
   :else
           :if one_letter_matrix pattern
