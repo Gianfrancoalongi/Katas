@@ -21,4 +21,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← mixed_array_TEST
+  #.UT.expect ← 'HELLO ' 'WORLD!'
+  text ← 'HELLO WORLD!'
+  pattern ← 'AB'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace
