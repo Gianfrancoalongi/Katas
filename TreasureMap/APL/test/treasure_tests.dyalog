@@ -28,4 +28,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← mixed_array_with_uneven_length_on_text_TEST
+  #.UT.expect ← 'HELLO' 'WORLD!'
+  text ← 'HELLOWORLD!'
+  pattern ← 'AB'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace
