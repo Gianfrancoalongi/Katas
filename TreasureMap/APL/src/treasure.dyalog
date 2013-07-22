@@ -23,9 +23,7 @@ one_letter_matrix ← {1=⊃⍴∪∪/⍵}
 
 ∇ Z ← indices_from_pattern_letters (pattern textlen)
   :if 2=⊃⍴∪pattern
-          a ← ⍳(textlen÷2)
-          b ← (textlen÷2)+a
-          Z ← a b
+          Z ← { (⍳⍵) (⍵+⍳⍵) } textlen÷2
   :endif
 ∇
 
