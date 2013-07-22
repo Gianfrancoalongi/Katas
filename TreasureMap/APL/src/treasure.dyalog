@@ -25,7 +25,7 @@ one_letter_matrix ← {1=⊃⍴∪∪/⍵}
           :if 0 = 2 | textlen
                   Z ← { (⍳⍵) (⍵+⍳⍵) } textlen÷2
           :else
-                  Z ← { (⍳⌊⍵) ((⌊⍵)+⍳(⌊⍵)+2|textlen) } textlen÷2
+                  Z ← { (⍳⍵) (⍵+⍳(⍵+2|textlen)) } ⌊textlen÷2
           :endif
   :endif
 ∇
