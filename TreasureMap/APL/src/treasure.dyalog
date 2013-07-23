@@ -25,13 +25,12 @@ one_letter_matrix ← {1=⊃⍴∪∪/⍵}
   :if 0 = p | textlen
           s ← (textlen÷p)
           index_groups ← (⍳s)∘+ ¨ s × 0,⍳¯1+p
-          Z ← merge_groups_from_same_letter pattern index_groups
   :else
           s ← ⌊(textlen÷p)
           index_groups ← (⍳s)∘+ ¨ s × 0,⍳¯2+p
           index_groups,← ⊂(s×(¯1+p))+⍳(s+p|textlen)
-          Z ← merge_groups_from_same_letter pattern index_groups
   :endif
+  Z ← merge_groups_from_same_letter pattern index_groups
 ∇
 
 ∇ Z ← merge_groups_from_same_letter (pattern index_groups);indices
