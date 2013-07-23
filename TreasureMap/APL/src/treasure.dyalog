@@ -2,10 +2,14 @@
 
 ∇ Z ← split (pattern text)
   :if is_array pattern
-          :if can_be_expressed_as_one_letter pattern
-                  Z ← text
+          :if is_array text
+                  :if can_be_expressed_as_one_letter pattern
+                          Z ← text
+                  :else
+                          Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
+                  :endif
           :else
-                  Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
+                  Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
           :endif
   :else
           Z ← text

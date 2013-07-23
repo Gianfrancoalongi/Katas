@@ -69,4 +69,11 @@
   pattern ← 'A'
   Z ← #.treasure.split pattern text
 ∇
+
+∇ Z ← two_letter_pattern_test_for_two_row_input_TEST
+  #.UT.expect ← (↑'HE' 'WO') (↑'LLO' 'RLD')
+  text ← ↑ 'HELLO' 'WORLD'
+  pattern ← 'AB'
+  Z ← #.treasure.split pattern text
+∇
 :EndNameSpace
