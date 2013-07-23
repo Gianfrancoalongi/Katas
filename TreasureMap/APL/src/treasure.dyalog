@@ -28,7 +28,11 @@ one_letter_matrix ← {1=⊃⍴∪∪/⍵}
                   Z ← { (⍳⍵) (⍵+⍳(⍵+2|textlen)) } ⌊textlen÷2
           :endif
   :elseif 3=⊃⍴pattern
-          Z ← { (⍳⍵) (⍵+⍳⍵) (⍵+⍵+⍳⍵) } textlen÷3
+          :if 0 = 3 | textlen
+                  Z ← { (⍳⍵) (⍵+⍳⍵) (⍵+⍵+⍳⍵) } textlen÷3
+          :else
+                  Z ← { (⍳⍵) (⍵+⍳⍵) (⍵+⍵+⍳(⍵+3|textlen)) } ⌊textlen÷3
+          :endif
   :endif
 ∇
 

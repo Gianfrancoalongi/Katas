@@ -35,9 +35,16 @@
   Z ← #.treasure.split pattern text
 ∇
 
-∇ Z ← mixed_array_with_four_letters_in_pattern_TEST
+∇ Z ← mixed_array_with_three_letters_in_pattern_TEST
   #.UT.expect ← 'HELL' 'O WO' 'RLD!'
   text ← 'HELLO WORLD!'
+  pattern ← 'ABC'
+  Z ← #.treasure.split pattern text
+∇
+
+∇ Z ← mixed_array_with_three_letters_and_uneven_length_TEST
+  #.UT.expect ← 'HEL' 'LOW' 'ORLD!'
+  text ← 'HELLOWORLD!'
   pattern ← 'ABC'
   Z ← #.treasure.split pattern text
 ∇
