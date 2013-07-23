@@ -35,4 +35,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← mixed_array_with_four_letters_in_pattern_TEST
+  #.UT.expect ← 'HELL' 'O WO' 'RLD!'
+  text ← 'HELLO WORLD!'
+  pattern ← 'ABC'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace
