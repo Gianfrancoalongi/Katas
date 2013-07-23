@@ -20,16 +20,15 @@ a_scalar ← {0=⊃⍴⍴⍵}
 one_letter_array ← {1=⊃⍴∪⍵}
 one_letter_matrix ← {1=⊃⍴∪∪/⍵}
 
-∇ Z ← indices_from_pattern_letters (pattern textlen);p;s;a;b
+∇ Z ← indices_from_pattern_letters (pattern textlen);p;s
   p ← ⊃⍴pattern
   :if 0 = p | textlen
           s ← (textlen÷p)
           Z ← (⍳s)∘+ ¨ s × 0,⍳¯1+p
   :else
           s ← ⌊(textlen÷p)
-          a ← (⍳s)∘+ ¨ s × 0,⍳¯2+p
-          b ← (s×(¯1+p))+⍳(s+p|textlen)
-          Z ← a,⊂b
+          Z ← (⍳s)∘+ ¨ s × 0,⍳¯2+p
+          Z,← ⊂(s×(¯1+p))+⍳(s+p|textlen)
   :endif
 ∇
 
