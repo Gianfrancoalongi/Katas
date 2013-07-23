@@ -70,4 +70,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← single_column_pattern_TEST
+  #.UT.expect ← ⍪'HELLO WORLD!'   
+  text ← 'HELLO WORLD!'
+  pattern ← ⍪'AB'
+  
+∇
+
 :EndNameSpace

@@ -1,7 +1,9 @@
 Given some text we can split it into geometric pieces (rectangles or squares), 
 based on what can be called a 'Split Pattern', the pieces of the text can then
-be stored in more than one files. 
-
+be stored in more than one file(s). 
+Later, given the file(s) and the split pattern, the original text can be 
+reconstructed.
+ 
 Example: Given the text "HELLO, WORLD!"
 
 The following Split Pattern
@@ -14,58 +16,45 @@ A.txt
 B.txt
  WORLD!
 
-The split pattern 
-AB
+
+The split pattern
+AABBCC
+
+would generate three files A.txt, B.txt and C.txt containing the following.
+A.txt
+ HELL
+
+B.txt
+ O WO
+
+C.txt
+ RLD!
+
+If the input contains more than one line, the split pattern is applied onto
+all the input as such.
+
+Example: Given the text "HELLO\nWORLD" <-- read as two lines
+
+The following Split Pattern 
 AB
 
 would generate two files A.txt and B.txt each one containing the following.
-A.txt
- HEL
- WOR
-
-B.txt
- LO,
- LD!
-
-Thus, the split pattern not only dictates how the data is partitioned, it
-also dictates how the data is "reshaped".
-
-The split pattern
-ABC
-ABC
-
-Would result in three files A.txt, B.txt and C.txt containing the following.
 A.txt
  HE
  WO
 
 B.txt
- LL
- RL 
+ LLO
+ RLD
 
-C.txt
- O, 
- D!
+The following split pattern "A\nB" 
 
-For multi line inputs, the whole block of text is considered as the subject
-for the Split Pattern.
-Thus the text "HELLO, WORLD!\nI AM SO HAPPY"
-Using the Split Pattern
-
-ABB
-CCC
-
-Would result in three files (A.txt B.txt and C.txt) containing
-
+would generate two files A.txt and B.txt containing the following.
 A.txt
  HELLO
 
 B.txt
- , WORLD!
-
-C.txt
- I AM SO HAPPY
-
+ WORLD
 
 Write a program - that given text and a Split pattern as input,
 will split the text into the appropriate amount of files according, with
@@ -104,6 +93,18 @@ The rules for the Split Pattern are
   and this is NOT a legal pattern
   ABB
   CC
+
+* The amount of rows in the split pattern must not be more than the amount of rows in the text. Given the text "HELLO\nWORLD" 
+  Thus, this is a legal pattern 
+   AB
+  Thus, this is a legal pattern
+   A
+   B
+
+  and this is NOT a legal pattern 
+   A 
+   B
+   C
 
 The same program shall also be able to reconstruct the text from the given files
 and the split pattern.
