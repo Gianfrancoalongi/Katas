@@ -94,18 +94,24 @@ The rules for the Split Pattern are
   ABB
   CC
 
-* The amount of rows in the split pattern must not be more than the amount 
-  of rows in the text. Given the text "HELLO\nWORLD" 
+* The dimensions of the pattern may never be greater than the dimensions of the
+  text itself: Meaning, neither the amount of columns, or rows may be greater
+  than the amount of rows and columns in the text. Given "HELLO\nWORLD"
+  the dimensions of the text are (2 5) 2 rows, 5 columns, when viewed like
+  a matrix.
   Thus, this is a legal pattern 
    AB
-  Thus, this is a legal pattern
+  and, this is a legal pattern
    A
    B
 
-  and this is NOT a legal pattern 
+  and this is NOT a legal pattern (3 1)
    A 
    B
    C
+
+  likewise, this is also NOT a valid pattern (1 6)
+   ABCDEF
 
 The same program shall also be able to reconstruct the text from the given files
 and the split pattern.
