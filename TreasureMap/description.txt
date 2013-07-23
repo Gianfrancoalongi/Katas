@@ -94,7 +94,8 @@ The rules for the Split Pattern are
   ABB
   CC
 
-* The amount of rows in the split pattern must not be more than the amount of rows in the text. Given the text "HELLO\nWORLD" 
+* The amount of rows in the split pattern must not be more than the amount 
+  of rows in the text. Given the text "HELLO\nWORLD" 
   Thus, this is a legal pattern 
    AB
   Thus, this is a legal pattern
