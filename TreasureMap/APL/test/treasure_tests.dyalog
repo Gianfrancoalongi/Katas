@@ -56,4 +56,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← mixed_array_repetition_for_one_letter_TEST
+  #.UT.expect ← 'HELLO WOR' 'LD!'
+  text ← 'HELLO WORLD!'
+  pattern ← 'AAAB'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace

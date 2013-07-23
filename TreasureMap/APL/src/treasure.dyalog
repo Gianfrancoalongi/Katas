@@ -20,16 +20,23 @@ a_scalar ← {0=⊃⍴⍴⍵}
 one_letter_array ← {1=⊃⍴∪⍵}
 one_letter_matrix ← {1=⊃⍴∪∪/⍵}
 
-∇ Z ← indices_from_pattern_letters (pattern textlen);p;s
+∇ Z ← indices_from_pattern_letters (pattern textlen);p;s;index_groups
   p ← ⊃⍴pattern
   :if 0 = p | textlen
           s ← (textlen÷p)
-          Z ← (⍳s)∘+ ¨ s × 0,⍳¯1+p
+          index_groups ← (⍳s)∘+ ¨ s × 0,⍳¯1+p
+          Z ← merge_groups_from_same_letter pattern index_groups
   :else
           s ← ⌊(textlen÷p)
-          Z ← (⍳s)∘+ ¨ s × 0,⍳¯2+p
-          Z,← ⊂(s×(¯1+p))+⍳(s+p|textlen)
+          index_groups ← (⍳s)∘+ ¨ s × 0,⍳¯2+p
+          index_groups,← ⊂(s×(¯1+p))+⍳(s+p|textlen)
+          Z ← merge_groups_from_same_letter pattern index_groups
   :endif
+∇
+
+∇ Z ← merge_groups_from_same_letter (pattern index_groups);indices
+  indices ← {(⍵=pattern)/⍳⍴pattern}¨ ∪pattern
+  Z ← {⊃,/index_groups[⍵]} ¨ indices
 ∇
 
 :EndNameSpace
