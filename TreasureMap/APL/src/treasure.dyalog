@@ -8,9 +8,7 @@
                   Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
           :endif
   :else
-          :if one_letter_matrix pattern
-                  Z ← text
-          :endif
+          Z ← text
   :endif
 ∇
 

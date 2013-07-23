@@ -14,13 +14,6 @@
   Z ← #.treasure.split pattern text
 ∇
 
-∇ Z ← only_one_letter_used_many_times_vertically_TEST
-  text ← 'HELLO WORLD!'
-  #.UT.expect ← text
-  pattern ← ⍪ 'AAA'
-  Z ← #.treasure.split pattern text
-∇
-
 ∇ Z ← mixed_array_TEST
   #.UT.expect ← 'HELLO ' 'WORLD!'
   text ← 'HELLO WORLD!'
@@ -68,13 +61,6 @@
   text ← 'HELLO WORLD!'
   pattern ← 'AAAAABCCCCCC'
   Z ← #.treasure.split pattern text
-∇
-
-∇ Z ← single_column_pattern_TEST
-  #.UT.expect ← ⍪'HELLO WORLD!'   
-  text ← 'HELLO WORLD!'
-  pattern ← ⍪'AB'
-  
 ∇
 
 :EndNameSpace
