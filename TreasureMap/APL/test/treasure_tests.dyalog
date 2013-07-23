@@ -49,4 +49,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← mixed_array_with_four_letters_TEST
+  #.UT.expect ← 'HEL' 'LO ' 'WOR' 'LD!'
+  text ← 'HELLO WORLD!'
+  pattern ← 'ABCD'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace

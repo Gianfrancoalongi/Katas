@@ -33,6 +33,10 @@ one_letter_matrix ← {1=⊃⍴∪∪/⍵}
           :else
                   Z ← { (⍳⍵) (⍵+⍳⍵) (⍵+⍵+⍳(⍵+3|textlen)) } ⌊textlen÷3
           :endif
+  :elseif 4=⊃⍴pattern
+          :if 0 = 4 | textlen
+                  Z ← { (⍳⍵) (⍵+⍳⍵) (⍵+⍵+⍳⍵) (⍵+⍵+⍵+⍳⍵) } textlen÷4
+          :endif
   :endif
 ∇
 
