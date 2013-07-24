@@ -1,8 +1,10 @@
 :NameSpace treasure
 
-∇ Z ← split (pattern text);rows
+∇ Z ← split (pattern text)
   :if is_array pattern
           Z ← array_based_split pattern text
+  :elseif a_scalar pattern
+          Z ← text
   :else
           Z ← matrix_based_split pattern text
  :endif
@@ -24,13 +26,9 @@
   :endif
 ∇
 
-∇ Z ← matrix_based_split (pattern text)
-  :if a_scalar pattern
-          Z ← text
-  :else
-          splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
-          Z ← ↑ ¨ ↓ ⍉ ↑ splits
-  :endif 
+∇ Z ← matrix_based_split (pattern text);splits
+  splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
+  Z ← ↑ ¨ ↓ ⍉ ↑ splits
 ∇
 
 can_be_expressed_as_one_letter ← {(a_scalar ⍵) ∨ one_letter_array ⍵}
