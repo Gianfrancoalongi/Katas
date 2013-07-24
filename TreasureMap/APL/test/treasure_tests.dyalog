@@ -91,4 +91,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← same_letter_in_matrix_for_two_rows_TEST
+  #.UT.expect ← ↑ 'HELLO' 'WORLD'
+  text ← ↑ 'HELLO' 'WORLD'
+  pattern ← ↑ 'AA' 'AA'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace

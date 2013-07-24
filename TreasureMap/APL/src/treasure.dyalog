@@ -7,7 +7,7 @@
           Z ← text
   :else
           Z ← matrix_based_split pattern text
- :endif
+  :endif
 ∇
 
 ∇ Z ← array_based_split (pattern text)
@@ -27,15 +27,21 @@
 ∇
 
 ∇ Z ← matrix_based_split (pattern text);splits
-  splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
-  Z ← ↑ ¨ ↓ ⍉ ↑ splits
+  :if same_letter_in_whole_matrix pattern
+          Z ← text
+  :else
+          splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
+          Z ← ↑ ¨ ↓ ⍉ ↑ splits
+  :endif
 ∇
+
+
 
 can_be_expressed_as_one_letter ← {(a_scalar ⍵) ∨ one_letter_array ⍵}
 is_array ← {1=⍴⍴⍵}
 a_scalar ← {0=⊃⍴⍴⍵}
 one_letter_array ← {1=⊃⍴∪⍵}
-one_letter_matrix ← {1=⊃⍴∪∪/⍵}
+same_letter_in_whole_matrix ← {1=⊃⍴⊃∪∪/⍵}
 
 ∇ Z ← indices_from_pattern_letters (pattern textlen);p;s;index_groups
   p ← ⊃⍴pattern
