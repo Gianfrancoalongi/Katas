@@ -2,23 +2,35 @@
 
 ∇ Z ← split (pattern text);rows
   :if is_array pattern
-          :if is_array text
-                  :if can_be_expressed_as_one_letter pattern
-                          Z ← text
-                  :else
-                          Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
-                  :endif
-          :else
-                  Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
-          :endif
+          Z ← array_based_split pattern text
   :else
-          :if a_scalar pattern
-                  Z ← text
-          :else
-                  splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
-                  Z ← ↑ ¨ ↓ ⍉ ↑ splits
-          :endif
+          Z ← matrix_based_split pattern text
+ :endif
+∇
+
+∇ Z ← array_based_split (pattern text)
+  :if is_array text
+          Z ← split_array_text pattern text
+  :else
+          Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
   :endif
+∇
+
+∇ Z ← split_array_text (pattern text)
+  :if can_be_expressed_as_one_letter pattern
+          Z ← text
+  :else
+          Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
+  :endif
+∇
+
+∇ Z ← matrix_based_split (pattern text)
+  :if a_scalar pattern
+          Z ← text
+  :else
+          splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
+          Z ← ↑ ¨ ↓ ⍉ ↑ splits
+  :endif 
 ∇
 
 can_be_expressed_as_one_letter ← {(a_scalar ⍵) ∨ one_letter_array ⍵}
