@@ -18,18 +18,21 @@
   :endif
 ∇
 
-∇ Z ← matrix_based_split (pattern text);letter_indices;index_shapes;pc;splits
+∇ Z ← matrix_based_split (pattern text)
   :if same_letter_in_whole_matrix pattern
           Z ← text
   :else
-          letter_indices ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ ∪,pattern
-          index_shapes ← shape ¨ letter_indices
-          pc ← 2 ⊃ ⍴ pattern
-          splits ← {split_text_into_fragments ⍵ pc} ¨ ↓ text
-          Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
+          Z ← matrix_pattern_with_matrix_text pattern text
   :endif
 ∇
 
+∇ Z ← matrix_pattern_with_matrix_text (pattern text);letter_indices;index_shapes;pc;splits
+  letter_indices ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ ∪,pattern
+  index_shapes ← shape ¨ letter_indices
+  pc ← 2 ⊃ ⍴ pattern
+  splits ← {split_text_into_fragments ⍵ pc} ¨ ↓ text
+  Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
+∇
 
 ∇ Z ← split_array_text (pattern text)
   :if can_be_expressed_as_one_letter pattern
