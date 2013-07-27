@@ -14,9 +14,22 @@
   :if is_array text
           Z ← split_array_text pattern text
   :else
-          Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
+          Z ← split_matrix_text pattern text
   :endif
 ∇
+
+∇ Z ← matrix_based_split (pattern text);letter_indices;index_shapes;pc;splits
+  :if same_letter_in_whole_matrix pattern
+          Z ← text
+  :else
+          letter_indices ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ ∪,pattern
+          index_shapes ← shape ¨ letter_indices
+          pc ← 2 ⊃ ⍴ pattern
+          splits ← {split_text_into_fragments ⍵ pc} ¨ ↓ text
+          Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
+  :endif
+∇
+
 
 ∇ Z ← split_array_text (pattern text)
   :if can_be_expressed_as_one_letter pattern
@@ -26,17 +39,8 @@
   :endif
 ∇
 
-∇ Z ← matrix_based_split (pattern text);letter_indices;index_shapes;pr;pc;t_rows;splits
-  :if same_letter_in_whole_matrix pattern
-          Z ← text
-  :else
-          letter_indices ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ ∪,pattern
-          index_shapes ← shape ¨ letter_indices
-          (pr pc) ← ⍴ pattern
-          t_rows ← ↓ text
-          splits ← {split_text_into_fragments ⍵ pc} ¨ t_rows
-          Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
-  :endif
+∇ Z ← split_matrix_text (pattern text)
+  Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
 ∇
 
 ∇ Z ← collapse nested
