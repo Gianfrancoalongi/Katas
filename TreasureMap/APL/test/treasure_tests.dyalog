@@ -105,4 +105,10 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← four_layers_of_letters_TEST
+  #.UT.expect ← (↑ 'HE' 'WO') (↑ 'LLO' 'RLD') (↑ 'FO' 'HA') (↑ 'OER' 'CKS')
+  text ← ↑ 'HELLO' 'WORLD' 'FOOER' 'HACKS'
+  pattern ← ↑ 'AABB' 'AABB' 'CCDD' 'CCDD'
+  Z ← #.treasure.split pattern text
+∇
 :EndNameSpace
