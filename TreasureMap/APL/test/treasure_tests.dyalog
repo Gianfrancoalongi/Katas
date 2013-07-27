@@ -98,4 +98,11 @@
   Z ← #.treasure.split pattern text
 ∇
 
+∇ Z ← three_layers_of_letters_TEST
+  #.UT.expect ←  (↑ 'HE' 'WO') (↑ 'LLO' 'RLD') 'FOOER'
+  text ← ↑ 'HELLO' 'WORLD' 'FOOER'
+  pattern ← ↑ 'AAB' 'AAB' 'CCC'
+  Z ← #.treasure.split pattern text
+∇
+
 :EndNameSpace

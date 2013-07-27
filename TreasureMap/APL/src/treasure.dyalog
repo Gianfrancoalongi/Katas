@@ -26,16 +26,61 @@
   :endif
 ∇
 
-∇ Z ← matrix_based_split (pattern text);splits
+∇ Z ← matrix_based_split (pattern text);letter_indices;index_shapes;pr;pc;t_rows;splits
   :if same_letter_in_whole_matrix pattern
           Z ← text
   :else
-          splits ← {split ⍵[1],⍵[2]} ¨ ↓(↓pattern),[1.5](↓text)
-          Z ← ↑ ¨ ↓ ⍉ ↑ splits
+          letter_indices ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ ∪,pattern
+          index_shapes ← shape ¨ letter_indices
+          (pr pc) ← ⍴ pattern
+          t_rows ← ↓ text
+          splits ← {split_text_into_fragments ⍵ pc} ¨ t_rows
+          Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
   :endif
 ∇
 
+∇ Z ← collapse nested
+  (r c) ← ⍴ nested
+  :if r = c
+          Z ← ↑ {⊃,/⍵} ¨ ↓ nested
+  :elseif 1=c
+          Z ← ↑,/nested
+  :elseif 1=r
+          Z ← ⊃,/nested
+  :endif
+∇
 
+∇ Z ← split_text_into_fragments (text pc);tc;d;s;q;w
+  tc ← ⍴text
+  :if 0≠pc|tc
+          d ← ⌊ tc ÷ pc
+          s ← (¯1+pc) ⍴ d
+          s,← (pc|tc)+d
+  :else
+          d ← tc ÷ pc
+          s ← pc ⍴ d
+  :endif
+  q ← +\¯1↓0,s
+  w ← ⍉ ↑ s q
+  Z ← {⍵[1]↑⍵[2]↓text}¨↓w
+∇
+
+∇ Z ← shape coordinates;rows;sqrt;a
+  :if #.treasure_pattern.is_row coordinates
+          Z ← 1 (⊃⍴coordinates)
+  :elseif #.treasure_pattern.is_row ⍉ ¨ coordinates
+          Z ← (⊃⍴coordinates) 1
+  :elseif #.treasure_pattern.is_rectangle coordinates
+          rows ← ⊃⍴∪⊃¨ coordinates
+          Z ← rows ((⊃⍴coordinates)÷rows)
+  :elseif #.treasure_pattern.is_rectangle ⍉ ¨ coordinates
+          rows ← ⊃⍴∪⊃¨ coordinates
+          Z ← ((⊃⍴coordinates)÷rows) rows
+  :else
+          sqrt ← ⊃ (⍴ coordinates) * 0.5
+          Z ← (⌊sqrt) (⌊sqrt) ⍴ coordinates
+  :endif
+∇
 
 can_be_expressed_as_one_letter ← {(a_scalar ⍵) ∨ one_letter_array ⍵}
 is_array ← {1=⍴⍴⍵}
