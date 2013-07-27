@@ -2,23 +2,23 @@
 
 ∇ Z ← split (pattern text)
   :if is_array pattern
-          Z ← array_based_split pattern text
+          Z ← array_pattern pattern text
   :elseif a_scalar pattern
           Z ← text
   :else
-          Z ← matrix_based_split pattern text
+          Z ← matrix_pattern pattern text
   :endif
 ∇
 
-∇ Z ← array_based_split (pattern text)
+∇ Z ← array_pattern (pattern text)
   :if is_array text
-          Z ← split_array_text pattern text
+          Z ← array_pattern_with_array_text pattern text
   :else
-          Z ← split_matrix_text pattern text
+          Z ← array_pattern_with_matrix_text pattern text
   :endif
 ∇
 
-∇ Z ← matrix_based_split (pattern text)
+∇ Z ← matrix_pattern (pattern text)
   :if same_letter_in_whole_matrix pattern
           Z ← text
   :else
@@ -34,7 +34,7 @@
   Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
 ∇
 
-∇ Z ← split_array_text (pattern text)
+∇ Z ← array_pattern_with_array_text (pattern text)
   :if can_be_expressed_as_one_letter pattern
           Z ← text
   :else
@@ -42,7 +42,7 @@
   :endif
 ∇
 
-∇ Z ← split_matrix_text (pattern text)
+∇ Z ← array_pattern_with_matrix_text (pattern text)
   Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
 ∇
 
