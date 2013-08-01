@@ -111,4 +111,11 @@
   pattern ← ↑ 'AABB' 'AABB' 'CCDD' 'CCDD'
   Z ← #.treasure.split pattern text
 ∇
+
+∇ Z ← matrix_pattern_smaller_than_text_TEST
+  #.UT.expect ←  'HE' (↑ 'LLO' 'RLD' 'OER') (↑ 'WO' 'FO')
+  text ← ↑ 'HELLO' 'WORLD' 'FOOER'
+  pattern ← ↑ 'AB' 'CB'
+  Z ← #.treasure.split pattern text
+∇
 :EndNameSpace

@@ -26,12 +26,39 @@
   :endif
 ∇
 
-∇ Z ← matrix_pattern_with_matrix_text (pattern text);letter_indices;index_shapes;pc;splits
+∇ Z ← matrix_pattern_with_matrix_text (pattern text);letter_indices;index_shapes;splits
   letter_indices ← {(,⍵=pattern)/(,⍳⍴pattern)} ¨ ∪,pattern
   index_shapes ← shape ¨ letter_indices
-  pc ← 2 ⊃ ⍴ pattern
-  splits ← {split_text_into_fragments ⍵ pc} ¨ ↓ text
-  Z ← { collapse (⊃⍵[1]) ⍴ (↑splits)[⊃⍵[2]] } ¨ ↓ index_shapes,[1.5]letter_indices
+  splits ← split_according_to_pattern_matrix pattern text
+  Z ← { take_and_shape splits ⍵} ¨ ↓ index_shapes,[1.5]letter_indices
+∇
+
+∇ Z ← take_and_shape (splits shape_indices);s;rows;cols
+  s ← splits[⊃shape_indices[2]]
+  s ← (⊃shape_indices[1]) ⍴ s
+  rows ← (∪+/ ¨ ⊃ ¨¨ ↓ ⍉ (⍴ ¨ s))
+  cols ← (⊃+/ ∪ ¨ 2∘⊃ ¨¨ ↓ ⍉ (⍴ ¨ s))
+  Z ← (rows,cols) ⍴ ⊃,/,¨,s
+  :if 1=rows
+          Z ← ,Z
+  :endif
+∇
+
+∇ Z ← split_according_to_pattern_matrix (pattern text);pr;pc;tr;tc;c;d;w;rows;blocks
+  (pr pc) ← ⍴ pattern
+  (tr tc) ← ⍴ text
+  c ← ⌊ tr ÷ pr
+  :if 0 ≠ pr | tr
+          t ← (¯1 + pr) ⍴ c
+          t,← (pr | tr) + c
+  :else
+          t ← pr ⍴ c
+  :endif
+  d ← +\0,(¯1 ↓ t)
+  w ← d,[1.5]t
+  rows ← ↓ text
+  blocks ← { ⍵[2] ↑ ⍵[1] ↓ rows } ¨ ↓ w
+  Z ← ↑ {split_block_horizontally ⍵ pc} ¨ ↑ ¨ blocks
 ∇
 
 ∇ Z ← array_pattern_with_array_text (pattern text)
@@ -46,30 +73,18 @@
   Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
 ∇
 
-∇ Z ← collapse nested
-  (r c) ← ⍴ nested
-  :if r = c
-          Z ← ↑ {⊃,/⍵} ¨ ↓ nested
-  :elseif 1=c
-          Z ← ↑,/nested
-  :elseif 1=r
-          Z ← ⊃,/nested
-  :endif
-∇
-
-∇ Z ← split_text_into_fragments (text pc);tc;d;s;q;w
-  tc ← ⍴text
+∇ Z ← split_block_horizontally (text pc);tc;d;s;q;w
+  tc ← 2⊃⍴text
+  d ← ⌊ tc ÷ pc
   :if 0≠pc|tc
-          d ← ⌊ tc ÷ pc
           s ← (¯1+pc) ⍴ d
           s,← (pc|tc)+d
   :else
-          d ← tc ÷ pc
           s ← pc ⍴ d
   :endif
   q ← +\¯1↓0,s
-  w ← ⍉ ↑ s q
-  Z ← {⍵[1]↑⍵[2]↓text}¨↓w
+  w ← s,[1.5] q
+  Z ← {⍵[1]↑[2]⍵[2]↓[2]text}¨↓w
 ∇
 
 ∇ Z ← shape coordinates;rows;sqrt;a
