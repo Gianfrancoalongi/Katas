@@ -1,8 +1,6 @@
+
 Given some text we can split it into geometric pieces (rectangles or squares), 
-based on what can be called a 'Split Pattern', the pieces of the text can then
-be stored in more than one file(s). 
-Later, given the file(s) and the split pattern, the original text can be 
-reconstructed.
+based on what can be called a 'Split Pattern'.
  
 Example: Given the text "HELLO, WORLD!"
 
@@ -112,8 +110,5 @@ The rules for the Split Pattern are
 
   likewise, this is also NOT a valid pattern (1 6)
    ABCDEF
-
-The same program shall also be able to reconstruct the text from the given files
-and the split pattern.
 
 You shall of course also have pattern validation for your program.
