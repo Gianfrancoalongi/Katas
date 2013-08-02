@@ -1,114 +1,113 @@
-
-Given some text we can split it into geometric pieces (rectangles or squares), 
-based on what can be called a 'Split Pattern'.
+Given a block of text, we can split it into geometric pieces
+by using a template, the 'Split Pattern'.
  
-Example: Given the text "HELLO, WORLD!"
+* Example-1
+Given the text "HELLO, WORLD!" and the split pattern AB, the
+text would be split into two pieces.
 
-The following Split Pattern
-AB
+ "HELLO," for A
 
-would generate two files A.txt and B.txt each one containing the following.
-A.txt
- HELLO,
+ "WORLD!" for B
 
-B.txt
- WORLD!
+* Example-2
+Given the text "HELLO, WORLD!" and the split pattern AABBCC,
+the text would be split into three pieces.
+
+ "HELL" for A
+ 
+ "O WO" for B
+
+ "RLD!" for C
 
 
-The split pattern
-AABBCC
+If the input is a matrix (several lines) the split pattern is 
+applied onto the whole as one matrix.
 
-would generate three files A.txt, B.txt and C.txt containing the following.
-A.txt
- HELL
+* Example-3
+Given the text "HELLO  and the split pattern AB, the text
+                WORLD"
+would be split into two pieces.
 
-B.txt
- O WO
+ "HE  for A
+  WO" 
 
-C.txt
- RLD!
+ "LLO for B
+  RLD" 
 
-If the input contains more than one line, the split pattern is applied onto
-all the input as such.
+* Example-4
+Given the text "HELLO  and the split pattern A the text
+                WORLD"                       B
+would be split into two pieces.
 
-Example: Given the text "HELLO\nWORLD" <-- read as two lines
+ "HELLO" for A
 
-The following Split Pattern 
-AB
+ "WORLD" for B
 
-would generate two files A.txt and B.txt each one containing the following.
-A.txt
- HE
- WO
+* The task
 
-B.txt
- LLO
- RLD
-
-The following split pattern "A\nB" 
-
-would generate two files A.txt and B.txt containing the following.
-A.txt
- HELLO
-
-B.txt
- WORLD
-
-Write a program - that given text and a Split pattern as input,
-will split the text into the appropriate amount of files according, with
-the appropriate contents.
+Write a program - that given a block of text, and a split pattern,
+will split the text into the appropriate geometric parts, with the
+appropriate contents.
 
 The rules for the Split Pattern are
 
 * No same letters may appear with another letter in between. 
-
   Thus, this is a legal pattern
+
   AB
   AB
   AB
 
   and this is NOT a legal pattern
+
   AB
   CB
   AB
 
-* Only rectangles or squares of same letters are allowed
-
+* Only choerent rectangles or squares of the same letters are allowed
   Thus, this is a legal pattern
+
   AAB
   AAB
 
   and this is NOT a legal pattern
+
   AAB
   AAB
   BBB
 
 * The split pattern must be an non-jagged matrix.
   Thus, this is a legal pattern
+
   ABB
   CCC
 
   and this is NOT a legal pattern
+
   ABB
   CC
 
 * The dimensions of the pattern may never be greater than the dimensions of the
   text itself: Meaning, neither the amount of columns, or rows may be greater
-  than the amount of rows and columns in the text. Given "HELLO\nWORLD"
-  the dimensions of the text are (2 5) 2 rows, 5 columns, when viewed like
-  a matrix.
+  than the amount of rows and columns in the text. 
+  Given "HELLO  - the dimensions of the text are (2 5) 2 rows, 5 columns
+         WORLD"
   Thus, this is a legal pattern 
+
    AB
-  and, this is a legal pattern
+
+  and this is a legal pattern
+
    A
    B
 
   and this is NOT a legal pattern (3 1)
+
    A 
    B
    C
 
   likewise, this is also NOT a valid pattern (1 6)
+
    ABCDEF
 
-You shall of course also have pattern validation for your program.
