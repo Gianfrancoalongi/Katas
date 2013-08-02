@@ -44,9 +44,15 @@
   :endif
 ∇
 
-∇ Z ← split_according_to_pattern_matrix (pattern text);pr;pc;tr;tc;c;d;w;rows;blocks
-  (pr pc) ← ⍴ pattern
-  (tr tc) ← ⍴ text
+∇ Z ← split_according_to_pattern_matrix (pattern text);blocks;pc
+  blocks ← split_vertically pattern text
+  pc ← 2⊃⍴ pattern
+  Z ← ↑ {split_horizontally ⍵ pc} ¨ ↑ ¨ blocks
+∇
+
+∇ Z ← split_vertically (pattern text);pr;tr;c;d;w;rows
+  pr ← ⊃⍴ pattern
+  tr ← ⊃⍴ text
   c ← ⌊ tr ÷ pr
   :if 0 ≠ pr | tr
           t ← (¯1 + pr) ⍴ c
@@ -57,8 +63,7 @@
   d ← +\0,(¯1 ↓ t)
   w ← d,[1.5]t
   rows ← ↓ text
-  blocks ← { ⍵[2] ↑ ⍵[1] ↓ rows } ¨ ↓ w
-  Z ← ↑ {split_block_horizontally ⍵ pc} ¨ ↑ ¨ blocks
+  Z ← { ⍵[2] ↑ ⍵[1] ↓ rows } ¨ ↓ w
 ∇
 
 ∇ Z ← array_pattern_with_array_text (pattern text)
@@ -73,7 +78,7 @@
   Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
 ∇
 
-∇ Z ← split_block_horizontally (text pc);tc;d;s;q;w
+∇ Z ← split_horizontally (text pc);tc;d;s;q;w
   tc ← 2⊃⍴text
   d ← ⌊ tc ÷ pc
   :if 0≠pc|tc
