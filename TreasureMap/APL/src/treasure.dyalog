@@ -3,7 +3,7 @@
 ∇ Z ← split (pattern text)
   :if is_array pattern
           Z ← array_pattern pattern text
-  :elseif a_scalar pattern
+  :elseif is_scalar pattern
           Z ← text
   :else
           Z ← matrix_pattern pattern text
@@ -109,9 +109,9 @@
   :endif
 ∇
 
-can_be_expressed_as_one_letter ← {(a_scalar ⍵) ∨ one_letter_array ⍵}
+can_be_expressed_as_one_letter ← {(is_scalar ⍵) ∨ one_letter_array ⍵}
 is_array ← {1=⍴⍴⍵}
-a_scalar ← {0=⊃⍴⍴⍵}
+is_scalar ← {0=⊃⍴⍴⍵}
 one_letter_array ← {1=⊃⍴∪⍵}
 same_letter_in_whole_matrix ← {1=⊃⍴⊃∪∪/⍵}
 
