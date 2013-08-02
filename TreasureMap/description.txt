@@ -10,14 +10,14 @@ text would be split into two pieces.
  "WORLD!" for B
 
 * Example-2
-Given the text "HELLO, WORLD!" and the split pattern AABBCC,
+Given the text "HELLO, WORLD" and the split pattern AABBCC,
 the text would be split into three pieces.
 
  "HELL" for A
  
- "O WO" for B
+ "O, W" for B
 
- "RLD!" for C
+ "ORLD" for C
 
 
 If the input is a matrix (several lines) the split pattern is 
