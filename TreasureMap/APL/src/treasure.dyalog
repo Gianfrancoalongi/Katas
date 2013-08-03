@@ -18,6 +18,18 @@
   :endif
 ∇
 
+∇ Z ← array_pattern_with_array_text (pattern text)
+  :if can_be_expressed_as_one_letter pattern
+          Z ← text
+  :else
+          Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
+  :endif
+∇
+
+∇ Z ← array_pattern_with_matrix_text (pattern text)
+  Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
+∇
+
 ∇ Z ← matrix_pattern (pattern text)
   :if same_letter_in_whole_matrix pattern
           Z ← text
@@ -71,18 +83,6 @@
   :endif
   d ← +\0,(¯1 ↓ t)
   Z ← d,[1.5]t
-∇
-
-∇ Z ← array_pattern_with_array_text (pattern text)
-  :if can_be_expressed_as_one_letter pattern
-          Z ← text
-  :else
-          Z ← { text[⍵] } ¨ indices_from_pattern_letters pattern (⍴text)
-  :endif
-∇
-
-∇ Z ← array_pattern_with_matrix_text (pattern text)
-  Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
 ∇
 
 ∇ Z ← shape coordinates;rows;sqrt;a
