@@ -50,9 +50,18 @@
   Z ← ↑ {split_horizontally ⍵ pc} ¨ ↑ ¨ blocks
 ∇
 
-∇ Z ← split_vertically (pattern text);pr;tr;c;d;w;rows
-  pr ← ⊃⍴ pattern
-  tr ← ⊃⍴ text
+∇ Z ← split_vertically (pattern text);w;rows
+  w ← generate_drop_and_take_sizes (⊃⍴ pattern) (⊃⍴ text)
+  rows ← ↓ text
+  Z ← { ⍵[2] ↑ ⍵[1] ↓ rows } ¨ ↓ w
+∇
+
+∇ Z ← split_horizontally (text pc);w
+  w ← generate_drop_and_take_sizes pc (2⊃⍴text)
+  Z ← {⍵[2]↑[2]⍵[1]↓[2]text}¨↓w
+∇
+
+∇ Z ← generate_drop_and_take_sizes (pr tr);c;t;d
   c ← ⌊ tr ÷ pr
   :if 0 ≠ pr | tr
           t ← (¯1 + pr) ⍴ c
@@ -61,9 +70,7 @@
           t ← pr ⍴ c
   :endif
   d ← +\0,(¯1 ↓ t)
-  w ← d,[1.5]t
-  rows ← ↓ text
-  Z ← { ⍵[2] ↑ ⍵[1] ↓ rows } ¨ ↓ w
+  Z ← d,[1.5]t
 ∇
 
 ∇ Z ← array_pattern_with_array_text (pattern text)
@@ -76,20 +83,6 @@
 
 ∇ Z ← array_pattern_with_matrix_text (pattern text)
   Z ← { text[;⍵] } ¨ indices_from_pattern_letters pattern (2⊃⍴text)
-∇
-
-∇ Z ← split_horizontally (text pc);tc;d;s;q;w
-  tc ← 2⊃⍴text
-  d ← ⌊ tc ÷ pc
-  :if 0≠pc|tc
-          s ← (¯1+pc) ⍴ d
-          s,← (pc|tc)+d
-  :else
-          s ← pc ⍴ d
-  :endif
-  q ← +\¯1↓0,s
-  w ← s,[1.5] q
-  Z ← {⍵[1]↑[2]⍵[2]↓[2]text}¨↓w
 ∇
 
 ∇ Z ← shape coordinates;rows;sqrt;a
