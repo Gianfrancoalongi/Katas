@@ -1,4 +1,4 @@
-use Test::Simple tests => 5;
+use Test::Simple tests => 6;
 use strict;
 use warnings;
 use phone;
@@ -17,3 +17,6 @@ ok( phone::check_numbers(\@numbers) eq "ok", "Two numbers that do not collide");
 
 @numbers = ("9112", "911");
 ok( phone::check_numbers(\@numbers) eq "err","Two numbers that collide - smallest as second");
+
+@numbers = ("8112", "8113", "8114");
+ok( phone::check_numbers(\@numbers) eq "ok", "Three numbers, none collide");
