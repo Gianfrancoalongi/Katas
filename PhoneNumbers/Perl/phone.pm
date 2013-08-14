@@ -10,12 +10,9 @@ sub check_numbers
 	my $second = ${$l}[1];
 	if($second =~ /^$first.*/) {
 	    return "err";
-	}else{
-	    return "ok";
 	}
-    }else{
-	return "ok"
     }
+    return "ok"
 }
 
 1;
