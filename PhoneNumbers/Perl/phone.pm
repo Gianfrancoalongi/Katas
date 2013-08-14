@@ -4,7 +4,12 @@ use warnings;
 
 sub check_numbers
 {
-    return "ok"
+    my $l = $_[0];
+    if (scalar(@{$l}) > 1) {
+	return "err";
+    }else{	
+	return "ok"
+    }
 }
 
 1;
