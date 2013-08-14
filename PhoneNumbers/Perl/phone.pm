@@ -10,6 +10,8 @@ sub check_numbers
 	my $second = ${$l}[1];
 	if($second =~ /^$first.*/) {
 	    return "err";
+	}elsif($first =~ /^$second.*/){
+	    return "err";
 	}
     }
     return "ok"
