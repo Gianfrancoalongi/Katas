@@ -13,13 +13,15 @@ sub check_numbers
 sub check_every_number_against_all_others
 {
     my $l = $_[0];
-    for(my $i = 0; $i < scalar(@$l); $i++) {
-	my $first = ${$l}[$i];
+    my $i = 0;
+    my $first;
+    foreach $first (@$l) {
 	foreach (@$l[($i+1) .. scalar(@$l)-1]) {
 	    if ( any_prefixes_the_other($first, $_) ) {
 		return "err";
 	    }
 	}
+	$i++;
     }
     return "ok";
 }
