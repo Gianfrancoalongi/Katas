@@ -28,12 +28,7 @@ sub check_every_number_against_all_others
 
 sub any_prefixes_the_other
 {
-    if($_[1] =~ /^$_[0].*/) {
-	return 1;
-    }elsif($_[0] =~ /^$_[1].*/){
-	return 1;
-    }
-    return 0;
+    return ( ($_[1] =~ /^$_[0].*/) || ($_[0] =~ /^$_[1].*/) );
 }
 
 1;
