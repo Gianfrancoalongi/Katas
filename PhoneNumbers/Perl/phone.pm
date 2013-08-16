@@ -4,9 +4,8 @@ use warnings;
 
 sub check_numbers
 {
-    my $l = $_[0];
-    if (scalar(@{$l}) > 1) {
-	return check_every_number_against_all_others($l);
+    if (scalar(@{$_[0]}) > 1) {
+	return check_every_number_against_all_others($_[0]);
     }
     return "ok"
 }
