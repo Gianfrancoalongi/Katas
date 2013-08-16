@@ -15,9 +15,10 @@ sub check_every_number_against_all_others
     my $l = $_[0];
     my $i = 0;
     my $first;
+    my $second;
     foreach $first (@$l) {
-	foreach (@$l[($i+1) .. scalar(@$l)-1]) {
-	    if ( any_prefixes_the_other($first, $_) ) {
+	foreach $second (@$l[($i+1) .. scalar(@$l)-1]) {
+	    if ( any_prefixes_the_other($first, $second) ) {
 		return "err";
 	    }
 	}
