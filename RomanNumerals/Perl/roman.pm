@@ -4,7 +4,7 @@ use warnings;
 
 sub to
 {
-    return "I";
+    return 'I' x $_[0];
 }
 
 1;
