@@ -7,6 +7,7 @@ sub to
     if ( $_[0] == 0 ) { return ""; }
     if ( $_[0] == 4 ) { return "IV"; }
     if ( $_[0] == 9)  { return "IX"; }
+    if ( $_[0] == 90) { return "XC"; }
     if ( $_[0] >= 50) { return "L".to($_[0]-50);}
     if ( $_[0] >= 40) { return "XL".to($_[0]-40);}
     if ( $_[0] >= 10) { return "X".to($_[0]-10);}

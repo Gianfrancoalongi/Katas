@@ -1,4 +1,4 @@
-use Test::Simple tests => 12;
+use Test::Simple tests => 13;
 use strict;
 use warnings;
 use roman;
@@ -26,3 +26,5 @@ ok( roman::to(41) eq "XLI","XLI");
 ok( roman::to(50) eq "L","L");
 
 ok( roman::to(51) eq "LI","LI");
+
+ok( roman::to(90) eq "XC","XC");
