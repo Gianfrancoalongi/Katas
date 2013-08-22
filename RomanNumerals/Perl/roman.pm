@@ -7,13 +7,12 @@ sub to
     if ( $_[0] == 0 ) { return ""; }
     if ( $_[0] == 4 ) { return "IV"; }
     if ( $_[0] == 9)  { return "IX"; }
-    if ( $_[0] >= 400){ return "CD".to($_[0]-400); }
-    if ( $_[0] >= 100){ return "C".to($_[0]-100); }
-    if ( $_[0] >= 90) { return "XC".to($_[0]-90);}
-    if ( $_[0] >= 50) { return "L".to($_[0]-50);}
-    if ( $_[0] >= 40) { return "XL".to($_[0]-40);}
-    if ( $_[0] >= 10) { return "X".to($_[0]-10);}
-    if ( $_[0] >= 5 ) { return "V".to($_[0]-5);}
+    my @limits =  ([400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[5,"V"]);
+    foreach my $lim (@limits) {
+	if ($_[0] >= $lim->[0]) {
+	    return $lim->[1].to($_[0]-$lim->[0]);
+	}
+    }
     return 'I' x $_[0];
 }
 
