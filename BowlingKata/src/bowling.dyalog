@@ -16,10 +16,8 @@
 ∇ Z ← parse_frame frame
   :if 1=⍴frame
           Z ← (10 2)
-  :else
-          :if (2⊃frame) ≡ '-'
-                  Z ← ((⍎⊃frame) 0)
-          :endif
+  :elseif (2⊃frame) ≡ '-'
+          Z ← ((⍎⊃frame) 0)
   :endif
 ∇
 
