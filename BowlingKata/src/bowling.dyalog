@@ -14,7 +14,13 @@
 ∇
 
 ∇ Z ← parse_frame frame
-  Z ← (10 2) × frame='X'
+  :if 1=⍴frame
+          Z ← (10 2)
+  :else
+          :if (2⊃frame) ≡ '-'
+                  Z ← ((⍎⊃frame) 0)
+          :endif
+  :endif
 ∇
 
 ∇ Z ← parse_bonus frame
