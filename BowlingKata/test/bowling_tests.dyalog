@@ -10,4 +10,9 @@
   #.UT.expect ← (10 ⍴ ⊂(9 0))
 ∇
 
+∇ Z ← parse_spares_with_one_bonus_ball_TEST
+  Z ← #.bowling.parse '5/|5/|5/|5/|5/|5/|5/|5/|5/|5/||5'
+  #.UT.expect ← (10 ⍴ ⊂(10 1)),⊂(5 0)
+∇
+
 :EndNameSpace

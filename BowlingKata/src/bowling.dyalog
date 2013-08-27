@@ -1,6 +1,6 @@
 :NameSpace bowling
 
-∇ Z ← parse input;frames
+∇ Z ← parse input;frames;bonus
   frames ← split input
   throws ← parse_frame ¨ 10↑frames
   bonus ← parse_bonus ¨ 10↓frames
@@ -18,11 +18,19 @@
           Z ← (10 2)
   :elseif (2⊃frame) ≡ '-'
           Z ← ((⍎⊃frame) 0)
+  :elseif (2⊃frame) ≡ '/'
+          Z ← (10 1)
   :endif
 ∇
 
 ∇ Z ← parse_bonus frame
-  Z ← ((10 0) (10 0)) × frame='XX'
+  :if 'XX'≡frame
+          Z ← ((10 0) (10 0))
+  :elseif 1=⍴frame
+          Z ← ((⍎frame) 0)
+  :else
+          Z ← ⍬
+  :endif
 ∇
 
 :EndNameSpace
