@@ -1,5 +1,9 @@
 :NameSpace bowling
 
+∇ Z ← score parsed
+  Z ← 1⊃parsed  
+∇
+
 ∇ Z ← parse input;frames;bonus
   frames ← split input
   throws ← parse_frame ¨ 10↑frames

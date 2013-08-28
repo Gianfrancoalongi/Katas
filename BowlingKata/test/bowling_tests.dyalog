@@ -15,4 +15,9 @@
   #.UT.expect ← (10 ⍴ ⊂(10 1)),⊂(5 0)
 ∇
 
+∇ Z ← points_for_one_strike_frame_TEST
+  Z ← #.bowling.score (10 2)
+  #.UT.expect ← 10
+∇
+
 :EndNameSpace
