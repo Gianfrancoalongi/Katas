@@ -25,4 +25,14 @@
   #.UT.expect ← 5
 ∇
 
+∇ Z ← points_for_one_miss_frame_TEST
+  Z ← #.bowling.score (9 0)
+  #.UT.expect ← 9
+∇
+
+∇ Z ← points_strike_miss_miss_TEST
+  Z ← #.bowling.score (10 2) (5 0) (7 0)
+  #.UT.expect ← 22
+∇
+
 :EndNameSpace

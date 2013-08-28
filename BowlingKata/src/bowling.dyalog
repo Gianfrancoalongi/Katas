@@ -1,7 +1,12 @@
 :NameSpace bowling
 
-∇ Z ← score parsed
-  Z ← 1⊃parsed  
+∇ Z ← score parsed;also
+  :if 1=≡parsed
+          Z ← ⊃parsed
+  :else
+          also ← +/ ⊃ ¨ 1 ↓ parsed
+          Z ← 10 + also
+  :endif
 ∇
 
 ∇ Z ← parse input;frames;bonus
