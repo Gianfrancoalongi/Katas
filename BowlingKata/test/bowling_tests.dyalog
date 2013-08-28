@@ -20,4 +20,9 @@
   #.UT.expect ← 10
 ∇
 
+∇ Z ← points_for_one_spare_frame_TEST
+  Z ← #.bowling.score (5 1)
+  #.UT.expect ← 5
+∇
+
 :EndNameSpace
