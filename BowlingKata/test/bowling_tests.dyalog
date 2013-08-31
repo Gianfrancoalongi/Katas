@@ -19,5 +19,10 @@
           #.UT.expect←5 0
           #.bowling.parse_frame'5-'
       }
+      
+      parse_all_miss_frame_TEST←{
+          #.UT.expect←0 0
+          #.bowling.parse_frame'--'
+      }
 
 :EndNameSpace
