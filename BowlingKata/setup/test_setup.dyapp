@@ -1,3 +1,0 @@
-Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
-Load ./src/bowling.dyalog
-Run UT.run './test/bowling_tests.dyalog' ⋄ ⎕OFF
