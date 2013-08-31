@@ -2,7 +2,7 @@
 
       parse_strike_frame_TEST←{
           #.UT.expect←10
-          #.bowling.parse_frame'X'
+          #.bowling.parse_frame,'X'
       }
       
       parse_spare_frame_TEST←{
@@ -23,6 +23,11 @@
       parse_all_miss_frame_TEST←{
           #.UT.expect←0 0
           #.bowling.parse_frame'--'
+      }
+      
+      parse_game_input_to_frames_TEST←{
+          #.UT.expect←10(5 5)(0 0)
+          #.bowling.parse_game'X|5/|--|'
       }
 
 :EndNameSpace
