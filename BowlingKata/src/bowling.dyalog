@@ -12,14 +12,9 @@
       }
       
       parse_game←{
-          ⎕ML←3
-          f←(⍵≠'|')⊂⍵
-          ⎕ML←0
+          ⎕ML←3 ⋄ f←(⍵≠'|')⊂⍵ ⋄ ⎕ML←0
           s←parse_frame¨(10⌊⍴f)↑f
-          b←{10<⍴⍵:parse_frame¨{
-                  ⍬≡⍴⍵:⍵
-                  ,¨⊃⍵
-              }10↓⍵
+          b←{10<⍴⍵:parse_frame¨{⍬≡⍴⍵:⍵ ⋄ ,¨⊃⍵}10↓⍵
               ⍬}f
           s,b
       }
@@ -29,18 +24,14 @@
           s←⍵
           g←↓s,[1.5]d
           a←{10<2⊃⍵:0
-              10≡⊃⍵:10+(2⊃⍵)score_of_next_two_balls s
-              10=+/⊃⍵:10+(2⊃⍵)score_of_next_ball s
+              10≡⊃⍵:10+(2⊃⍵)score_of_next 2 s
+              10=+/⊃⍵:10+(2⊃⍵)score_of_next 1 s
               (10>+/⊃⍵):+/⊃⍵
           }¨g
           ⊃+/a
       }
       
-    score_of_next_two_balls ← { ⊃+/2↑⊃,/ ⍺ at_least_two ⍵}
-        
-    score_of_next_ball ← { ⊃+/1↑⊃,/ ⍺ at_least_two ⍵}
-      
-      at_least_two←{⍺≥⍴⍵:⍬ ⍬
-          ⍺↓⍵
-      }
+    score_of_next ← { ⊃+/(⊃⍵)↑⊃,/ ⍺ at_least_two (2⊃⍵)}
+  
+    at_least_two←{⍺≥⍴⍵:⍬ ⍬ ⋄ ⍺↓⍵ }
 :EndNameSpace
