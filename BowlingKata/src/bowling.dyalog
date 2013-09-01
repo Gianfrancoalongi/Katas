@@ -1,4 +1,6 @@
 ﻿:NameSpace bowling
+     
+    score_from_game ← { score parse_game ⍵ }
 
       parse_frame←{
           ⍵≡,'X':10
@@ -19,7 +21,8 @@
           d←⍳⍴⍵
           s←⍵
           g←↓s,[1.5]d
-          a←{10≡⊃⍵:10+(2⊃⍵)score_of_next_two_balls s
+          a←{10<2⊃⍵:0
+              10≡⊃⍵:10+(2⊃⍵)score_of_next_two_balls s
               10=+/⊃⍵:10+(2⊃⍵)score_of_next_ball s
               (10>+/⊃⍵):+/⊃⍵
           }¨g

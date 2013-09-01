@@ -49,5 +49,9 @@
           #.UT.expect←12⍴10
           #.bowling.parse_game'X|X|X|X|X|X|X|X|X|X||XX'
       }
-
+      
+      score_full_strike_game_TEST←{
+          #.UT.expect←300
+          #.bowling.score_from_game'X|X|X|X|X|X|X|X|X|X||XX'
+      }
 :EndNameSpace
