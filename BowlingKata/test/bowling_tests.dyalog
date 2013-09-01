@@ -59,4 +59,9 @@
           #.UT.expect←90
           #.bowling.score_from_game'9-|9-|9-|9-|9-|9-|9-|9-|9-|9-||'
       }
+      
+      score_all_spare_game_TEST←{
+          #.UT.expect←150
+          #.bowling.score_from_game'5/|5/|5/|5/|5/|5/|5/|5/|5/|5/||5'
+      }
 :EndNameSpace
