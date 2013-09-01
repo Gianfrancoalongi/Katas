@@ -54,4 +54,9 @@
           #.UT.expect←300
           #.bowling.score_from_game'X|X|X|X|X|X|X|X|X|X||XX'
       }
+      
+      score_nine_miss_game_TEST←{
+          #.UT.expect←90
+          #.bowling.score_from_game'9-|9-|9-|9-|9-|9-|9-|9-|9-|9-||'
+      }
 :EndNameSpace
