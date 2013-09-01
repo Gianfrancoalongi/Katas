@@ -44,5 +44,10 @@
           #.UT.expect←25
           #.bowling.score(5 5)(6 0)(3 0)
       }
+      
+      parse_full_game_input_TEST←{
+          #.UT.expect←12⍴10
+          #.bowling.parse_game'X|X|X|X|X|X|X|X|X|X||XX'
+      }
 
 :EndNameSpace

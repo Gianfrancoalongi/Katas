@@ -7,8 +7,12 @@
       }
       
       parse_game←{
-          b←¯1⌽⍵='|'
-          parse_frame¨¯1↓¨b⊂⍵
+          ⎕ML←3
+          f←(⍵≠'|')⊂⍵
+          ⎕ML←0
+          s←parse_frame¨(10⌊⍴f)↑f
+          b←{10<⍴⍵:parse_frame¨,¨⊃10↓⍵ ⋄ ⍬}f
+          s,b
       }
       
       score←{
