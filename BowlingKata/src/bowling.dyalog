@@ -15,11 +15,13 @@
           d←⍳⍴⍵
           s←⍵
           g←↓s,[1.5]d
-          a←{10≡⊃⍵:10+⊃+/2↑⊃,/⍵ at_least_two s
+          a←{10≡⊃⍵:10+score_of_next_two_balls ⍵ at_least_two s
               (10>+/⊃⍵):+/⊃⍵
           }¨g
           ⊃+/a
       }
+      
+    score_of_next_two_balls ← { ⊃+/2↑⊃,/⍵ }
       
       at_least_two←{(2⊃⍺)≥⍴⍵:⍬ ⍬
           (2⊃⍺)↓⍵
