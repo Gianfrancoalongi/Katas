@@ -29,5 +29,10 @@
           #.UT.expect←10(5 5)(0 0)
           #.bowling.parse_game'X|5/|--|'
       }
+      
+      score_strike_two_frames_TEST←{
+          #.UT.expect←20
+          #.bowling.score 10(5 0)
+      }
 
 :EndNameSpace
