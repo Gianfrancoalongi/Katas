@@ -34,5 +34,10 @@
           #.UT.expect←20
           #.bowling.score 10(5 0)
       }
+      
+      score_strikes_frames_TEST←{
+          #.UT.expect←60
+          #.bowling.score 10 10 10
+      }
 
 :EndNameSpace
