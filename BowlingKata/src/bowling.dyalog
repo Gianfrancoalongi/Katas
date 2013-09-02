@@ -3,10 +3,10 @@
     score_from_game ← { score parse_game ⍵ }
 
       parse_frame←{
+          n←,↑2⊃¨⎕VFI¨⍵
           ⍵≡,'X':10
-          2=⍴⍵:{'/'=2⊃⍵:⊃,/(2⊃⎕VFI⊃⍵)(10-(2⊃⎕VFI⊃⍵))
-              ⊃,/2∘⊃¨⎕VFI¨⍵}⍵
-          2∘⊃⎕VFI ⍵
+          '/'∊⍵:|0 10-⊃n
+          n
       }
       
       parse_game←{
