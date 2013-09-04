@@ -19,5 +19,10 @@
           #.UT.expect←0 10
           #.bowl.frame'-/'
       }
+      
+      hit_spare_frame_TEST←{
+          #.UT.expect←4 6
+          #.bowl.frame'4/'
+      }
 
 :EndNameSpace
