@@ -24,5 +24,10 @@
           #.UT.expect←4 6
           #.bowl.frame'4/'
       }
+      
+      hit_miss_TEST←{
+          #.UT.expect←4 0
+          #.bowl.frame'4-'
+      }
 
 :EndNameSpace
