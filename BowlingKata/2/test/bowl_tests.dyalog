@@ -9,5 +9,10 @@
           #.UT.expect←0 0
           #.bowl.frame'--'
       }
+      
+      miss_hit_frame_TEST←{
+          #.UT.expect←0 1
+          #.bowl.frame'-1'
+      }
 
 :EndNameSpace
