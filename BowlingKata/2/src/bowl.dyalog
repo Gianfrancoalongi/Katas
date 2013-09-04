@@ -1,7 +1,8 @@
 ﻿:NameSpace bowl
 
       frame←{
-          ⍵='X':10
+          ⍵≡,'X':10
+          ⊃,/2∘⊃¨⎕VFI¨⍵
       }
 
 :EndNameSpace
