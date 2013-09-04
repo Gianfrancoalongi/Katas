@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load ./src/bowl.dyalog
+Run UT.run './test/'
