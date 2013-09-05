@@ -39,5 +39,10 @@
           #.UT.expect←11
           #.bowl.score(4 6)1
       }
+      
+      score_of_two_throws_TEST←{
+          #.UT.expect←7
+          #.bowl.score(4 3)(4 5)
+      }
 
 :EndNameSpace
