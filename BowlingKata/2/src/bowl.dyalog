@@ -1,5 +1,10 @@
 ﻿:NameSpace bowl
 
+      parse←{
+          ⎕ML←3 ⋄ g←(⍵≠'|')⊂⍵ ⋄ ⎕ML←0
+          (frame¨10↑g),(frame¨,¨⊃10↓g)
+      }
+
       frame←{
           ⍵≡,'X':10
           n←⊃,/2∘⊃¨⎕VFI¨⍵

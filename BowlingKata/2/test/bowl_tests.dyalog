@@ -49,5 +49,11 @@
           #.UT.expect←33
           #.bowl.game_score 10(1 2)(3 4)10
       }
+      
+      parse_game_with_two_bonus_TEST←{
+          #.UT.expect←12⍴,10
+          #.bowl.parse'X|X|X|X|X|X|X|X|X|X||XX'
+      }
+    
 
 :EndNameSpace
