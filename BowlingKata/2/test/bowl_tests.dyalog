@@ -34,5 +34,10 @@
           #.UT.expect←13
           #.bowl.score 10(1 2)
       }
+      
+      score_spare_with_bonus_TEST←{
+          #.UT.expect←11
+          #.bowl.score(4 6)1
+      }
 
 :EndNameSpace
