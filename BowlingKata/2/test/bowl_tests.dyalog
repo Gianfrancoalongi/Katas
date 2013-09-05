@@ -29,5 +29,10 @@
           #.UT.expect←4 0
           #.bowl.frame'4-'
       }
+      
+      score_strike_with_bonus_TEST←{
+          #.UT.expect←13
+          #.bowl.score 10(1 2)
+      }
 
 :EndNameSpace
