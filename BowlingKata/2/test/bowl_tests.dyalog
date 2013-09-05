@@ -44,5 +44,10 @@
           #.UT.expect←7
           #.bowl.score(4 3)(4 5)
       }
+      
+      score_of_given_game_sub_frames_TEST←{
+          #.UT.expect←33
+          #.bowl.game_score 10(1 2)(3 4)10
+      }
 
 :EndNameSpace
