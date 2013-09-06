@@ -64,4 +64,10 @@
           #.UT.expect←30
           #.bowl.game_score(9⍴⊂0 0),10,10 10
       }
+      
+      game_score_for_kata_example_one_TEST←{
+          #.UT.expect←300
+          #.bowl.game_score #.bowl.parse'X|X|X|X|X|X|X|X|X|X||XX'
+      }
+
 :EndNameSpace
