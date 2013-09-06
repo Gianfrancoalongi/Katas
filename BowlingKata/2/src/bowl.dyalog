@@ -2,7 +2,7 @@
 
       parse←{
           ⎕ML←3 ⋄ g←(⍵≠'|')⊂⍵ ⋄ ⎕ML←0
-          (frame¨10↑g),(frame¨,¨⊃10↓g)
+          (frame¨10↑g),({10=⍴⍵:0 0 ⋄ frame¨,¨⊃10↓⍵}g)
       }
 
       frame←{

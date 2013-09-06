@@ -69,5 +69,10 @@
           #.UT.expect←300
           #.bowl.game_score #.bowl.parse'X|X|X|X|X|X|X|X|X|X||XX'
       }
+      
+      game_score_for_kata_example_two_TEST←{
+          #.UT.expect←90
+          #.bowl.game_score #.bowl.parse'9-|9-|9-|9-|9-|9-|9-|9-|9-|9-||'
+      }
 
 :EndNameSpace
