@@ -14,7 +14,7 @@
        
       game_score←{
           gc←⍵
-          ⊃+/score¨{3↑⍵↓gc}¨¯1+⍳⍴gc
+          ⊃+/score¨{3↑⍵↓gc}¨¯1+⍳10
       }
 
       score←{

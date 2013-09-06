@@ -55,5 +55,8 @@
           #.bowl.parse'X|X|X|X|X|X|X|X|X|X||XX'
       }
     
-
+      game_score_of_nine_miss_one_strike_TEST←{
+          #.UT.expect←15
+          #.bowl.game_score(9⍴⊂0 0),(⊂4 6),5
+      }
 :EndNameSpace
