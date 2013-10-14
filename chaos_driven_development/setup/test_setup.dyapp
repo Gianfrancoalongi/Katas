@@ -1,0 +1,3 @@
+Load /home/gianfranco/APL/UnitTestFrameWork/UT.dyalog
+Load ./src/cdd.dyalog
+Run UT.run './test/'
