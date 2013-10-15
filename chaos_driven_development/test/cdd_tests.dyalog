@@ -33,9 +33,21 @@
       display_game_state_TEST←{
           #.UT.expect←↑'⎕⎕⎕' '⎕⎕⎕' '⎕⎕▲'
           board_dim←3 3
-          robot_pos←(3 3)
+          robot_pos←3 3
           robot_heading←1
-          #.cdd.disp_game board_dim robot_pos robot_heading
+          board_dim #.cdd.disp_game robot_pos robot_heading
       }
+            
+      interpret_DF_command_TEST←{
+          #.UT.expect←↑'⎕▲⎕' '⎕⎕⎕' '⎕⎕⎕'
+          command←'DF'
+          board←3 3
+          pos←2 2
+          heading←1
+          board #.cdd.disp_game(pos heading)#.cdd.interpret'DF'
+      }
+      
+      ⍝ (↑'⎕⎕⎕' '⎕▶⎕' '⎕⎕⎕')(↑'⎕⎕⎕' '⎕⎕⎕' '⎕▲⎕')(↑'⎕⎕⎕' '⎕◀⎕' '⎕⎕⎕')
+      ⍝ 'TR' 'DB' 'TL'
 
 :EndNameSpace
