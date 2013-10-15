@@ -39,39 +39,32 @@
       }
             
       interpret_DF_command_TEST←{
-          #.UT.expect←↑'⎕▲⎕' '⎕⎕⎕' '⎕⎕⎕'
+          #.UT.expect←(1 2)1
           command←'DF'
-          board←3 3
           pos←2 2
           heading←1
-          board #.cdd.disp_game(pos heading)#.cdd.interpret'DF'
+          (pos heading)#.cdd.interpret'DF'
       }
       
       interpret_DB_command_TEST←{
-          #.UT.expect←↑'⎕⎕⎕' '⎕⎕⎕' '⎕▲⎕'
-          board←3 3
+          #.UT.expect←(3 2)1
           pos←2 2
           heading←1
-          board #.cdd.disp_game(pos heading)#.cdd.interpret'DB'
+          (pos heading)#.cdd.interpret'DB'
       }
       
       interpret_TL_command_TEST←{
-          #.UT.expect←↑'⎕⎕' '⎕◀'
-          board←2 2
+          #.UT.expect←(2 2)4
           pos←2 2
           heading←1
-          board #.cdd.disp_game(pos heading)#.cdd.interpret'TL'
+          (pos heading)#.cdd.interpret'TL'
       }
       
       interpret_TR_command_TEST←{
-          #.UT.expect←↑'⎕⎕' '⎕▶'
-          board←2 2
+          #.UT.expect←(2 2)2
           pos←2 2
           heading←1
-          board #.cdd.disp_game(pos heading)#.cdd.interpret'TR'
+          (pos heading)#.cdd.interpret'TR'
       }
       
-      ⍝ (↑'⎕⎕⎕' '⎕▶⎕' '⎕⎕⎕')(↑'⎕⎕⎕' '⎕◀⎕' '⎕⎕⎕')
-      ⍝ 'TR' 'DB' 'TL'
-
 :EndNameSpace
