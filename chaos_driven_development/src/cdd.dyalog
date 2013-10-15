@@ -15,6 +15,7 @@
           'DF'≡⍵:((⊃⍺)forward(2⊃⍺))(2⊃⍺)
           'DB'≡⍵:((⊃⍺)backward(2⊃⍺))(2⊃⍺)
           'TL'≡⍵:(⊃⍺)(turn_left 2⊃⍺)
+          'TR'≡⍵:(⊃⍺)(turn_right 2⊃⍺)
       }
 
 
