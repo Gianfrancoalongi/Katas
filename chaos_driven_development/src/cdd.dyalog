@@ -6,5 +6,10 @@
     u_turn←{(2⌽⍳4)⍳⍵}
     forward←{⍺+⍵⊃(¯1 0) (0 1) (1 0) (0 ¯1)}
     backward←{⍺+⍵⊃(1 0) (0 ¯1) (¯1 0) (0 1)}
+      disp_game←{
+          b←(⊃⍵)⍴'⎕'
+          b[⊂2⊃⍵]←disp_heading 3⊃⍵
+          b
+      }
 
 :EndNameSpace

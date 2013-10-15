@@ -29,5 +29,13 @@
           #.UT.expect←(3 2)(2 1)(1 2)(2 3)
           (2 2)∘#.cdd.backward¨1 2 3 4
       }
+      
+      display_game_state_TEST←{
+          #.UT.expect←↑'⎕⎕⎕' '⎕⎕⎕' '⎕⎕▲'
+          board_dim←3 3
+          robot_pos←(3 3)
+          robot_heading←1
+          #.cdd.disp_game board_dim robot_pos robot_heading
+      }
 
 :EndNameSpace
