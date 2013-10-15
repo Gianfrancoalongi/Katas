@@ -47,7 +47,15 @@
           board #.cdd.disp_game(pos heading)#.cdd.interpret'DF'
       }
       
-      ⍝ (↑'⎕⎕⎕' '⎕▶⎕' '⎕⎕⎕')(↑'⎕⎕⎕' '⎕⎕⎕' '⎕▲⎕')(↑'⎕⎕⎕' '⎕◀⎕' '⎕⎕⎕')
+      interpret_DB_command_TEST←{
+          #.UT.expect←↑'⎕⎕⎕' '⎕⎕⎕' '⎕▲⎕'
+          board←3 3
+          pos←2 2
+          heading←1
+          board #.cdd.disp_game(pos heading)#.cdd.interpret'DB'
+      }
+      
+      ⍝ (↑'⎕⎕⎕' '⎕▶⎕' '⎕⎕⎕')(↑'⎕⎕⎕' '⎕◀⎕' '⎕⎕⎕')
       ⍝ 'TR' 'DB' 'TL'
 
 :EndNameSpace
