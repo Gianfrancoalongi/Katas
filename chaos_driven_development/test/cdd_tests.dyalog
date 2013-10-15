@@ -9,5 +9,10 @@
           #.UT.expect←'◀▲▶▼'
           #.cdd.disp_heading #.cdd.turn_left¨1 2 3 4
       }
+      
+      robot_turn_right_TEST←{
+          #.UT.expect←'▶▼◀▲'
+          #.cdd.disp_heading #.cdd.turn_right¨1 2 3 4
+      }
 
 :EndNameSpace
