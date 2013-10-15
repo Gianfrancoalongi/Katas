@@ -24,5 +24,10 @@
           #.UT.expect←(1 2)(2 3)(3 2)(2 1)
           (2 2)∘#.cdd.forward¨1 2 3 4
       }
+      
+      driving_backward_TEST←{
+          #.UT.expect←(3 2)(2 1)(1 2)(2 3)
+          (2 2)∘#.cdd.backward¨1 2 3 4
+      }
 
 :EndNameSpace
