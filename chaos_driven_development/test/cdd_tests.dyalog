@@ -55,6 +55,14 @@
           board #.cdd.disp_game(pos heading)#.cdd.interpret'DB'
       }
       
+      interpret_TL_command_TEST←{
+          #.UT.expect←↑'⎕⎕' '⎕◀'
+          board←2 2
+          pos←2 2
+          heading←1
+          board #.cdd.disp_game(pos heading)#.cdd.interpret'TL'
+      }
+      
       ⍝ (↑'⎕⎕⎕' '⎕▶⎕' '⎕⎕⎕')(↑'⎕⎕⎕' '⎕◀⎕' '⎕⎕⎕')
       ⍝ 'TR' 'DB' 'TL'
 
