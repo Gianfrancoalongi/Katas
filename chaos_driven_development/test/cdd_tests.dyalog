@@ -40,10 +40,16 @@
             
       interpret_DF_1_command_TEST←{
           #.UT.expect←(1 2)1
-          command←'DF 1'
           pos←2 2
           heading←1
           (pos heading)#.cdd.interpret'DF 1'
+      }
+      
+      interpret_DF_2_command_TEST←{
+          #.UT.expect←(1 3)1
+          pos←3 3
+          heading←1
+          (pos heading)#.cdd.interpret'DF 2'
       }
       
       interpret_DB_command_TEST←{
