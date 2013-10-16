@@ -21,6 +21,10 @@
           'UT'≡⍵:(⊃⍺)(u_turn 2⊃⍺)
       }
 
+    ∇ Z←random_commands
+      Z←⍳9
+    ∇
+
     ∇ Z←state play commands;t;r;s
       r←⊂state
       :For c :In commands

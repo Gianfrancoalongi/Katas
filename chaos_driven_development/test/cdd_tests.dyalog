@@ -86,6 +86,11 @@
           heading←1
           (pos heading)#.cdd.interpret'UT'
       }
+      
+      nine_commands_set_TEST←{
+          #.UT.expect←9
+          ⊃⍴#.cdd.random_commands
+      }
            
       play_TEST←{
           #.UT.expect←(↑'⎕⎕' '⎕▲')(↑'⎕▲' '⎕⎕')(↑'⎕▶' '⎕⎕')(↑'▶⎕' '⎕⎕')(↑'▲⎕' '⎕⎕')
