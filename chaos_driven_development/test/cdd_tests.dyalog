@@ -67,6 +67,13 @@
           (pos heading)#.cdd.interpret'TR'
       }
       
+      interpret_UT_command_TEST←{
+          #.UT.expect←(2 2)3
+          pos←2 2
+          heading←1
+          (pos heading)#.cdd.interpret'UT'
+      }
+      
       play_TEST←{
           #.UT.expect←(↑'⎕⎕' '⎕▲')(↑'⎕▲' '⎕⎕')(↑'⎕▶' '⎕⎕')(↑'▶⎕' '⎕⎕')(↑'▲⎕' '⎕⎕')
           ((2 2)1)#.cdd.play'DF' 'TR' 'DB' 'TL'

@@ -16,6 +16,7 @@
           'DB'≡⍵:((⊃⍺)backward(2⊃⍺))(2⊃⍺)
           'TL'≡⍵:(⊃⍺)(turn_left 2⊃⍺)
           'TR'≡⍵:(⊃⍺)(turn_right 2⊃⍺)
+          'UT'≡⍵:(⊃⍺)(u_turn 2⊃⍺)
       }
 
     ∇ Z←state play commands;t;r;s
@@ -30,3 +31,4 @@
 
 
 :EndNameSpace
+
