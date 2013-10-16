@@ -14,6 +14,7 @@
       interpret←{
           'DF 1'≡⍵:((⊃⍺)forward(2⊃⍺))(2⊃⍺)
           'DF 2'≡⍵:(((⊃⍺)forward(2⊃⍺))forward(2⊃⍺))(2⊃⍺)
+          'DF 3'≡⍵:((((⊃⍺)forward(2⊃⍺))forward(2⊃⍺))forward(2⊃⍺))(2⊃⍺)
           'DB'≡⍵:((⊃⍺)backward(2⊃⍺))(2⊃⍺)
           'TL'≡⍵:(⊃⍺)(turn_left 2⊃⍺)
           'TR'≡⍵:(⊃⍺)(turn_right 2⊃⍺)
