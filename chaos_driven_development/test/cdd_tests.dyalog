@@ -38,12 +38,12 @@
           board_dim #.cdd.disp_game robot_pos robot_heading
       }
             
-      interpret_DF_command_TEST←{
+      interpret_DF_1_command_TEST←{
           #.UT.expect←(1 2)1
-          command←'DF'
+          command←'DF 1'
           pos←2 2
           heading←1
-          (pos heading)#.cdd.interpret'DF'
+          (pos heading)#.cdd.interpret'DF 1'
       }
       
       interpret_DB_command_TEST←{
@@ -76,6 +76,7 @@
       
       play_TEST←{
           #.UT.expect←(↑'⎕⎕' '⎕▲')(↑'⎕▲' '⎕⎕')(↑'⎕▶' '⎕⎕')(↑'▶⎕' '⎕⎕')(↑'▲⎕' '⎕⎕')
-          ((2 2)1)#.cdd.play'DF' 'TR' 'DB' 'TL'
+          ((2 2)1)#.cdd.play'DF 1' 'TR' 'DB' 'TL'
       }
 :EndNameSpace
+
