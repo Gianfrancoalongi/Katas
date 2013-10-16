@@ -18,5 +18,15 @@
           'TR'≡⍵:(⊃⍺)(turn_right 2⊃⍺)
       }
 
+    ∇ Z←state play commands;t;r;s
+      r←⊂state
+      :For c :In commands
+          t←state interpret c
+          r,←⊂t
+          state←t
+      :EndFor
+      Z←(2 2)∘disp_game¨r
+    ∇
+
 
 :EndNameSpace

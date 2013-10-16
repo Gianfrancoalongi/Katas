@@ -67,4 +67,8 @@
           (pos heading)#.cdd.interpret'TR'
       }
       
+      play_TEST←{
+          #.UT.expect←(↑'⎕⎕' '⎕▲')(↑'⎕▲' '⎕⎕')(↑'⎕▶' '⎕⎕')(↑'▶⎕' '⎕⎕')(↑'▲⎕' '⎕⎕')
+          ((2 2)1)#.cdd.play'DF' 'TR' 'DB' 'TL'
+      }
 :EndNameSpace
