@@ -91,6 +91,13 @@
           #.UT.expect←9
           ⊃⍴#.cdd.random_commands
       }
+      
+      nine_random_commands_TEST←{
+          #.UT.expect←21 14 7 7 21 21 7
+          sequence←⊃,/{#.cdd.random_commands}¨⍳20000
+          amount←'DF 1' 'DF 2' 'DF 3' 'DB' 'TR' 'TL' 'UT'∘.{+/⍺∘≡¨⍵}⊂sequence
+          ⌊100×amount÷180000
+      }
            
       play_TEST←{
           #.UT.expect←(↑'⎕⎕' '⎕▲')(↑'⎕▲' '⎕⎕')(↑'⎕▶' '⎕⎕')(↑'▶⎕' '⎕⎕')(↑'▲⎕' '⎕⎕')
