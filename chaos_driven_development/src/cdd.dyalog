@@ -28,14 +28,20 @@
       Z←set[9?⍴set]
     ∇
 
-    ∇ Z←state play commands;t;r;s
+    ∇ Z←play;state;r;c;t
+      ⎕←random_commands
+      commands←9⍴⊂''
+      {commands[⍵]←⊂⍞}¨⍳9
+      commands←{(∨\' '≠⍵)/⍵}¨commands
+      commands←(''∘≢¨commands)/commands
+      state←(12 12)1
       r←⊂state
       :For c :In commands
           t←state interpret c
           r,←⊂t
           state←t
       :EndFor
-      Z←(2 2)∘disp_game¨r
+      Z←(12 12)∘disp_game¨r
     ∇
 
 
