@@ -22,7 +22,10 @@
       }
 
     ∇ Z←random_commands
-      Z←⍳9
+      commands←('DF 1' 'DF 2' 'DF 3' 'DB' 'TR' 'TL' 'UT')
+      distribution←18 12 6 6 18 18 6
+      set←⊃,/{(⊃⍵)⍴(⊂2⊃⍵)}¨↓↑[0.5]distribution commands
+      Z←set[9?⍴set]
     ∇
 
     ∇ Z←state play commands;t;r;s
